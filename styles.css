@@ -81,6 +81,7 @@ nav ul li a.active {
   text-transform: lowercase;
   font-family: 'NewEdge666', sans-serif;
   border: none; /* No border for buttons */
+  display: inline-block; /* Ensure button acts like a menu item */
 }
 
 /* Hero section */

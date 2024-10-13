@@ -38,45 +38,36 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 3em; /* Adjust text size using em */
 }
 
 nav ul li a {
   text-decoration: none;
   color: black;
-  font-size: 1.2vw;
+  font-size: 1.2em; /* Use em for better scaling */
 }
 
 /* Hover effect */
-nav ul li a:hover {
+nav ul li a:hover,
+.menu-button:hover {
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* External link buttons */
-.buttons {
-  display: flex;
-  gap: 1vw;
-}
-
-.buttons .button {
-  font-size: 1.5vw;
+/* Button styling same as menu */
+.menu-button {
+  font-size: 1.2em;
   color: black;
   text-decoration: none;
   padding: 10px 20px;
-  border: 2px solid black;
-  border-radius: 5px;
-  transition: transform 0.3s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
-/* Hover effect for buttons */
-.buttons .button:hover {
-  transform: scale(1.1);
-}
-
-/* Hero section (logo) */
+/* Hero section (logo) with updated gradient */
 .hero {
   height: 100vh;
-  background: linear-gradient(180deg, #C5A9ED 0%, #B486E1 50%, #B06278 100%);
+  background: linear-gradient(90deg, #B14B48 0%, #DAB2E0 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,11 +77,12 @@ nav ul li a:hover {
   max-width: 50vw;
 }
 
-/* About section (scroll to) */
+/* About section with 3-color gradient and regular rounded font */
 .about {
   height: 100vh;
-  background: linear-gradient(180deg, #B06278 0%, #FF1493 100%);
+  background: linear-gradient(-90deg, #B14B48 0%, #FF009B 50%, #FFD0E4 100%);
   padding: 50px;
   color: black;
   font-size: 1.5vw;
+  font-family: 'NewEdge666', sans-serif; /* Using regular rounded font */
 }

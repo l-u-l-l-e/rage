@@ -75,7 +75,7 @@ nav ul li a.active {
 /* Hero section (logo) with updated gradient */
 .hero {
   height: 100vh;
-  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 85%); /* More of the dark red */
+  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 90%); /* More of the dark red */
   display: flex;
   justify-content: center;
   align-items: center;

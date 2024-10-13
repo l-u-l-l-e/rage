@@ -32,6 +32,36 @@
     <p>We are an inclusive and non-profit feminist platform for expression – one where rage can be set free with vulnerability and dignity. Our zine publishes bold and experimental feminist content (writing, art & more) primarily in English, with an emphasis on multidisciplinarity, harnessing rage as the powerful source of creativity it can be. We also host launch events, workshops, and talks seeking to provide a space for voices that are usually unheard.</p><br><br>
     <p>The project is led by the RAGE Collective, a group of young feminist artists, creatives, writers, academics, and activists based around the world but headquartered in Copenhagen, Denmark.</p>
   </section>
+  
+<script>
+  // Function to track scroll position and apply the active class to the correct menu link
+  window.addEventListener('scroll', () => {
+    // Select all sections and all navigation links
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    let currentSection = '';
+
+    // Loop through each section to find the one currently in view
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+
+      // Check if the section is within the current scroll position
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        currentSection = section.getAttribute('id');  // Get the id of the section in view
+      }
+    });
+
+    // Loop through all navigation links and toggle the active class
+    navLinks.forEach(link => {
+      link.classList.remove('active');  // Remove active class from all links
+      if (link.getAttribute('href').includes(currentSection)) {
+        link.classList.add('active');  // Add active class to the link corresponding to the current section
+      }
+    });
+  });
+</script>
 
 </body>
 </html>

@@ -37,7 +37,7 @@ html, body {
   font-family: 'NewEdge666', sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: #DAB2E0; /* Light purple background */
+  background-color: #DAB2E0;
 }
 
 /* Navigation styling */
@@ -111,7 +111,7 @@ nav ul li a.active {
 /* About section */
 .about {
   height: 100vh;
-  background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #C2B0D9 100%); /* Match transition color */
+  background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFE4FF 100%);
   padding: 50px;
   color: black;
   font-size: 1.7vw;
@@ -126,15 +126,25 @@ nav ul li a.active {
 /* Paragraph styling */
 .about p {
   max-width: 75vw;
-  margin-bottom: 20px;
-  line-height: 1.6;
+  margin-bottom: 30px; /* More vertical space */
+  line-height: 1.7;
   display: block;
+}
+
+/* Link styling */
+a {
+  color: #1C30D6; /* Blue color from color scheme */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #CEBDEF; /* Hover color from color scheme */
 }
 
 /* Collective section gradient */
 .collective {
   padding: 50px;
-  background: linear-gradient(180deg, #C2B0D9 0%, #233AD5 100%); /* Smooth transition starting with the last color of "About" */
+  background: linear-gradient(180deg, #CEBDEF 0%, #CEBDEF 50%, #1C30D6 100%);
   color: black;
 }
 
@@ -175,10 +185,11 @@ nav ul li a.active {
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 80%;
-  max-width: 500px; /* Wider on desktop */
+  max-width: 500px;
   display: none;
   z-index: 10;
   text-align: left;
+  font-family: 'NewEdge666Light', sans-serif;
 }
 
 /* Display bio on member active */
@@ -194,8 +205,12 @@ nav ul li a.active {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #233AD5; /* Blue color from scheme */
+  color: #1C30D6; /* Blue color from scheme */
   cursor: pointer;
+}
+
+.close-bio:hover {
+  color: #CEBDEF; /* Hover color */
 }
 
 /* Member bio styling */
@@ -217,7 +232,7 @@ nav ul li a.active {
 }
 
 .bio p:not(.title-handle) {
-  font-family: 'NewEdge666', sans-serif;
+  font-family: 'NewEdge666Light', sans-serif;
   font-size: 1.1rem;
   margin-top: 10px;
   line-height: 1.6;

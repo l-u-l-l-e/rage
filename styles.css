@@ -8,12 +8,17 @@
 /* Custom fonts */
 @font-face {
   font-family: 'NewEdge666';
-  src: url('NewEdge666-LightRounded.otf') format('opentype');
+  src: url('NewEdge666-RegularRounded.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'NewEdge666Slanted';
   src: url('NewEdge666-RegularRoundedSlanted.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NewEdge666Light';
+  src: url('NewEdge666-LightRounded.otf') format('opentype');
 }
 
 /* Full-page layout */
@@ -28,10 +33,10 @@ html, body {
 /* Navigation styling */
 nav {
   position: fixed;
-  top: 10px; /* Added top margin for space */
-  left: 10px; /* Added left margin for space */
-  width: calc(100% - 20px); /* Adjusted width to account for space on both sides */
-  padding: 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 30px; /* Added padding to give space to menu items */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,6 +56,7 @@ nav ul li a {
   color: black;
   font-size: 2vw;
   text-transform: lowercase;
+  font-family: 'NewEdge666', sans-serif; /* Regular Rounded for menu items */
 }
 
 /* Hover effect */
@@ -61,7 +67,7 @@ nav ul li a:hover,
 
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
-  text-decoration: underline; /* Optional: underline the active section */
+  text-decoration: underline;
 }
 
 /* Button styling (same as menu items) */
@@ -74,6 +80,7 @@ nav ul li a.active {
   background: none;
   cursor: pointer;
   text-transform: lowercase;
+  font-family: 'NewEdge666', sans-serif;
 }
 
 /* Hero section with light purple and sharper dark red */
@@ -95,10 +102,10 @@ nav ul li a.active {
   background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFD0E4 100%);
   padding: 50px;
   color: black;
-  font-size: 1.3vw; /* Slightly smaller font size */
-  font-family: 'NewEdge666', sans-serif;
-  display: flex; 
-  flex-direction: column; 
+  font-size: 1.5vw; /* Slightly larger font size */
+  font-family: 'NewEdge666Light', sans-serif; /* Light Rounded for the about text */
+  display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
   text-align: left;
@@ -110,30 +117,40 @@ nav ul li a.active {
   margin-bottom: 5px;
   line-height: 1.5;
   display: block;
-  font-family: 'NewEdge666-LightRounded', sans-serif; /* Switch to light rounded */
 }
 
-/* Responsive menu for medium screens */
+/* Section transitions and smooth scrolling */
+section {
+  position: relative;
+  scroll-snap-align: start;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   nav ul {
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 1em; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
   }
 
   nav ul li a,
   .menu-button {
-    font-size: 3vw; /* Adjust font size */
+    font-size: 3vw;
     padding: 10px;
   }
 
   .hero .logo {
-    max-width: 90vw; 
+    max-width: 90vw;
   }
 
   .about p {
     max-width: 90vw;
-    font-size: 4vw; /* Increased font size for better readability on small screens */
+    font-size: 2.5vw; /* Increase font size earlier for smaller screens */
+    line-height: 1.7; /* Increase line-height to keep readability */
+  }
+
+  .about {
+    padding: 30px; /* Adjust padding for smaller screens */
   }
 }
 
@@ -144,14 +161,15 @@ nav ul li a.active {
     gap: 0.5em;
     align-items: center;
   }
-  
+
   nav ul li a,
   .menu-button {
-    font-size: 5vw; 
+    font-size: 5vw;
     padding: 10px;
   }
-  
+
   .about p {
-    font-size: 5vw; /* Further adjustment for small screens */
+    font-size: 3vw;
+    line-height: 1.8;
   }
 }

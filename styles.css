@@ -111,7 +111,7 @@ nav ul li a.active {
 /* About section */
 .about {
   height: 100vh;
-  background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFD0E4 100%);
+  background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #C2B0D9 100%); /* Match transition color */
   padding: 50px;
   color: black;
   font-size: 1.7vw;
@@ -134,7 +134,7 @@ nav ul li a.active {
 /* Collective section gradient */
 .collective {
   padding: 50px;
-  background: linear-gradient(180deg, #EDD1EB 0%, #C2B0D9 50%, #233AD5 100%);
+  background: linear-gradient(180deg, #C2B0D9 0%, #233AD5 100%); /* Smooth transition starting with the last color of "About" */
   color: black;
 }
 

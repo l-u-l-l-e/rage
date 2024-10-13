@@ -68,20 +68,6 @@ nav ul li a {
   font-family: 'NewEdge666', sans-serif;
 }
 
-/* Hover effect */
-nav ul li a:hover,
-.menu-button:hover {
-  font-family: 'NewEdge666Slanted', sans-serif;
-}
-
-/* Active section indicator with forceful application */
-nav ul li a.active {
-  font-family: 'NewEdge666Slanted', sans-serif !important;
-  text-decoration: none;
-  color: black;
-}
-
-/* Button styling (Same as menu items) */
 .menu-button {
   font-size: 2vw;
   color: black;
@@ -93,6 +79,18 @@ nav ul li a.active {
   font-family: 'NewEdge666', sans-serif;
   border: none;
   display: inline-block;
+}
+
+nav ul li a:hover,
+.menu-button:hover {
+  font-family: 'NewEdge666Slanted', sans-serif;
+}
+
+/* Active section indicator */
+nav ul li a.active {
+  font-family: 'NewEdge666Slanted', sans-serif;
+  text-decoration: none;
+  color: black;
 }
 
 /* Hero section */
@@ -126,7 +124,7 @@ nav ul li a.active {
 /* Paragraph styling */
 .about p {
   max-width: 75vw;
-  margin-bottom: 10px; /* Reduced spacing between paragraphs */
+  margin-bottom: 10px; /* Reduced vertical spacing between paragraphs */
   line-height: 1.4;
   display: block;
 }
@@ -166,7 +164,7 @@ nav ul li a.active {
 
 /* Bio pop-up initially hidden */
 .bio {
-  position: fixed; /* Ensure the bio stays in the viewport */
+  position: fixed; /* Stay in viewport */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -176,17 +174,12 @@ nav ul li a.active {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 80%;
   max-width: 500px;
-  max-height: 90vh; /* Limit pop-up height on mobile */
-  overflow: hidden;
+  max-height: 90vh; /* Limit pop-up height */
+  overflow: auto; /* Allow scroll only if necessary */
   display: none;
   z-index: 10;
   text-align: left;
   font-family: 'NewEdge666Light', sans-serif;
-}
-
-/* Ensure bio doesn't exceed viewport */
-.bio.shrink {
-  font-size: 0.9rem; /* Reduce font size if too large */
 }
 
 /* Display bio on member active */
@@ -235,6 +228,11 @@ nav ul li a.active {
   line-height: 1.7;
 }
 
+/* Ensure bio stays centered and text is fully visible */
+.bio.shrink {
+  font-size: 0.9rem; /* Adjust font size if necessary */
+}
+
 /* Section transitions */
 section {
   position: relative;
@@ -243,9 +241,14 @@ section {
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
+  nav ul li a,
+  .menu-button {
+    font-size: 2.5vw;
+  }
+
   .about p {
     font-size: 2.5vw;
-    line-height: 1.6;
+    line-height: 1.5;
   }
 
   .collective-container {
@@ -266,17 +269,16 @@ section {
   }
 }
 
-/* Mobile view adjustments */
 @media (max-width: 768px) {
   nav ul li a {
-    font-size: 4vw; /* Bigger menu items */
+    font-size: 4vw; /* Slightly bigger menu items */
   }
 
   .about p {
     max-width: 90vw;
     font-size: 4.5vw;
     line-height: 1.6;
-    margin-top: 10vh; /* Ensure it starts higher */
+    margin-top: 10vh; /* Start further up in the section */
   }
 
   .about {
@@ -293,14 +295,13 @@ section {
     height: 120px;
   }
 
-  /* Ensure bio doesn't exceed viewport */
+  /* Ensure bio doesn't interfere with menu */
   .bio {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 90vw;
     max-height: 80vh; /* Prevent overflow */
-    overflow: hidden;
   }
 
   /* Reduce bio text size if necessary */

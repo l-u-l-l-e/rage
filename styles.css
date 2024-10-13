@@ -37,7 +37,7 @@ html, body {
   font-family: 'NewEdge666', sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: #DAB2E0;
+  background-color: #DAB2E0; /* Light purple background */
 }
 
 /* Navigation styling */
@@ -66,16 +66,15 @@ nav ul li a {
   font-size: 2vw;
   text-transform: lowercase;
   font-family: 'NewEdge666', sans-serif;
-  transition: all 0.3s ease;
 }
 
-/* No color change on hover, only slanted font */
+/* Hover effect */
 nav ul li a:hover,
 .menu-button:hover {
   font-family: 'NewEdge666Slanted', sans-serif;
-  color: black;
 }
 
+/* Active section indicator */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif !important;
   text-decoration: none;
@@ -94,12 +93,6 @@ nav ul li a.active {
   font-family: 'NewEdge666', sans-serif;
   border: none;
   display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.menu-button:hover {
-  font-family: 'NewEdge666Slanted', sans-serif;
-  color: black;
 }
 
 /* Hero section */
@@ -121,7 +114,7 @@ nav ul li a.active {
   background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFE4FF 100%);
   padding: 50px;
   color: black;
-  font-size: 2vw;
+  font-size: 1.7vw;
   font-family: 'NewEdge666Light', sans-serif;
   display: flex;
   flex-direction: column;
@@ -133,18 +126,9 @@ nav ul li a.active {
 /* Paragraph styling */
 .about p {
   max-width: 75vw;
-  margin-bottom: 30px;
-  line-height: 1.7;
+  margin-bottom: 20px;
+  line-height: 1.6;
   display: block;
-}
-
-a {
-  color: #1C30D6;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #CEBDEF;
 }
 
 /* Collective section gradient */
@@ -182,7 +166,7 @@ a:hover {
 
 /* Bio pop-up initially hidden */
 .bio {
-  position: absolute;
+  position: fixed; /* Ensure the bio stays in the viewport */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -196,8 +180,11 @@ a:hover {
   z-index: 10;
   text-align: left;
   font-family: 'NewEdge666Light', sans-serif;
-  max-height: 80vh; /* Ensure bio does not exceed view height */
-  overflow-y: auto;
+}
+
+/* Ensure bio doesn't exceed viewport */
+.bio.shrink {
+  font-size: 0.9rem; /* Reduce font size if too large */
 }
 
 /* Display bio on member active */
@@ -254,15 +241,9 @@ section {
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  nav ul li a,
-  .menu-button {
-    font-size: 2.5vw;
-  }
-
   .about p {
-    font-size: 3.5vw;
-    line-height: 2;
-    margin-top: 20px; /* Text starts further up */
+    font-size: 2.5vw;
+    line-height: 1.8;
   }
 
   .collective-container {
@@ -285,22 +266,11 @@ section {
 
 /* Mobile view adjustments */
 @media (max-width: 768px) {
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em;
-  }
-
-  nav ul li a,
-  .menu-button {
-    font-size: 3vw;
-  }
-
   .about p {
     max-width: 90vw;
-    font-size: 4.5vw; /* Larger text */
-    line-height: 2.5;
-    margin-top: 15vh; /* Starts higher up */
+    font-size: 4vw;
+    line-height: 2;
+    margin-top: 15vh;
   }
 
   .about {
@@ -317,34 +287,18 @@ section {
     height: 120px;
   }
 
+  /* Ensure bio doesn't exceed viewport */
   .bio {
     top: 50%;
-    width: 90vw;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 90vw;
     max-height: 80vh;
-    overflow-y: auto;
-  }
-}
-
-/* Mobile click-to-show bio */
-@media (max-width: 480px) {
-  .member {
-    cursor: pointer;
+    overflow: hidden; /* Prevent scrolling */
   }
 
-  .member.active .bio {
-    display: block;
-  }
-
-  .bio {
-    top: 50%;
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .member.active .bio {
-    display: block;
-    opacity: 1;
-    visibility: visible;
+  /* Reduce bio text size if necessary */
+  .bio.shrink {
+    font-size: 0.8rem;
   }
 }

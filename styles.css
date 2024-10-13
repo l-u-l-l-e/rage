@@ -59,10 +59,11 @@ nav ul li a:hover,
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Active section indicator (slanted font for active section) */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
-  text-decoration: underline;
+  text-decoration: underline; /* Optional: underline the active section */
+}
+
 }
 
 /* Button styling (same as menu items) */

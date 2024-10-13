@@ -20,9 +20,9 @@
 html, body {
   height: 100%;
   font-family: 'NewEdge666', sans-serif;
-  scroll-behavior: smooth; /* Smooth scrolling behavior */
+  scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: #B14B48; /* Prevents white background on over-scroll */
+  background-color: #B80000; /* Dark red background to prevent white background on over-scroll */
 }
 
 /* Navigation styling */
@@ -60,7 +60,7 @@ nav ul li a:hover,
 /* Active section indicator */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif; /* Slanted font for active section */
-  text-decoration: underline; /* Optional: underline to make it clearer */
+  text-decoration: underline;
 }
 
 /* Button styling */
@@ -75,10 +75,10 @@ nav ul li a.active {
   text-transform: lowercase;
 }
 
-/* Hero section with dark red dominating */
+/* Hero section with dark red gradient */
 .hero {
   height: 100vh;
-  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 100%);
+  background: linear-gradient(180deg, #DAB2E0 0%, #B80000 90%); /* Light purple to dark red */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,7 +91,7 @@ nav ul li a.active {
 /* About section starting with dark red */
 .about {
   height: 100vh;
-  background: linear-gradient(180deg, #B14B48 0%, #FF009B 50%, #FFD0E4 100%);
+  background: linear-gradient(180deg, #B80000 0%, #FF009B 50%, #FFD0E4 100%);
   padding: 50px;
   color: black;
   font-size: 1.5vw;
@@ -102,12 +102,12 @@ nav ul li a.active {
   text-align: left;
 }
 
-/* Paragraph styling */
+/* Paragraph styling to prevent columns */
 .about p {
   max-width: 75vw;
   margin-bottom: 20px;
   line-height: 1.6;
-  column-count: 1; /* Ensure no columns */
+  column-count: 1 !important; /* Ensure no columns */
 }
 
 /* Section transitions and smooth scrolling */

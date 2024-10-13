@@ -33,18 +33,11 @@
     <p>The project is led by the RAGE Collective, a group of young feminist artists, creatives, writers, academics, and activists based around the world but headquartered in Copenhagen, Denmark.</p>
   </section>
 
-  <!-- Placeholder for more sections -->
-  <section class="submit" id="submit"></section>
-  <section class="events" id="events"></section>
-  <section class="contact" id="contact"></section>
-  
   <!-- JavaScript to add active class to menu item -->
   <script>
-    // Function to track scroll position and apply the active class to the correct menu link
     window.addEventListener('scroll', () => {
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('nav ul li a');
-
       let currentSection = '';
 
       // Loop through each section to find the one currently in view
@@ -54,15 +47,15 @@
 
         // Check if the section is within the current scroll position
         if (pageYOffset >= sectionTop - sectionHeight / 3) {
-          currentSection = section.getAttribute('id');  // Get the id of the section in view
+          currentSection = section.getAttribute('id');
         }
       });
 
       // Loop through all navigation links and toggle the active class
       navLinks.forEach(link => {
-        link.classList.remove('active');  // Remove active class from all links
+        link.classList.remove('active');
         if (link.getAttribute('href').includes(currentSection)) {
-          link.classList.add('active');  // Add active class to the link corresponding to the current section
+          link.classList.add('active');
         }
       });
     });

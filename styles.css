@@ -105,12 +105,13 @@ nav ul li a.active {
   text-align: left;
 }
 
-/* Paragraph styling - Strict enforcement of single column */
 .about p {
-  max-width: 75vw;
-  margin-bottom: 10px; /* Reduced margin between paragraphs */
-  line-height: 1.6;
+  max-width: 75vw; /* Ensure paragraph width takes up only 75% of viewport */
+  margin-bottom: 5px; /* Reduce margin between paragraphs even further */
+  line-height: 1.4; /* Reduce line height to minimize spacing between lines */
   display: block; /* Ensure block layout for paragraphs */
+}
+
 }
 
 /* Section transitions and smooth scrolling */

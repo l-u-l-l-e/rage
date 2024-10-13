@@ -181,3 +181,34 @@ section {
     line-height: 1.8;
   }
 }
+
+/* Member bio styling */
+
+/* Member Name - Ultra Bold Rounded Slanted */
+.bio h3 {
+  font-size: 1.8rem;
+  font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
+  margin: 10px 0;
+}
+
+/* Pronouns - Regular Rounded */
+.bio h3 span {
+  font-family: 'NewEdge666', sans-serif;
+  font-size: 1.5rem;
+}
+
+/* Title and Handle - Light Rounded Slanted */
+.bio p:first-of-type {
+  font-family: 'NewEdge666LightSlanted', sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* Description - Regular Rounded (paragraph) */
+.bio p:not(:first-of-type) {
+  font-family: 'NewEdge666', sans-serif;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+

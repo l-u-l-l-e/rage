@@ -67,7 +67,7 @@ nav ul li a:hover,
 
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
-  text-decoration: underline;
+  text-decoration: none; /* No underline */
 }
 
 /* Button styling (same as menu items) */

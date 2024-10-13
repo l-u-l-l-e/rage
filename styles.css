@@ -20,7 +20,7 @@
 html, body {
   height: 100%;
   font-family: 'NewEdge666', sans-serif;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Ensures smooth scrolling */
   overflow: hidden; /* Hides the scroll bar */
   background-color: #B14B48; /* Prevents white background on over-scroll */
 }
@@ -41,7 +41,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000; /* Ensure menu stays on top */
+  z-index: 1000;
 }
 
 nav ul {
@@ -54,7 +54,7 @@ nav ul li a {
   text-decoration: none;
   color: black;
   font-size: 2vw;
-  text-transform: lowercase; /* All lowercase for menu */
+  text-transform: lowercase;
 }
 
 /* Hover effect */
@@ -68,7 +68,7 @@ nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Button styling same as menu */
+/* Button styling */
 .menu-button {
   font-size: 2vw;
   color: black;
@@ -80,10 +80,10 @@ nav ul li a.active {
   text-transform: lowercase;
 }
 
-/* Hero section with gradient */
+/* Hero section with a more dominant dark red gradient */
 .hero {
   height: 100vh;
-  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 95%);
+  background: linear-gradient(180deg, #DAB2E0 10%, #B14B48 90%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,25 +93,26 @@ nav ul li a.active {
   max-width: 80vw;
 }
 
-/* About section with 3-color gradient */
+/* About section with a smoother 3-color gradient */
 .about {
   height: 100vh;
-  background: linear-gradient(180deg, #B14B48 0%, #FF009B 50%, #FFD0E4 100%);
+  background: linear-gradient(180deg, #B14B48 10%, #FF009B 50%, #FFD0E4 90%);
   padding: 50px;
   color: black;
   font-size: 1.5vw;
   font-family: 'NewEdge666', sans-serif;
   display: flex;
-  justify-content: flex-start; /* Align to the left */
-  align-items: flex-end; /* Align to the bottom */
+  justify-content: flex-start; /* Align the text to the left */
+  align-items: flex-end; /* Align the text to the bottom */
   text-align: left;
 }
 
-/* Paragraph styling for About section */
+/* Paragraph styling */
 .about p {
-  max-width: 75vw; /* Take up ¾ of the screen width */
-  margin-bottom: 20px; /* Space between the text and the bottom */
-  line-height: 1.6; /* Good readability */
+  max-width: 75vw; /* ¾ of the screen width */
+  margin-bottom: 20px;
+  line-height: 1.6;
+  column-count: 1; /* Ensure no columns */
 }
 
 /* Section transitions and slanted menu indicator */
@@ -136,6 +137,6 @@ body {
   }
 
   .about p {
-    max-width: 90vw; /* Make the paragraph more flexible on smaller screens */
+    max-width: 90vw;
   }
 }

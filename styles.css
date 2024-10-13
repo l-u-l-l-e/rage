@@ -44,7 +44,8 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: black;
-  font-size: 1.2em; /* Use em for better scaling */
+  font-size: 1.2em;
+  text-transform: lowercase; /* Ensure all lowercase for menu */
 }
 
 /* Hover effect */
@@ -53,7 +54,7 @@ nav ul li a:hover,
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Button styling same as menu */
+/* Button styling same as menu, with lowercase letters */
 .menu-button {
   font-size: 1.2em;
   color: black;
@@ -62,25 +63,26 @@ nav ul li a:hover,
   border: none;
   background: none;
   cursor: pointer;
+  text-transform: lowercase; /* Ensure all lowercase for buttons */
 }
 
 /* Hero section (logo) with updated gradient */
 .hero {
   height: 100vh;
-  background: linear-gradient(90deg, #B14B48 0%, #DAB2E0 100%);
+  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 100%); /* Light purple to dark red */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .hero .logo {
-  max-width: 50vw;
+  max-width: 35vw; /* Increase logo size */
 }
 
-/* About section with 3-color gradient and regular rounded font */
+/* About section with 3-color gradient */
 .about {
   height: 100vh;
-  background: linear-gradient(-90deg, #B14B48 0%, #FF009B 50%, #FFD0E4 100%);
+  background: linear-gradient(180deg, #B14B48 0%, #FF009B 50%, #FFD0E4 100%); /* Dark red to pink to pale pink */
   padding: 50px;
   color: black;
   font-size: 1.5vw;

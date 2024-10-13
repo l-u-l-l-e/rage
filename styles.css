@@ -38,13 +38,13 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 3em; /* Adjust text size using em */
+  gap: 2em; /* Reduced the gap to fit smaller screens */
 }
 
 nav ul li a {
   text-decoration: none;
   color: black;
-  font-size: 1.2em;
+  font-size: 2vw; /* Use viewport width for responsiveness */
   text-transform: lowercase; /* Ensure all lowercase for menu */
 }
 
@@ -54,9 +54,14 @@ nav ul li a:hover,
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
+/* Active section indicator */
+nav ul li a.active {
+  font-family: 'NewEdge666Slanted', sans-serif;
+}
+
 /* Button styling same as menu, with lowercase letters */
 .menu-button {
-  font-size: 1.2em;
+  font-size: 2vw; /* Responsive font size */
   color: black;
   text-decoration: none;
   padding: 10px 20px;
@@ -69,14 +74,14 @@ nav ul li a:hover,
 /* Hero section (logo) with updated gradient */
 .hero {
   height: 100vh;
-  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 100%); /* Light purple to dark red */
+  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 70%); /* More of the dark red */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .hero .logo {
-  max-width: 35vw; /* Increase logo size */
+  max-width: 80vw; /* Large size for the logo */
 }
 
 /* About section with 3-color gradient */
@@ -86,5 +91,36 @@ nav ul li a:hover,
   padding: 50px;
   color: black;
   font-size: 1.5vw;
-  font-family: 'NewEdge666', sans-serif; /* Using regular rounded font */
+  font-family: 'NewEdge666', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Align the text to the bottom */
+  text-align: left;
+}
+
+.about p {
+  width: 75%; /* ¾ page width for the text */
+  margin-bottom: 20px; /* Space between the text and the bottom */
+}
+
+/* Section transitions and slanted menu indicator */
+section {
+  position: relative;
+  scroll-snap-align: start;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  nav ul li a,
+  .menu-button {
+    font-size: 4vw; /* Increase font size on smaller screens */
+  }
+
+  .hero .logo {
+    max-width: 90vw; /* Adjust logo size for smaller screens */
+  }
 }

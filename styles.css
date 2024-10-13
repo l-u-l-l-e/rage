@@ -102,21 +102,27 @@ nav ul li a.active {
   text-align: left;
 }
 
-/* Paragraph styling - Enforcing single column */
+/* Strict single column enforcement only for the About section */
 .about p {
-  width: 100%; /* Ensure full width of the container */
-  max-width: 75vw; /* Limit to 75% of viewport width */
+  width: 100%;
+  max-width: 75vw;
   margin-bottom: 20px;
   line-height: 1.6;
-  column-count: 1 !important; /* Enforce no columns */
-  column-width: 100% !important; /* Ensure full column width */
-  column-gap: 0 !important; /* Remove any column gap */
+  column-count: 1 !important; /* Keep single column */
+  column-gap: 0 !important; /* Remove any column gaps */
+  display: block !important;
 }
 
 /* Section transitions and smooth scrolling */
 section {
   position: relative;
   scroll-snap-align: start;
+}
+
+/* Column styling for any other section (example) */
+.other-section {
+  column-count: 3; /* Example: 3 columns */
+  column-gap: 20px; /* Customize the column gap */
 }
 
 /* Responsive adjustments */

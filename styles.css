@@ -21,6 +21,14 @@ html, body {
   height: 100%;
   font-family: 'NewEdge666', sans-serif;
   scroll-behavior: smooth;
+  overflow: hidden; /* Hides the scroll bar */
+  background-color: #B14B48; /* Prevents white background on over-scroll */
+}
+
+/* Prevent white space when scrolling too far up/down */
+body {
+  overflow-y: scroll;
+  overflow-x: hidden; /* Lock the page horizontally to avoid overscroll */
 }
 
 /* Navigation styling */
@@ -104,8 +112,6 @@ nav ul li a.active {
   max-width: 75vw; /* Take up ¾ of the screen width */
   margin-bottom: 20px; /* Space between the text and the bottom */
   line-height: 1.6; /* Good readability */
-  column-count: 1; /* Enforce one column */
-  column-gap: 0; /* Remove any column gap */
 }
 
 /* Section transitions and slanted menu indicator */

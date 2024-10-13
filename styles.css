@@ -134,9 +134,10 @@ nav ul li a.active {
 /* Collective section gradient */
 .collective {
   padding: 50px;
-  background: linear-gradient(180deg, #FFD0E4 0%, #8A2BE2 60%, #6A5ACD 100%);
+  background: linear-gradient(180deg, #FFC0CB 0%, #DAB2E0 50%, #0000FF 100%);
   color: black;
 }
+
 
 /* Collective grid layout */
 .collective-container {

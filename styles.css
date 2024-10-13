@@ -75,7 +75,7 @@ nav ul li a.active {
 /* Hero section (logo) with updated gradient */
 .hero {
   height: 100vh;
-  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 90%); /* More of the dark red */
+  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 95%); /* Dark red more dominant */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,10 +99,13 @@ nav ul li a.active {
   text-align: left;
 }
 
+/* Ensure the about text is not in columns */
 .about p {
   max-width: 75vw; /* Take up ¾ of the screen width */
   margin-bottom: 20px; /* Space between the text and the bottom */
   line-height: 1.6; /* Ensure good readability */
+  column-count: 1; /* Explicitly enforce a single column */
+  column-gap: 0; /* No column gap */
 }
 
 /* Section transitions and slanted menu indicator */

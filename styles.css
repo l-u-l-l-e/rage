@@ -74,7 +74,7 @@ nav ul li a:hover,
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Active section indicator with forceful application */
+/* Active section indicator */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif !important;
   text-decoration: none;
@@ -91,7 +91,7 @@ nav ul li a.active {
   cursor: pointer;
   text-transform: lowercase;
   font-family: 'NewEdge666', sans-serif;
-  border: none; /* No border for buttons */
+  border: none;
   display: inline-block;
 }
 
@@ -126,35 +126,75 @@ nav ul li a.active {
 /* Paragraph styling */
 .about p {
   max-width: 75vw;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   line-height: 1.6;
   display: block;
 }
 
-/* Member bio styling */
+/* Collective section gradient */
+.collective {
+  padding: 50px;
+  background: linear-gradient(180deg, #FFD0E4 0%, #8A2BE2 60%, #6A5ACD 100%);
+}
 
-/* Member Name - Ultra Bold Rounded Slanted */
+/* Collective grid layout */
+.collective-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  align-items: start;
+  justify-items: center;
+}
+
+/* Portrait image styling */
+.portrait {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect on portrait */
+.member:hover .portrait {
+  filter: brightness(1.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Bio hidden by default */
+.bio {
+  display: none;
+  text-align: center;
+  margin-top: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Bio visibility on hover/click */
+.member:hover .bio, .member.active .bio {
+  display: block;
+}
+
+/* Member bio styling */
 .bio h3 {
   font-size: 1.8rem;
   font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
   margin: 10px 0;
 }
 
-/* Pronouns - Regular Rounded */
-.bio h3 span {
+.bio h3 .pronouns {
   font-family: 'NewEdge666', sans-serif;
   font-size: 1.5rem;
 }
 
-/* Title and Handle - Light Rounded Slanted */
-.bio p:first-of-type {
+.title-handle {
   font-family: 'NewEdge666LightSlanted', sans-serif;
   font-size: 1.2rem;
   font-style: italic;
 }
 
-/* Description - Regular Rounded (paragraph) */
-.bio p:not(:first-of-type) {
+.bio p:not(.title-handle) {
   font-family: 'NewEdge666', sans-serif;
   font-size: 1.1rem;
   margin-top: 10px;
@@ -201,6 +241,19 @@ section {
   .about {
     padding: 30px;
   }
+
+  .collective-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .portrait {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bio {
+    font-size: 0.9rem;
+  }
 }
 
 /* Stacked menu for very small screens */
@@ -219,5 +272,25 @@ section {
   .about p {
     font-size: 3vw;
     line-height: 1.8;
+  }
+
+  .portrait {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Mobile click-to-show bio */
+@media (max-width: 480px) {
+  .member {
+    cursor: pointer;
+  }
+
+  .member.active .bio {
+    display: block;
+  }
+
+  .bio {
+    display: none;
   }
 }

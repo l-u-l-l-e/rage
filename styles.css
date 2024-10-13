@@ -74,14 +74,14 @@ nav ul li a:hover,
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Active section indicator */
+/* Active section indicator with forceful application */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif !important;
   text-decoration: none;
   color: black;
 }
 
-/* Button styling */
+/* Button styling (Same as menu items) */
 .menu-button {
   font-size: 2vw;
   color: black;
@@ -108,7 +108,7 @@ nav ul li a.active {
   max-width: 80vw;
 }
 
-/* About section with smoother gradient */
+/* About section */
 .about {
   height: 100vh;
   background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFD0E4 100%);
@@ -131,16 +131,15 @@ nav ul li a.active {
   display: block;
 }
 
-/* Collective section gradient with smooth transition */
+/* Collective section gradient */
 .collective {
   padding: 50px;
-  background: linear-gradient(180deg, #FFE4FF 0%, #DAB2E0 50%, #233AD5 100%);
+  background: linear-gradient(180deg, #EDD1EB 0%, #C2B0D9 50%, #233AD5 100%);
   color: black;
-  min-height: 100vh;
 }
 
 /* Collective grid layout */
-.collective-grid {
+.collective-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
@@ -156,42 +155,54 @@ nav ul li a.active {
   object-fit: cover;
   transition: all 0.3s ease;
   filter: grayscale(100%);
-  box-shadow: none;
 }
 
-/* Glow effect on hover */
+/* Hover effect on portrait */
 .member:hover .portrait {
   filter: grayscale(0%);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8); /* Bigger glow */
+  cursor: pointer;
 }
 
-/* Popup bio initially hidden */
+/* Bio pop-up initially hidden */
 .bio {
-  display: none;
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #FFE4FF;
+  background-color: #FFE4FF; /* Light pink background */
   padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 80%;
-  max-width: 400px;
-  z-index: 1000;
+  max-width: 500px; /* Wider on desktop */
+  display: none;
+  z-index: 10;
   text-align: left;
 }
 
-/* Show popup bio on click */
+/* Display bio on member active */
 .member.active .bio {
   display: block;
 }
 
-/* Bio text styling */
+/* Close button styling */
+.close-bio {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #233AD5; /* Blue color from scheme */
+  cursor: pointer;
+}
+
+/* Member bio styling */
 .bio h3 {
   font-size: 1.8rem;
   font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .bio h3 .pronouns {
@@ -199,28 +210,17 @@ nav ul li a.active {
   font-size: 1.5rem;
 }
 
-.bio p {
+.title-handle {
+  font-family: 'NewEdge666LightSlanted', sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.bio p:not(.title-handle) {
   font-family: 'NewEdge666', sans-serif;
   font-size: 1.1rem;
+  margin-top: 10px;
   line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-/* Close button for bio */
-.close-bio {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
-}
-
-/* No movement on hover */
-.member {
-  position: relative;
 }
 
 /* Section transitions */
@@ -241,7 +241,7 @@ section {
     line-height: 1.7;
   }
 
-  .collective-grid {
+  .collective-container {
     gap: 20px;
   }
 
@@ -250,8 +250,12 @@ section {
     height: 150px;
   }
 
-  .bio {
-    width: 90%;
+  .bio h3 {
+    font-size: 1.4rem;
+  }
+
+  .bio p {
+    font-size: 1rem;
   }
 }
 
@@ -277,7 +281,7 @@ section {
     padding: 30px;
   }
 
-  .collective-grid {
+  .collective-container {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
@@ -298,11 +302,7 @@ section {
   }
 
   .bio {
-    display: none;
-  }
-
-  .bio {
-    top: -100%;
+    top: 50%;
     opacity: 0;
     visibility: hidden;
   }

@@ -90,25 +90,26 @@ nav ul li a.active {
   max-width: 80vw;
 }
 
+/* About section */
 .about {
   height: 100vh;
-  background: linear-gradient(180deg, #B80000 0%, #FF009B 50%, #FFD0E4 100%);
+  background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFD0E4 100%); /* Increased the pink area */
   padding: 50px;
   color: black;
-  font-size: 1.5vw;
+  font-size: 1.3vw; /* Slightly smaller font size */
   font-family: 'NewEdge666', sans-serif;
-  display: flex; /* Change to flex layout */
-  flex-direction: column; /* Stack the paragraphs vertically */
+  display: flex; /* Flex layout for vertical stacking */
+  flex-direction: column; 
   justify-content: flex-end;
   align-items: flex-start;
   text-align: left;
 }
 
-/* Paragraph styling - Keep the reduced spacing */
+/* Paragraph styling */
 .about p {
   max-width: 75vw;
-  margin-bottom: 5px; /* Further reduce margin between paragraphs */
-  line-height: 1.4; /* Reduce line height to minimize spacing between lines */
+  margin-bottom: 5px; 
+  line-height: 1.5; /* Slightly larger line height */
   display: block;
 }
 

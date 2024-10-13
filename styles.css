@@ -39,14 +39,14 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 2em; /* Reduced the gap to fit smaller screens */
+  gap: 2em;
 }
 
 nav ul li a {
   text-decoration: none;
   color: black;
-  font-size: 2vw; /* Use viewport width for responsiveness */
-  text-transform: lowercase; /* Ensure all lowercase for menu */
+  font-size: 2vw;
+  text-transform: lowercase; /* All lowercase for menu */
 }
 
 /* Hover effect */
@@ -60,52 +60,52 @@ nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Button styling same as menu, with lowercase letters */
+/* Button styling same as menu */
 .menu-button {
-  font-size: 2vw; /* Responsive font size */
+  font-size: 2vw;
   color: black;
   text-decoration: none;
   padding: 10px 20px;
   border: none;
   background: none;
   cursor: pointer;
-  text-transform: lowercase; /* Ensure all lowercase for buttons */
+  text-transform: lowercase;
 }
 
-/* Hero section (logo) with updated gradient */
+/* Hero section with gradient */
 .hero {
   height: 100vh;
-  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 95%); /* Dark red more dominant */
+  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 95%);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .hero .logo {
-  max-width: 80vw; /* Larger logo size */
+  max-width: 80vw;
 }
 
 /* About section with 3-color gradient */
 .about {
   height: 100vh;
-  background: linear-gradient(180deg, #B14B48 0%, #FF009B 50%, #FFD0E4 100%); /* Dark red to pink to pale pink */
+  background: linear-gradient(180deg, #B14B48 0%, #FF009B 50%, #FFD0E4 100%);
   padding: 50px;
   color: black;
   font-size: 1.5vw;
   font-family: 'NewEdge666', sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: flex-end; /* Align the text to the bottom */
+  justify-content: flex-start; /* Align to the left */
+  align-items: flex-end; /* Align to the bottom */
   text-align: left;
 }
 
-/* Ensure the about text is not in columns */
+/* Paragraph styling for About section */
 .about p {
   max-width: 75vw; /* Take up ¾ of the screen width */
   margin-bottom: 20px; /* Space between the text and the bottom */
-  line-height: 1.6; /* Ensure good readability */
-  column-count: 1; /* Explicitly enforce a single column */
-  column-gap: 0; /* No column gap */
+  line-height: 1.6; /* Good readability */
+  column-count: 1; /* Enforce one column */
+  column-gap: 0; /* Remove any column gap */
 }
 
 /* Section transitions and slanted menu indicator */
@@ -122,11 +122,11 @@ body {
 @media (max-width: 768px) {
   nav ul li a,
   .menu-button {
-    font-size: 4vw; /* Increase font size on smaller screens */
+    font-size: 4vw;
   }
 
   .hero .logo {
-    max-width: 90vw; /* Adjust logo size for smaller screens */
+    max-width: 90vw;
   }
 
   .about p {

@@ -37,7 +37,7 @@ html, body {
   font-family: 'NewEdge666', sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: #DAB2E0;
+  background-color: #DAB2E0; /* Light purple background */
 }
 
 /* Navigation styling */
@@ -189,7 +189,7 @@ a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #FFE4FF; /* Light pink background */
+  background-color: #FFE4FF;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -214,7 +214,7 @@ a:hover {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #1C30D6; /* Blue color from scheme */
+  color: #1C30D6;
   cursor: pointer;
 }
 
@@ -243,7 +243,7 @@ a:hover {
 .bio p:not(.title-handle) {
   font-family: 'NewEdge666Light', sans-serif;
   font-size: 1.1rem;
-  margin-top: 20px; /* More space before paragraphs */
+  margin-top: 20px;
   line-height: 1.7;
 }
 
@@ -283,6 +283,7 @@ section {
   }
 }
 
+/* Mobile view adjustments */
 @media (max-width: 768px) {
   nav ul {
     flex-wrap: wrap;
@@ -297,21 +298,31 @@ section {
 
   .about p {
     max-width: 90vw;
-    font-size: 2.5vw;
-    line-height: 1.8;
+    font-size: 3vw; /* Bigger text */
+    line-height: 2.0; /* More vertical space */
   }
 
   .about {
     padding: 30px;
   }
 
+  /* Collective section: 2 members per row */
   .collective-container {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Two members per row */
+    gap: 20px; /* Smaller gap */
   }
 
   .portrait {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .bio {
+    top: 50%;
+    width: 90vw;
+    max-width: 90vw;
+    max-height: 80vh; /* Pop-up window constrained to viewport */
+    overflow-y: auto;
   }
 }
 

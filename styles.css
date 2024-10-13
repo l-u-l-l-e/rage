@@ -1,0 +1,96 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom fonts */
+@font-face {
+  font-family: 'NewEdge666';
+  src: url('NewEdge666-RegularRounded.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NewEdge666Slanted';
+  src: url('NewEdge666-RegularRoundedSlanted.otf') format('opentype');
+}
+
+/* Full-page layout */
+html, body {
+  height: 100%;
+  font-family: 'NewEdge666', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Navigation styling */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2vw;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+  font-family: 'NewEdge666Slanted', sans-serif;
+}
+
+/* External link buttons */
+.buttons {
+  display: flex;
+  gap: 1vw;
+}
+
+.buttons .button {
+  font-size: 1.5vw;
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.buttons .button:hover {
+  transform: scale(1.1);
+}
+
+/* Hero section (logo) */
+.hero {
+  height: 100vh;
+  background: linear-gradient(180deg, #C5A9ED 0%, #B486E1 50%, #B06278 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .logo {
+  max-width: 50vw;
+}
+
+/* About section (scroll to) */
+.about {
+  height: 100vh;
+  background: linear-gradient(180deg, #B06278 0%, #FF1493 100%);
+  padding: 50px;
+  color: black;
+  font-size: 1.5vw;
+}

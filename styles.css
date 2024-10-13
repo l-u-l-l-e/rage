@@ -74,14 +74,14 @@ nav ul li a:hover,
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Active section indicator */
+/* Active section indicator with forceful application */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif !important;
   text-decoration: none;
   color: black;
 }
 
-/* Button styling */
+/* Button styling (Same as menu items) */
 .menu-button {
   font-size: 2vw;
   color: black;
@@ -110,7 +110,7 @@ nav ul li a.active {
 
 /* About section */
 .about {
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
   background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFE4FF 100%);
   padding: 50px;
   color: black;
@@ -126,8 +126,8 @@ nav ul li a.active {
 /* Paragraph styling */
 .about p {
   max-width: 75vw;
-  margin-bottom: 20px;
-  line-height: 1.6;
+  margin-bottom: 10px; /* Reduced spacing between paragraphs */
+  line-height: 1.4;
   display: block;
 }
 
@@ -160,7 +160,7 @@ nav ul li a.active {
 /* Hover effect on portrait */
 .member:hover .portrait {
   filter: grayscale(0%);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8); /* Bigger glow */
   cursor: pointer;
 }
 
@@ -176,6 +176,8 @@ nav ul li a.active {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 80%;
   max-width: 500px;
+  max-height: 90vh; /* Limit pop-up height on mobile */
+  overflow: hidden;
   display: none;
   z-index: 10;
   text-align: left;
@@ -200,12 +202,12 @@ nav ul li a.active {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #1C30D6;
+  color: #1C30D6; /* Blue color */
   cursor: pointer;
 }
 
 .close-bio:hover {
-  color: #CEBDEF;
+  color: #CEBDEF; /* Hover color */
 }
 
 /* Member bio styling */
@@ -243,7 +245,7 @@ section {
 @media (max-width: 1024px) {
   .about p {
     font-size: 2.5vw;
-    line-height: 1.8;
+    line-height: 1.6;
   }
 
   .collective-container {
@@ -266,11 +268,15 @@ section {
 
 /* Mobile view adjustments */
 @media (max-width: 768px) {
+  nav ul li a {
+    font-size: 4vw; /* Bigger menu items */
+  }
+
   .about p {
     max-width: 90vw;
-    font-size: 4vw;
-    line-height: 2;
-    margin-top: 15vh;
+    font-size: 4.5vw;
+    line-height: 1.6;
+    margin-top: 10vh; /* Ensure it starts higher */
   }
 
   .about {
@@ -278,7 +284,7 @@ section {
   }
 
   .collective-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Two members per row */
     gap: 20px;
   }
 
@@ -293,8 +299,8 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 90vw;
-    max-height: 80vh;
-    overflow: hidden; /* Prevent scrolling */
+    max-height: 80vh; /* Prevent overflow */
+    overflow: hidden;
   }
 
   /* Reduce bio text size if necessary */

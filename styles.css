@@ -88,7 +88,7 @@ nav ul li a.active {
   max-width: 80vw;
 }
 
-/* About section with proper dark red */
+/* About section with grid layout to ensure no columns */
 .about {
   height: 100vh;
   background: linear-gradient(180deg, #B80000 0%, #FF009B 50%, #FFD0E4 100%);
@@ -96,33 +96,25 @@ nav ul li a.active {
   color: black;
   font-size: 1.5vw;
   font-family: 'NewEdge666', sans-serif;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout */
   justify-content: flex-start;
   align-items: flex-end;
   text-align: left;
 }
 
-/* Strict single column enforcement only for the About section */
+/* Paragraph styling - Strict enforcement of single column */
 .about p {
-  width: 100%;
   max-width: 75vw;
   margin-bottom: 20px;
   line-height: 1.6;
-  column-count: 1 !important; /* Keep single column */
-  column-gap: 0 !important; /* Remove any column gaps */
-  display: block !important;
+  display: block; /* Ensure block layout for paragraphs */
 }
 
 /* Section transitions and smooth scrolling */
 section {
   position: relative;
   scroll-snap-align: start;
-}
-
-/* Column styling for any other section (example) */
-.other-section {
-  column-count: 3; /* Example: 3 columns */
-  column-gap: 20px; /* Customize the column gap */
 }
 
 /* Responsive adjustments */

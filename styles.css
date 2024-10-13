@@ -74,7 +74,7 @@ nav ul li a:hover,
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Active section indicator */
+/* Active section indicator with forceful application */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif !important;
   text-decoration: none;
@@ -135,15 +135,16 @@ nav ul li a.active {
 .collective {
   padding: 50px;
   background: linear-gradient(180deg, #FFD0E4 0%, #8A2BE2 60%, #6A5ACD 100%);
+  color: black;
 }
 
 /* Collective grid layout */
-.collective-grid {
+.collective-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  align-items: start;
+  gap: 40px;
   justify-items: center;
+  position: relative;
 }
 
 /* Portrait image styling */
@@ -153,27 +154,31 @@ nav ul li a.active {
   border-radius: 50%;
   object-fit: cover;
   transition: all 0.3s ease;
+  filter: grayscale(100%);
 }
 
 /* Hover effect on portrait */
 .member:hover .portrait {
-  filter: brightness(1.2);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  filter: grayscale(0%);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 }
 
-/* Bio hidden by default */
+/* Bio initially hidden, positioned above images */
 .bio {
-  display: none;
+  position: absolute;
+  top: -150%;
+  width: 100%;
   text-align: center;
-  margin-top: 15px;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 10;
 }
 
-/* Bio visibility on hover/click */
-.member:hover .bio, .member.active .bio {
-  display: block;
+/* Hover bio visibility */
+.member:hover .bio {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Member bio styling */
@@ -201,6 +206,11 @@ nav ul li a.active {
   line-height: 1.6;
 }
 
+/* No movement on hover */
+.member {
+  position: relative;
+}
+
 /* Section transitions */
 section {
   position: relative;
@@ -217,6 +227,27 @@ section {
   .about p {
     font-size: 2vw;
     line-height: 1.7;
+  }
+
+  .collective-container {
+    gap: 20px;
+  }
+
+  .portrait {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bio {
+    top: -120%;
+  }
+
+  .bio h3 {
+    font-size: 1.4rem;
+  }
+
+  .bio p {
+    font-size: 1rem;
   }
 }
 
@@ -242,7 +273,7 @@ section {
     padding: 30px;
   }
 
-  .collective-grid {
+  .collective-container {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
@@ -252,31 +283,7 @@ section {
   }
 
   .bio {
-    font-size: 0.9rem;
-  }
-}
-
-/* Stacked menu for very small screens */
-@media (max-width: 480px) {
-  nav ul {
-    flex-direction: column;
-    gap: 0.5em;
-    align-items: center;
-  }
-
-  nav ul li a,
-  .menu-button {
-    font-size: 5vw;
-  }
-
-  .about p {
-    font-size: 3vw;
-    line-height: 1.8;
-  }
-
-  .portrait {
-    width: 120px;
-    height: 120px;
+    top: -100%;
   }
 }
 
@@ -292,5 +299,17 @@ section {
 
   .bio {
     display: none;
+  }
+
+  .bio {
+    top: -100%;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .member.active .bio {
+    display: block;
+    opacity: 1;
+    visibility: visible;
   }
 }

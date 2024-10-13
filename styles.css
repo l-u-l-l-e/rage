@@ -68,8 +68,9 @@ nav ul li a {
   font-family: 'NewEdge666', sans-serif;
 }
 
+/* Read and Order button styling (separate from nav) */
 .menu-button {
-  font-size: 2vw;
+  font-size: 2vw; /* Size retained for read and order buttons */
   color: black;
   text-decoration: none;
   padding: 10px;
@@ -86,7 +87,7 @@ nav ul li a:hover,
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Active section indicator */
+/* Active section indicator with forceful application */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
   text-decoration: none;
@@ -169,13 +170,13 @@ nav ul li a.active {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #FFE4FF;
-  padding: 30px;
+  padding: 20px; /* Slightly smaller padding */
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 80%;
   max-width: 500px;
-  max-height: 90vh; /* Limit pop-up height */
-  overflow: auto; /* Allow scroll only if necessary */
+  max-height: 80vh; /* Smaller pop-up window */
+  overflow: auto; /* Allow scroll if necessary */
   display: none;
   z-index: 10;
   text-align: left;
@@ -205,14 +206,14 @@ nav ul li a.active {
 
 /* Member bio styling */
 .bio h3 {
-  font-size: 1.8rem;
+  font-size: 1.6rem; /* Reduced size for pop-up titles */
   font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
   margin: 10px 0;
 }
 
 .bio h3 .pronouns {
   font-family: 'NewEdge666', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .title-handle {
@@ -223,20 +224,20 @@ nav ul li a.active {
 
 .bio p:not(.title-handle) {
   font-family: 'NewEdge666Light', sans-serif;
-  font-size: 1.1rem;
-  margin-top: 20px;
-  line-height: 1.7;
-}
-
-/* Ensure bio stays centered and text is fully visible */
-.bio.shrink {
-  font-size: 0.9rem; /* Adjust font size if necessary */
+  font-size: 1rem; /* Reduced paragraph size */
+  margin-top: 15px;
+  line-height: 1.5;
 }
 
 /* Section transitions */
 section {
   position: relative;
   scroll-snap-align: start;
+}
+
+/* Fix About Section Scroll */
+#about {
+  scroll-margin-top: 80px; /* Adjust scroll position to show top of About section */
 }
 
 /* Responsive adjustments */
@@ -301,11 +302,10 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 90vw;
-    max-height: 80vh; /* Prevent overflow */
+    max-height: 70vh; /* Further limit height to avoid overlapping with menu */
   }
 
-  /* Reduce bio text size if necessary */
   .bio.shrink {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* Smaller bio text if necessary */
   }
 }

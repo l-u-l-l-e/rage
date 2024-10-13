@@ -38,10 +38,12 @@ nav {
   z-index: 1000;
 }
 
+/* Desktop Menu */
 nav ul {
   list-style: none;
   display: flex;
   gap: 2em;
+  flex-wrap: nowrap; /* Prevent wrapping on larger screens */
 }
 
 nav ul li a {
@@ -63,7 +65,7 @@ nav ul li a.active {
   text-decoration: underline;
 }
 
-/* Button styling */
+/* Button styling (same as menu items) */
 .menu-button {
   font-size: 2vw;
   color: black;
@@ -108,7 +110,7 @@ nav ul li a.active {
   max-width: 75vw;
   margin-bottom: 10px; /* Reduced margin between paragraphs */
   line-height: 1.6;
-  display: block;/* Ensure block layout for paragraphs */
+  display: block; /* Ensure block layout for paragraphs */
 }
 
 /* Section transitions and smooth scrolling */
@@ -117,18 +119,40 @@ section {
   scroll-snap-align: start;
 }
 
-/* Responsive adjustments */
+/* Responsive menu for medium screens */
 @media (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap; /* Allows menu items to stack */
+    justify-content: center; /* Center the stacked menu items */
+    gap: 1em; /* Reduce gap for smaller screens */
+  }
+
   nav ul li a,
   .menu-button {
-    font-size: 4vw;
+    font-size: 3vw; /* Adjust font size for better readability */
+    padding: 10px;
   }
 
   .hero .logo {
-    max-width: 90vw;
+    max-width: 90vw; /* Ensure the logo is still responsive */
   }
 
   .about p {
-    max-width: 90vw;
+    max-width: 90vw; /* Make the paragraph more flexible on smaller screens */
+  }
+}
+
+/* Stacked menu for very small screens */
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column; /* Stack menu items vertically */
+    gap: 0.5em; /* Further reduce gap between items */
+    align-items: center; /* Center-align the menu items */
+  }
+  
+  nav ul li a,
+  .menu-button {
+    font-size: 5vw; /* Increase font size for smaller screens */
+    padding: 10px;
   }
 }

@@ -54,7 +54,7 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: black;
-  font-size: 2vw;
+  font-size: 2.2vw; /* Slightly increased for boldness */
   text-transform: lowercase;
   font-family: 'NewEdge666', sans-serif; /* Regular Rounded for menu items */
 }
@@ -66,13 +66,13 @@ nav ul li a:hover,
 }
 
 nav ul li a.active {
-  font-family: 'NewEdge666Slanted', sans-serif; /* Slanted font for active section */
+  font-family: 'NewEdge666Slanted', sans-serif;
   text-decoration: none; /* No underline */
 }
 
 /* Button styling (same as menu items) */
 .menu-button {
-  font-size: 2vw;
+  font-size: 2.2vw; /* Slightly larger for buttons */
   color: black;
   text-decoration: none;
   padding: 10px 20px;
@@ -102,7 +102,7 @@ nav ul li a.active {
   background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFD0E4 100%);
   padding: 50px;
   color: black;
-  font-size: 1.5vw; /* Slightly larger font size */
+  font-size: 1.8vw; /* Increased the font size across all screen sizes */
   font-family: 'NewEdge666Light', sans-serif; /* Light Rounded for the about text */
   display: flex;
   flex-direction: column;
@@ -114,8 +114,8 @@ nav ul li a.active {
 /* Paragraph styling */
 .about p {
   max-width: 75vw;
-  margin-bottom: 10px; /* Increased spacing between paragraphs */
-  line-height: 1.7;
+  margin-bottom: 10px; /* Slightly increased margin between paragraphs */
+  line-height: 1.7; /* Increased line-height for better readability */
   display: block;
 }
 
@@ -135,7 +135,7 @@ section {
 
   nav ul li a,
   .menu-button {
-    font-size: 3vw;
+    font-size: 4vw; /* Increased responsiveness for smaller screens */
     padding: 10px;
   }
 
@@ -145,8 +145,8 @@ section {
 
   .about p {
     max-width: 90vw;
-    font-size: 2.5vw; /* Increase font size earlier for smaller screens */
-    line-height: 1.8; /* Adjust line height */
+    font-size: 2.8vw; /* Increased font size earlier for smaller screens */
+    line-height: 1.8; /* Increased line-height for readability */
   }
 
   .about {
@@ -164,12 +164,12 @@ section {
 
   nav ul li a,
   .menu-button {
-    font-size: 5vw;
+    font-size: 5.5vw; /* Slightly larger for very small screens */
     padding: 10px;
   }
 
   .about p {
-    font-size: 3vw;
-    line-height: 1.9; /* Increased line height for better readability */
+    font-size: 3.3vw;
+    line-height: 1.9;
   }
 }

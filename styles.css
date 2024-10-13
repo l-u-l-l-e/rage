@@ -36,27 +36,26 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 30px; /* Added padding to give space to menu items */
+  padding: 20px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
 }
 
-/* Desktop Menu */
 nav ul {
   list-style: none;
   display: flex;
   gap: 2em;
-  flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+  flex-wrap: nowrap;
 }
 
 nav ul li a {
   text-decoration: none;
   color: black;
-  font-size: 2.2vw; /* Slightly increased for boldness */
+  font-size: 2vw;
   text-transform: lowercase;
-  font-family: 'NewEdge666', sans-serif; /* Regular Rounded for menu items */
+  font-family: 'NewEdge666', sans-serif;
 }
 
 /* Hover effect */
@@ -65,25 +64,27 @@ nav ul li a:hover,
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
+/* Active section indicator */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
   text-decoration: none; /* No underline */
 }
 
-/* Button styling (same as menu items) */
+/* Button styling */
 .menu-button {
-  font-size: 2.2vw; /* Slightly larger for buttons */
+  font-size: 2vw;
   color: black;
   text-decoration: none;
   padding: 10px 20px;
-  border: none;
+  border: 2px solid black; /* Make it look like a button */
   background: none;
   cursor: pointer;
   text-transform: lowercase;
   font-family: 'NewEdge666', sans-serif;
+  border-radius: 5px; /* Button-like appearance */
 }
 
-/* Hero section with light purple and sharper dark red */
+/* Hero section */
 .hero {
   height: 100vh;
   background: linear-gradient(180deg, #DAB2E0 0%, #B80000 95%);
@@ -102,8 +103,8 @@ nav ul li a.active {
   background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFD0E4 100%);
   padding: 50px;
   color: black;
-  font-size: 1.8vw; /* Increased the font size across all screen sizes */
-  font-family: 'NewEdge666Light', sans-serif; /* Light Rounded for the about text */
+  font-size: 1.8vw; /* Bigger and bolder font size */
+  font-family: 'NewEdge666Light', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -114,12 +115,12 @@ nav ul li a.active {
 /* Paragraph styling */
 .about p {
   max-width: 75vw;
-  margin-bottom: 10px; /* Slightly increased margin between paragraphs */
-  line-height: 1.7; /* Increased line-height for better readability */
+  margin-bottom: 10px;
+  line-height: 1.7;
   display: block;
 }
 
-/* Section transitions and smooth scrolling */
+/* Section transitions */
 section {
   position: relative;
   scroll-snap-align: start;
@@ -135,7 +136,7 @@ section {
 
   nav ul li a,
   .menu-button {
-    font-size: 4vw; /* Increased responsiveness for smaller screens */
+    font-size: 3vw;
     padding: 10px;
   }
 
@@ -145,12 +146,12 @@ section {
 
   .about p {
     max-width: 90vw;
-    font-size: 2.8vw; /* Increased font size earlier for smaller screens */
-    line-height: 1.8; /* Increased line-height for readability */
+    font-size: 2.5vw;
+    line-height: 1.7;
   }
 
   .about {
-    padding: 30px; /* Adjust padding for smaller screens */
+    padding: 30px;
   }
 }
 
@@ -164,12 +165,12 @@ section {
 
   nav ul li a,
   .menu-button {
-    font-size: 5.5vw; /* Slightly larger for very small screens */
+    font-size: 5vw;
     padding: 10px;
   }
 
   .about p {
-    font-size: 3.3vw;
-    line-height: 1.9;
+    font-size: 3vw;
+    line-height: 1.8;
   }
 }

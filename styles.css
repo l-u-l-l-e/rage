@@ -90,7 +90,6 @@ nav ul li a.active {
   max-width: 80vw;
 }
 
-/* About section with grid layout to ensure no columns */
 .about {
   height: 100vh;
   background: linear-gradient(180deg, #B80000 0%, #FF009B 50%, #FFD0E4 100%);
@@ -98,20 +97,19 @@ nav ul li a.active {
   color: black;
   font-size: 1.5vw;
   font-family: 'NewEdge666', sans-serif;
-  display: grid;
-  grid-template-columns: 1fr; /* Single column layout */
-  justify-content: flex-start;
-  align-items: flex-end;
+  display: flex; /* Change to flex layout */
+  flex-direction: column; /* Stack the paragraphs vertically */
+  justify-content: flex-end;
+  align-items: flex-start;
   text-align: left;
 }
 
+/* Paragraph styling - Keep the reduced spacing */
 .about p {
-  max-width: 75vw; /* Ensure paragraph width takes up only 75% of viewport */
-  margin-bottom: 5px; /* Reduce margin between paragraphs even further */
+  max-width: 75vw;
+  margin-bottom: 5px; /* Further reduce margin between paragraphs */
   line-height: 1.4; /* Reduce line height to minimize spacing between lines */
-  display: block; /* Ensure block layout for paragraphs */
-}
-
+  display: block;
 }
 
 /* Section transitions and smooth scrolling */

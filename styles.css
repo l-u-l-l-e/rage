@@ -64,10 +64,11 @@ nav ul li a:hover,
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Active section indicator */
+/* Active section indicator with forceful application */
 nav ul li a.active {
-  font-family: 'NewEdge666Slanted', sans-serif;
+  font-family: 'NewEdge666Slanted', sans-serif !important;
   text-decoration: none;
+  color: black;
 }
 
 /* Button styling (Same as menu items) */
@@ -81,7 +82,7 @@ nav ul li a.active {
   text-transform: lowercase;
   font-family: 'NewEdge666', sans-serif;
   border: none; /* No border for buttons */
-  display: inline-block; /* Ensure button acts like a menu item */
+  display: inline-block;
 }
 
 /* Hero section */
@@ -103,7 +104,7 @@ nav ul li a.active {
   background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFD0E4 100%);
   padding: 50px;
   color: black;
-  font-size: 1.7vw; /* Bigger font size */
+  font-size: 1.7vw;
   font-family: 'NewEdge666Light', sans-serif;
   display: flex;
   flex-direction: column;

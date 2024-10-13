@@ -8,7 +8,7 @@
 /* Custom fonts */
 @font-face {
   font-family: 'NewEdge666';
-  src: url('NewEdge666-RegularRounded.otf') format('opentype');
+  src: url('NewEdge666-LightRounded.otf') format('opentype');
 }
 
 @font-face {
@@ -28,10 +28,10 @@ html, body {
 /* Navigation styling */
 nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px;
+  top: 10px; /* Added top margin for space */
+  left: 10px; /* Added left margin for space */
+  width: calc(100% - 20px); /* Adjusted width to account for space on both sides */
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,12 +61,7 @@ nav ul li a:hover,
 
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
-}
-
-/* Remove blue color and underline from all links */
-a {
-  color: inherit;
-  text-decoration: none;
+  text-decoration: underline; /* Optional: underline the active section */
 }
 
 /* Button styling (same as menu items) */
@@ -97,12 +92,12 @@ a {
 /* About section */
 .about {
   height: 100vh;
-  background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFD0E4 100%); /* Increased the pink area */
+  background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFD0E4 100%);
   padding: 50px;
   color: black;
-  font-size: 1.5vw;
+  font-size: 1.3vw; /* Slightly smaller font size */
   font-family: 'NewEdge666', sans-serif;
-  display: flex; /* Flex layout for vertical stacking */
+  display: flex; 
   flex-direction: column; 
   justify-content: flex-end;
   align-items: flex-start;
@@ -112,56 +107,51 @@ a {
 /* Paragraph styling */
 .about p {
   max-width: 75vw;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   line-height: 1.5;
   display: block;
-}
-
-/* Section transitions and smooth scrolling */
-section {
-  position: relative;
-  scroll-snap-align: start;
+  font-family: 'NewEdge666-LightRounded', sans-serif; /* Switch to light rounded */
 }
 
 /* Responsive menu for medium screens */
 @media (max-width: 768px) {
   nav ul {
-    flex-wrap: wrap; /* Allows menu items to stack */
-    justify-content: center; /* Center the stacked menu items */
-    gap: 1em; /* Reduce gap for smaller screens */
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 1em; 
   }
 
   nav ul li a,
   .menu-button {
-    font-size: 3vw; /* Adjust font size for better readability */
-    padding: 5px;
+    font-size: 3vw; /* Adjust font size */
+    padding: 10px;
   }
 
   .hero .logo {
-    max-width: 90vw;
+    max-width: 90vw; 
   }
 
   .about p {
     max-width: 90vw;
-    font-size: 1.8vw; /* Make the paragraph more legible on smaller screens */
+    font-size: 4vw; /* Increased font size for better readability on small screens */
   }
 }
 
 /* Stacked menu for very small screens */
 @media (max-width: 480px) {
   nav ul {
-    flex-direction: column; /* Stack menu items vertically */
-    gap: 0.5em; /* Further reduce gap between items */
-    align-items: center; /* Center-align the menu items */
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
   }
   
   nav ul li a,
   .menu-button {
-    font-size: 4vw; /* Increase font size for smaller screens */
-    padding: 5px;
+    font-size: 5vw; 
+    padding: 10px;
   }
-
+  
   .about p {
-    font-size: 2vw; /* Larger font for small screens */
+    font-size: 5vw; /* Further adjustment for small screens */
   }
 }

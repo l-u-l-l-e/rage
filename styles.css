@@ -66,12 +66,14 @@ nav ul li a {
   font-size: 2vw;
   text-transform: lowercase;
   font-family: 'NewEdge666', sans-serif;
+  transition: all 0.3s ease; /* Smooth transition for slant */
 }
 
-/* Hover effect */
+/* No color change on hover, only slanted font */
 nav ul li a:hover,
 .menu-button:hover {
   font-family: 'NewEdge666Slanted', sans-serif;
+  color: black; /* Ensure color stays the same */
 }
 
 /* Active section indicator with forceful application */
@@ -93,6 +95,13 @@ nav ul li a.active {
   font-family: 'NewEdge666', sans-serif;
   border: none;
   display: inline-block;
+  transition: all 0.3s ease; /* Smooth transition for slant */
+}
+
+/* No color change on hover, only slanted font for buttons */
+.menu-button:hover {
+  font-family: 'NewEdge666Slanted', sans-serif;
+  color: black; /* Ensure color stays the same */
 }
 
 /* Hero section */
@@ -138,13 +147,13 @@ a {
 }
 
 a:hover {
-  color: #CEBDEF; /* Hover color from color scheme */
+  color: #CEBDEF; /* Hover color */
 }
 
 /* Collective section gradient */
 .collective {
   padding: 50px;
-  background: linear-gradient(180deg, #CEBDEF 0%, #CEBDEF 50%, #1C30D6 100%);
+  background: linear-gradient(180deg, #FFE4FF 0%, #CEBDEF 50%, #1C30D6 100%);
   color: black;
 }
 
@@ -234,8 +243,8 @@ a:hover {
 .bio p:not(.title-handle) {
   font-family: 'NewEdge666Light', sans-serif;
   font-size: 1.1rem;
-  margin-top: 10px;
-  line-height: 1.6;
+  margin-top: 20px; /* More space before paragraphs */
+  line-height: 1.7;
 }
 
 /* Section transitions */

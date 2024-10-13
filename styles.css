@@ -57,7 +57,7 @@ nav ul li a:hover,
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Active section indicator */
+/* Active section indicator (slanted font for active section) */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
   text-decoration: underline;
@@ -102,13 +102,15 @@ nav ul li a.active {
   text-align: left;
 }
 
-/* Paragraph styling */
+/* Paragraph styling - Enforcing single column */
 .about p {
-  max-width: 75vw;
+  width: 100%; /* Ensure full width of the container */
+  max-width: 75vw; /* Limit to 75% of viewport width */
   margin-bottom: 20px;
   line-height: 1.6;
-  column-count: 1 !important; /* Enforcing no columns */
-  column-gap: 0 !important;
+  column-count: 1 !important; /* Enforce no columns */
+  column-width: 100% !important; /* Ensure full column width */
+  column-gap: 0 !important; /* Remove any column gap */
 }
 
 /* Section transitions and smooth scrolling */

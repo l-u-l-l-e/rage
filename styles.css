@@ -22,7 +22,7 @@ html, body {
   font-family: 'NewEdge666', sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: #B80000; /* Dark red background to prevent white background on over-scroll */
+  background-color: #DAB2E0; /* Light purple background */
 }
 
 /* Navigation styling */
@@ -59,7 +59,7 @@ nav ul li a:hover,
 
 /* Active section indicator */
 nav ul li a.active {
-  font-family: 'NewEdge666Slanted', sans-serif; /* Slanted font for active section */
+  font-family: 'NewEdge666Slanted', sans-serif;
   text-decoration: underline;
 }
 
@@ -75,10 +75,10 @@ nav ul li a.active {
   text-transform: lowercase;
 }
 
-/* Hero section with dark red gradient */
+/* Hero section with light purple and sharper dark red */
 .hero {
   height: 100vh;
-  background: linear-gradient(180deg, #DAB2E0 0%, #B80000 90%); /* Light purple to dark red */
+  background: linear-gradient(180deg, #DAB2E0 0%, #B80000 95%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,7 +88,7 @@ nav ul li a.active {
   max-width: 80vw;
 }
 
-/* About section starting with dark red */
+/* About section with proper dark red */
 .about {
   height: 100vh;
   background: linear-gradient(180deg, #B80000 0%, #FF009B 50%, #FFD0E4 100%);
@@ -102,32 +102,10 @@ nav ul li a.active {
   text-align: left;
 }
 
-/* Paragraph styling to prevent columns */
+/* Paragraph styling */
 .about p {
   max-width: 75vw;
   margin-bottom: 20px;
   line-height: 1.6;
-  column-count: 1 !important; /* Ensure no columns */
-}
-
-/* Section transitions and smooth scrolling */
-section {
-  position: relative;
-  scroll-snap-align: start;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-  nav ul li a,
-  .menu-button {
-    font-size: 4vw;
-  }
-
-  .hero .logo {
-    max-width: 90vw;
-  }
-
-  .about p {
-    max-width: 90vw;
-  }
-}
+  column-count: 1 !important; /* Enforcing no columns */
+ 

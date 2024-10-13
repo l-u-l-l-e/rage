@@ -67,21 +67,20 @@ nav ul li a:hover,
 /* Active section indicator */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
-  text-decoration: none; /* No underline */
+  text-decoration: none;
 }
 
-/* Button styling */
+/* Button styling (Same as menu items) */
 .menu-button {
   font-size: 2vw;
   color: black;
   text-decoration: none;
-  padding: 10px 20px;
-  border: 2px solid black; /* Make it look like a button */
+  padding: 10px;
   background: none;
   cursor: pointer;
   text-transform: lowercase;
   font-family: 'NewEdge666', sans-serif;
-  border-radius: 5px; /* Button-like appearance */
+  border: none; /* No border for buttons */
 }
 
 /* Hero section */
@@ -103,7 +102,7 @@ nav ul li a.active {
   background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFD0E4 100%);
   padding: 50px;
   color: black;
-  font-size: 1.8vw; /* Bigger and bolder font size */
+  font-size: 1.7vw; /* Bigger font size */
   font-family: 'NewEdge666Light', sans-serif;
   display: flex;
   flex-direction: column;
@@ -116,7 +115,7 @@ nav ul li a.active {
 .about p {
   max-width: 75vw;
   margin-bottom: 10px;
-  line-height: 1.7;
+  line-height: 1.6;
   display: block;
 }
 
@@ -127,6 +126,18 @@ section {
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  nav ul li a,
+  .menu-button {
+    font-size: 2.5vw; /* Slightly larger font size */
+  }
+
+  .about p {
+    font-size: 2vw; /* Smoother font scaling */
+    line-height: 1.7;
+  }
+}
+
 @media (max-width: 768px) {
   nav ul {
     flex-wrap: wrap;
@@ -137,17 +148,12 @@ section {
   nav ul li a,
   .menu-button {
     font-size: 3vw;
-    padding: 10px;
-  }
-
-  .hero .logo {
-    max-width: 90vw;
   }
 
   .about p {
     max-width: 90vw;
     font-size: 2.5vw;
-    line-height: 1.7;
+    line-height: 1.8;
   }
 
   .about {
@@ -166,7 +172,6 @@ section {
   nav ul li a,
   .menu-button {
     font-size: 5vw;
-    padding: 10px;
   }
 
   .about p {

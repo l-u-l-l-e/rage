@@ -117,7 +117,7 @@ nav ul li a.active {
   font-family: 'NewEdge666Light', sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Start higher up in section */
+  justify-content: center; /* Center text vertically */
   align-items: flex-start;
   text-align: left;
 }
@@ -125,7 +125,7 @@ nav ul li a.active {
 /* Paragraph styling */
 .about p {
   max-width: 75vw;
-  margin-bottom: 10px; /* Reduced vertical spacing between paragraphs */
+  margin-bottom: 20px; /* Reduced vertical spacing */
   line-height: 1.4;
   display: block;
 }

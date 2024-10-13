@@ -33,6 +33,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000; /* Ensure menu stays on top */
 }
 
 nav ul {
@@ -74,14 +75,14 @@ nav ul li a.active {
 /* Hero section (logo) with updated gradient */
 .hero {
   height: 100vh;
-  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 70%); /* More of the dark red */
+  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 85%); /* More of the dark red */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .hero .logo {
-  max-width: 80vw; /* Large size for the logo */
+  max-width: 80vw; /* Larger logo size */
 }
 
 /* About section with 3-color gradient */
@@ -99,8 +100,9 @@ nav ul li a.active {
 }
 
 .about p {
-  width: 75%; /* ¾ page width for the text */
+  max-width: 75vw; /* Take up ¾ of the screen width */
   margin-bottom: 20px; /* Space between the text and the bottom */
+  line-height: 1.6; /* Ensure good readability */
 }
 
 /* Section transitions and slanted menu indicator */
@@ -123,6 +125,8 @@ body {
   .hero .logo {
     max-width: 90vw; /* Adjust logo size for smaller screens */
   }
+
+  .about p {
+    max-width: 90vw; /* Make the paragraph more flexible on smaller screens */
+  }
 }
-
-

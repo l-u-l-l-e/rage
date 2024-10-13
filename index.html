@@ -33,31 +33,144 @@
     <p>The project is led by the RAGE Collective, a group of young feminist artists, creatives, writers, academics, and activists based around the world but headquartered in Copenhagen, Denmark.</p>
   </section>
 
+  <!-- Collective Section (Part of the About) -->
+  <section class="collective" id="collective">
+    <div class="collective-container">
+      
+      <!-- Collective member 1 -->
+      <div class="member" id="member1">
+        <img src="images/member1.jpg" alt="Alva Guzzini" class="portrait">
+        <div class="bio">
+          <h3>Alva Guzzini <span class="pronouns">she/her</span></h3>
+          <p class="title-handle">ART EDITOR / @alvaguzzini</p>
+          <p>Alva is an artist and a book and paper conservator in training, based in Amsterdam...</p>
+        </div>
+      </div>
+
+      <!-- Collective member 2 -->
+      <div class="member" id="member2">
+        <img src="images/member2.jpg" alt="Corey Ruzicano" class="portrait">
+        <div class="bio">
+          <h3>Corey Ruzicano <span class="pronouns">she/her</span></h3>
+          <p class="title-handle">COMMUNITY + EDUCATION EDITOR / @coreyruzi</p>
+          <p>Corey is a writer, educator, and creative consultant from the San Francisco Bay Area...</p>
+        </div>
+      </div>
+
+      <!-- Collective member 3 -->
+      <div class="member" id="member3">
+        <img src="images/member3.jpg" alt="Ernestine Boiling" class="portrait">
+        <div class="bio">
+          <h3>Ernestine Boiling <span class="pronouns">she/her</span></h3>
+          <p class="title-handle">VISUAL CULTURE EDITOR / @likehotwater</p>
+          <p>Ernestine is an art history student based in London...</p>
+        </div>
+      </div>
+
+      <!-- Collective member 4 -->
+      <div class="member" id="member4">
+        <img src="images/member4.jpg" alt="Julie Savery" class="portrait">
+        <div class="bio">
+          <h3>Julie Savery <span class="pronouns">she/her</span></h3>
+          <p class="title-handle">VISUAL IDENTITY / @juliesavery.jpeg</p>
+          <p>Julie is a multidisciplinary creator based in Berlin...</p>
+        </div>
+      </div>
+
+      <!-- Collective member 5 -->
+      <div class="member" id="member5">
+        <img src="images/member5.jpg" alt="Laura Griss" class="portrait">
+        <div class="bio">
+          <h3>Laura Griss <span class="pronouns">she/her</span></h3>
+          <p class="title-handle">POETRY EDITOR + SOCIAL MEDIA / @itslawrah</p>
+          <p>Laura is a Chilean and German poet & writer...</p>
+        </div>
+      </div>
+
+      <!-- Collective member 6 -->
+      <div class="member" id="member6">
+        <img src="images/member6.jpg" alt="Lorenza Pia Foglia" class="portrait">
+        <div class="bio">
+          <h3>Lorenza Pia Foglia <span class="pronouns">she/her</span></h3>
+          <p class="title-handle">SCIENCE EDITOR / @loyfeuille</p>
+          <p>Lorenza is a PhD Student in Biophotonics...</p>
+        </div>
+      </div>
+
+      <!-- Collective member 7 -->
+      <div class="member" id="member7">
+        <img src="images/member7.jpg" alt="Mathilde Betant-Rasmussen" class="portrait">
+        <div class="bio">
+          <h3>Mathilde Betant-Rasmussen <span class="pronouns">she/her</span></h3>
+          <p class="title-handle">POLITICS EDITOR / @mathilde.br</p>
+          <p>Mathilde works at the EU Commission on peace and security...</p>
+        </div>
+      </div>
+
+      <!-- Collective member 8 -->
+      <div class="member" id="member8">
+        <img src="images/member8.jpg" alt="Nadia Razali" class="portrait">
+        <div class="bio">
+          <h3>Nadia Razali <span class="pronouns">she/her</span></h3>
+          <p class="title-handle">FOUNDER + EDITOR-IN-CHIEF / @nadiadrazali</p>
+          <p>Nadia is an Algerian and Danish feminist activist...</p>
+        </div>
+      </div>
+
+      <!-- Collective member 9 -->
+      <div class="member" id="member9">
+        <img src="images/member9.jpg" alt="Rosa Davies-Jones" class="portrait">
+        <div class="bio">
+          <h3>Rosa Davies-Jones <span class="pronouns">they/them</span></h3>
+          <p class="title-handle">GENDER + LGBTQIA+ EDITOR / @rozdavjon</p>
+          <p>Rosa is a non-binary Brit, originally from London...</p>
+        </div>
+      </div>
+
+      <!-- Collective member 10 -->
+      <div class="member" id="member10">
+        <img src="images/member10.jpg" alt="Roselil Aalund" class="portrait">
+        <div class="bio">
+          <h3>Roselil Aalund <span class="pronouns">she/her</span></h3>
+          <p class="title-handle">PSYCHOLOGY EDITOR / @roselilaalund</p>
+          <p>Roselil is a therapist based both in Copenhagen and San Diego...</p>
+        </div>
+      </div>
+
+      <!-- Collective member 11 -->
+      <div class="member" id="member11">
+        <img src="images/member11.jpg" alt="Zelie Lezin" class="portrait">
+        <div class="bio">
+          <h3>Zelie Lezin <span class="pronouns">she/her</span></h3>
+          <p class="title-handle">GENERAL EDITOR / @leziezelin</p>
+          <p>Zelie is an English and French teacher based in Canada...</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- JavaScript to add active class to menu item -->
   <script>
-    // Function to track scroll position and apply the active class to the correct menu link
     window.addEventListener('scroll', () => {
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('nav ul li a');
 
       let currentSection = '';
 
-      // Loop through each section to find the one currently in view
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
 
-        // Check if the section is within the current scroll position
         if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
           currentSection = section.getAttribute('id');
         }
       });
 
-      // Loop through all navigation links and toggle the active class
       navLinks.forEach(link => {
-        link.classList.remove('active');  // Remove active class from all links
+        link.classList.remove('active');
         if (link.getAttribute('href').includes(currentSection)) {
-          link.classList.add('active');  // Add active class to the link corresponding to the current section
+          link.classList.add('active');
         }
       });
     });

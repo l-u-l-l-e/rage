@@ -20,15 +20,9 @@
 html, body {
   height: 100%;
   font-family: 'NewEdge666', sans-serif;
-  scroll-behavior: smooth; /* Ensures smooth scrolling */
-  overflow: hidden; /* Hides the scroll bar */
+  scroll-behavior: smooth; /* Smooth scrolling behavior */
+  overflow-x: hidden;
   background-color: #B14B48; /* Prevents white background on over-scroll */
-}
-
-/* Prevent white space when scrolling too far up/down */
-body {
-  overflow-y: scroll;
-  overflow-x: hidden; /* Lock the page horizontally to avoid overscroll */
 }
 
 /* Navigation styling */
@@ -65,7 +59,8 @@ nav ul li a:hover,
 
 /* Active section indicator */
 nav ul li a.active {
-  font-family: 'NewEdge666Slanted', sans-serif;
+  font-family: 'NewEdge666Slanted', sans-serif; /* Slanted font for active section */
+  text-decoration: underline; /* Optional: underline to make it clearer */
 }
 
 /* Button styling */
@@ -80,10 +75,10 @@ nav ul li a.active {
   text-transform: lowercase;
 }
 
-/* Hero section with a more dominant dark red gradient */
+/* Hero section with dark red dominating */
 .hero {
   height: 100vh;
-  background: linear-gradient(180deg, #DAB2E0 10%, #B14B48 90%);
+  background: linear-gradient(180deg, #DAB2E0 0%, #B14B48 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,36 +88,32 @@ nav ul li a.active {
   max-width: 80vw;
 }
 
-/* About section with a smoother 3-color gradient */
+/* About section starting with dark red */
 .about {
   height: 100vh;
-  background: linear-gradient(180deg, #B14B48 10%, #FF009B 50%, #FFD0E4 90%);
+  background: linear-gradient(180deg, #B14B48 0%, #FF009B 50%, #FFD0E4 100%);
   padding: 50px;
   color: black;
   font-size: 1.5vw;
   font-family: 'NewEdge666', sans-serif;
   display: flex;
-  justify-content: flex-start; /* Align the text to the left */
-  align-items: flex-end; /* Align the text to the bottom */
+  justify-content: flex-start;
+  align-items: flex-end;
   text-align: left;
 }
 
 /* Paragraph styling */
 .about p {
-  max-width: 75vw; /* ¾ of the screen width */
+  max-width: 75vw;
   margin-bottom: 20px;
   line-height: 1.6;
   column-count: 1; /* Ensure no columns */
 }
 
-/* Section transitions and slanted menu indicator */
+/* Section transitions and smooth scrolling */
 section {
   position: relative;
   scroll-snap-align: start;
-}
-
-body {
-  scroll-snap-type: y mandatory;
 }
 
 /* Responsive adjustments for smaller screens */

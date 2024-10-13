@@ -37,7 +37,7 @@ html, body {
   font-family: 'NewEdge666', sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: #DAB2E0; /* Light purple background */
+  background-color: #DAB2E0;
 }
 
 /* Navigation styling */
@@ -66,24 +66,23 @@ nav ul li a {
   font-size: 2vw;
   text-transform: lowercase;
   font-family: 'NewEdge666', sans-serif;
-  transition: all 0.3s ease; /* Smooth transition for slant */
+  transition: all 0.3s ease;
 }
 
 /* No color change on hover, only slanted font */
 nav ul li a:hover,
 .menu-button:hover {
   font-family: 'NewEdge666Slanted', sans-serif;
-  color: black; /* Ensure color stays the same */
+  color: black;
 }
 
-/* Active section indicator with forceful application */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif !important;
   text-decoration: none;
   color: black;
 }
 
-/* Button styling (Same as menu items) */
+/* Button styling */
 .menu-button {
   font-size: 2vw;
   color: black;
@@ -95,13 +94,12 @@ nav ul li a.active {
   font-family: 'NewEdge666', sans-serif;
   border: none;
   display: inline-block;
-  transition: all 0.3s ease; /* Smooth transition for slant */
+  transition: all 0.3s ease;
 }
 
-/* No color change on hover, only slanted font for buttons */
 .menu-button:hover {
   font-family: 'NewEdge666Slanted', sans-serif;
-  color: black; /* Ensure color stays the same */
+  color: black;
 }
 
 /* Hero section */
@@ -123,7 +121,7 @@ nav ul li a.active {
   background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFE4FF 100%);
   padding: 50px;
   color: black;
-  font-size: 1.7vw;
+  font-size: 2vw;
   font-family: 'NewEdge666Light', sans-serif;
   display: flex;
   flex-direction: column;
@@ -135,19 +133,18 @@ nav ul li a.active {
 /* Paragraph styling */
 .about p {
   max-width: 75vw;
-  margin-bottom: 30px; /* More vertical space */
+  margin-bottom: 30px;
   line-height: 1.7;
   display: block;
 }
 
-/* Link styling */
 a {
-  color: #1C30D6; /* Blue color from color scheme */
+  color: #1C30D6;
   text-decoration: none;
 }
 
 a:hover {
-  color: #CEBDEF; /* Hover color */
+  color: #CEBDEF;
 }
 
 /* Collective section gradient */
@@ -179,7 +176,7 @@ a:hover {
 /* Hover effect on portrait */
 .member:hover .portrait {
   filter: grayscale(0%);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8); /* Bigger glow */
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
   cursor: pointer;
 }
 
@@ -199,6 +196,8 @@ a:hover {
   z-index: 10;
   text-align: left;
   font-family: 'NewEdge666Light', sans-serif;
+  max-height: 80vh; /* Ensure bio does not exceed view height */
+  overflow-y: auto;
 }
 
 /* Display bio on member active */
@@ -219,7 +218,7 @@ a:hover {
 }
 
 .close-bio:hover {
-  color: #CEBDEF; /* Hover color */
+  color: #CEBDEF;
 }
 
 /* Member bio styling */
@@ -261,8 +260,9 @@ section {
   }
 
   .about p {
-    font-size: 2vw;
-    line-height: 1.7;
+    font-size: 3.5vw;
+    line-height: 2;
+    margin-top: 20px; /* Text starts further up */
   }
 
   .collective-container {
@@ -298,18 +298,18 @@ section {
 
   .about p {
     max-width: 90vw;
-    font-size: 3vw; /* Bigger text */
-    line-height: 2.0; /* More vertical space */
+    font-size: 4.5vw; /* Larger text */
+    line-height: 2.5;
+    margin-top: 15vh; /* Starts higher up */
   }
 
   .about {
     padding: 30px;
   }
 
-  /* Collective section: 2 members per row */
   .collective-container {
-    grid-template-columns: repeat(2, 1fr); /* Two members per row */
-    gap: 20px; /* Smaller gap */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   .portrait {
@@ -321,7 +321,7 @@ section {
     top: 50%;
     width: 90vw;
     max-width: 90vw;
-    max-height: 80vh; /* Pop-up window constrained to viewport */
+    max-height: 80vh;
     overflow-y: auto;
   }
 }

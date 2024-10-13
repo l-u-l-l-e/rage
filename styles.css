@@ -106,9 +106,9 @@ nav ul li a.active {
 /* Paragraph styling - Strict enforcement of single column */
 .about p {
   max-width: 75vw;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Reduced margin between paragraphs */
   line-height: 1.6;
-  display: block; /* Ensure block layout for paragraphs */
+  display: block;/* Ensure block layout for paragraphs */
 }
 
 /* Section transitions and smooth scrolling */

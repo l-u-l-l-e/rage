@@ -21,6 +21,16 @@
   src: url('NewEdge666-LightRounded.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'NewEdge666UltraBoldRoundedSlanted';
+  src: url('NewEdge666-UltraBoldRoundedSlanted.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'NewEdge666LightSlanted';
+  src: url('NewEdge666-LightRoundedSlanted.otf') format('opentype');
+}
+
 /* Full-page layout */
 html, body {
   height: 100%;
@@ -121,6 +131,36 @@ nav ul li a.active {
   display: block;
 }
 
+/* Member bio styling */
+
+/* Member Name - Ultra Bold Rounded Slanted */
+.bio h3 {
+  font-size: 1.8rem;
+  font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
+  margin: 10px 0;
+}
+
+/* Pronouns - Regular Rounded */
+.bio h3 span {
+  font-family: 'NewEdge666', sans-serif;
+  font-size: 1.5rem;
+}
+
+/* Title and Handle - Light Rounded Slanted */
+.bio p:first-of-type {
+  font-family: 'NewEdge666LightSlanted', sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* Description - Regular Rounded (paragraph) */
+.bio p:not(:first-of-type) {
+  font-family: 'NewEdge666', sans-serif;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
 /* Section transitions */
 section {
   position: relative;
@@ -131,11 +171,11 @@ section {
 @media (max-width: 1024px) {
   nav ul li a,
   .menu-button {
-    font-size: 2.5vw; /* Slightly larger font size */
+    font-size: 2.5vw;
   }
 
   .about p {
-    font-size: 2vw; /* Smoother font scaling */
+    font-size: 2vw;
     line-height: 1.7;
   }
 }
@@ -181,34 +221,3 @@ section {
     line-height: 1.8;
   }
 }
-
-/* Member bio styling */
-
-/* Member Name - Ultra Bold Rounded Slanted */
-.bio h3 {
-  font-size: 1.8rem;
-  font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
-  margin: 10px 0;
-}
-
-/* Pronouns - Regular Rounded */
-.bio h3 span {
-  font-family: 'NewEdge666', sans-serif;
-  font-size: 1.5rem;
-}
-
-/* Title and Handle - Light Rounded Slanted */
-.bio p:first-of-type {
-  font-family: 'NewEdge666LightSlanted', sans-serif;
-  font-size: 1.2rem;
-  font-style: italic;
-}
-
-/* Description - Regular Rounded (paragraph) */
-.bio p:not(:first-of-type) {
-  font-family: 'NewEdge666', sans-serif;
-  font-size: 1.1rem;
-  margin-top: 10px;
-  line-height: 1.6;
-}
-

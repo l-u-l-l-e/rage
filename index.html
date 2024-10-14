@@ -162,8 +162,8 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
     </div>
   </section>
 <!-- JavaScript for active section highlighting and hover effect -->
-  <script>
-    // Scroll-based active section
+ <script>
+    // Active section highlighting when scrolling
     window.addEventListener('scroll', () => {
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('nav ul li a');
@@ -187,25 +187,17 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
       });
     });
 
-    // Toggle bio visibility on hover (for desktop) and click
+    // Toggle bio visibility on click
     document.querySelectorAll('.member').forEach(member => {
       member.addEventListener('click', () => {
         member.classList.toggle('active');
       });
-
-      member.addEventListener('mouseover', () => {
-        member.classList.add('hover');
-      });
-
-      member.addEventListener('mouseout', () => {
-        member.classList.remove('hover');
-      });
     });
 
-    // Close bio when the close button is clicked
+    // Close bio window on click of close button
     document.querySelectorAll('.close-bio').forEach(button => {
       button.addEventListener('click', (e) => {
-        e.stopPropagation();
+        e.stopPropagation(); // Prevent click event on the member from firing
         const bio = button.closest('.bio');
         bio.parentElement.classList.remove('active');
       });

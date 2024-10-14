@@ -187,22 +187,31 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
       });
     });
 
-    // Toggle bio visibility on member click
-document.querySelectorAll('.member').forEach(member => {
-  member.addEventListener('click', () => {
-    member.classList.toggle('active');
-  });
-});
+    // Toggle bio visibility on hover (for desktop) and click
+    document.querySelectorAll('.member').forEach(member => {
+      member.addEventListener('click', () => {
+        member.classList.toggle('active');
+      });
 
-// Close bio when the close button is clicked
-document.querySelectorAll('.close-bio').forEach(button => {
-  button.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent the member click event from firing
-    const bio = button.closest('.bio');
-    bio.parentElement.classList.remove('active');
-  });
-});
+      member.addEventListener('mouseover', () => {
+        member.classList.add('hover');
+      });
 
+      member.addEventListener('mouseout', () => {
+        member.classList.remove('hover');
+      });
+    });
+
+    // Close bio when the close button is clicked
+    document.querySelectorAll('.close-bio').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const bio = button.closest('.bio');
+        bio.parentElement.classList.remove('active');
+      });
+    });
   </script>
+</body>
+</html>
 </body>
 </html>

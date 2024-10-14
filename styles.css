@@ -21,23 +21,13 @@
   src: url('NewEdge666-LightRounded.otf') format('opentype');
 }
 
-@font-face {
-  font-family: 'NewEdge666UltraBoldRoundedSlanted';
-  src: url('NewEdge666-UltraBoldRoundedSlanted.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'NewEdge666LightSlanted';
-  src: url('NewEdge666-LightRoundedSlanted.otf') format('opentype');
-}
-
 /* Full-page layout */
 html, body {
   height: 100%;
   font-family: 'NewEdge666', sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: #DAB2E0; /* Light purple background */
+  background-color: #DAB2E0;
 }
 
 /* Navigation styling */
@@ -57,7 +47,7 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 2em;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -68,9 +58,9 @@ nav ul li a {
   font-family: 'NewEdge666', sans-serif;
 }
 
-/* Read and Order button styling (separate from nav) */
+/* Read and Order button styling */
 .menu-button {
-  font-size: 2vw; /* Size retained for read and order buttons */
+  font-size: 2vw;
   color: black;
   text-decoration: none;
   padding: 10px;
@@ -87,10 +77,9 @@ nav ul li a:hover,
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Active section indicator with forceful application */
+/* Active section indicator */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
-  text-decoration: none;
   color: black;
 }
 
@@ -109,30 +98,27 @@ nav ul li a.active {
 
 /* About section */
 .about {
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFE4FF 100%);
   padding: 50px;
   color: black;
-  font-size: 1.7vw;
   font-family: 'NewEdge666Light', sans-serif;
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center text vertically */
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   text-align: left;
 }
 
 /* Paragraph styling */
 .about p {
   max-width: 75vw;
-  margin-bottom: 20px; /* Reduced vertical spacing */
+  margin-bottom: 10px;
   line-height: 1.4;
-  display: block;
 }
 
-/* Collective section gradient */
+/* Collective section */
 .collective {
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   padding: 50px;
   background: linear-gradient(180deg, #FFE4FF 0%, #CEBDEF 50%, #1C30D6 100%);
   color: black;
@@ -141,47 +127,45 @@ nav ul li a.active {
 /* Collective grid layout */
 .collective-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(2, 1fr); /* Two columns for mobile */
+  gap: 20px;
   justify-items: center;
-  position: relative;
 }
 
 /* Portrait image styling */
 .portrait {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   transition: all 0.3s ease;
   filter: grayscale(100%);
 }
 
-/* Hover effect on portrait */
+/* Hover effect */
 .member:hover .portrait {
   filter: grayscale(0%);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8); /* Bigger glow */
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
   cursor: pointer;
 }
 
-/* Bio pop-up initially hidden */
+/* Bio pop-up window */
 .bio {
-  position: fixed; /* Stay in viewport */
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #FFE4FF;
-  padding: 20px; /* Slightly smaller padding */
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 80%;
   max-width: 500px;
-  max-height: 80vh; /* Smaller pop-up window */
-  overflow: auto; /* Allow scroll if necessary */
+  max-height: 80vh;
+  overflow: auto;
   display: none;
   z-index: 10;
   text-align: left;
-  font-family: 'NewEdge666Light', sans-serif;
 }
 
 /* Display bio on member active */
@@ -197,116 +181,48 @@ nav ul li a.active {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #1C30D6; /* Blue color */
+  color: #1C30D6;
   cursor: pointer;
 }
 
 .close-bio:hover {
-  color: #CEBDEF; /* Hover color */
-}
-
-/* Member bio styling */
-.bio h3 {
-  font-size: 1.6rem; /* Reduced size for pop-up titles */
-  font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
-  margin: 10px 0;
-}
-
-.bio h3 .pronouns {
-  font-family: 'NewEdge666', sans-serif;
-  font-size: 1.4rem;
-}
-
-.title-handle {
-  font-family: 'NewEdge666LightSlanted', sans-serif;
-  font-size: 1.2rem;
-  font-style: italic;
-}
-
-.bio p:not(.title-handle) {
-  font-family: 'NewEdge666Light', sans-serif;
-  font-size: 1rem; /* Reduced paragraph size */
-  margin-top: 15px;
-  line-height: 1.5;
+  color: #CEBDEF;
 }
 
 /* Section transitions */
 section {
-  height: 100vh; /* Ensure every section is exactly 100vh */
+  height: 100vh;
   scroll-snap-align: start;
 }
 
-/* Fix About Section Scroll */
-#about {
-  scroll-margin-top: 80px; /* Adjust scroll position to show top of About section */
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  nav ul li a,
-  .menu-button {
-    font-size: 2.5vw;
-  }
-
-  .about p {
-    font-size: 2.5vw;
-    line-height: 1.5;
-  }
-
-  .collective-container {
-    gap: 20px;
-  }
-
-  .portrait {
-    width: 150px;
-    height: 150px;
-  }
-
-  .bio h3 {
-    font-size: 1.4rem;
-  }
-
-  .bio p {
-    font-size: 1rem;
-  }
-}
-
+/* Mobile adjustments */
 @media (max-width: 768px) {
-  nav ul li a {
-    font-size: 4vw; /* Slightly bigger menu items */
-  }
-
   .about p {
-    max-width: 90vw;
     font-size: 4.5vw;
     line-height: 1.6;
-    margin-top: 10vh; /* Start further up in the section */
-  }
-
-  .about {
-    padding: 30px;
+    margin-top: 10vh;
   }
 
   .collective-container {
-    grid-template-columns: repeat(2, 1fr); /* Two members per row */
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .portrait {
-    width: 120px;
-    height: 120px;
-  }
-
-  /* Ensure bio doesn't interfere with menu */
   .bio {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 90vw;
-    max-height: 70vh; /* Further limit height to avoid overlapping with menu */
+    max-height: 70vh;
   }
 
   .bio.shrink {
-    font-size: 0.8rem; /* Smaller bio text if necessary */
+    font-size: 0.8rem;
+  }
+}
+
+/* Desktop hover effect */
+@media (min-width: 1024px) {
+  nav ul li a.active {
+    font-family: 'NewEdge666Slanted', sans-serif;
   }
 }

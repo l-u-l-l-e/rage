@@ -162,7 +162,7 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
     </div>
   </section>
 
-  <!-- Submit Section -->
+ <!-- Submit Section -->
 <section class="submit" id="submit">
   <!-- Rolling Text for Submissions Deadline -->
   <div class="rolling-text">
@@ -172,9 +172,7 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
   <!-- Submission Guidelines -->
   <div class="submission-content">
     <h2>SUBMISSION GUIDELINES</h2>
-    <p>Abor aliquatium fugito quasimusa volorrorem. Dis niscid exerumquam laceaquae odis endis quae. Lique ratin nullestis dictures et eaquid qui niati cores dolore et apicabo. Rum veliquiscia nonserum nam, test molorit aepudam niat et quo dollantias volupta tusam, sed que ne prem qui in niendi tem cum quunt eniscipsam nis etur?</p>
-    <p>Id exeraessima dolo excevor itasiti umenis et facera a dolut vent maximaio omnis animoles alitae aut ium la si blaces etur aut ab id molore cor adi imagman faccus alisiti ssinven desequist de nonectem dolorit, tecestrum nonsequi officae poribus doloriat autem conem repreic illoris doluptatur, ipsam sae essit es illorpos qui rentor rehent.</p>
-    <p>Met qui beati as arciet volor rerum quia dis apit etur? Quis sae nobis solupta cor seque.</p>
+    <p>Abor aliquatium fugito quasimusa volorrorem. Dis niscid exerumquam laceaquae odis endis quae. Lique ratin nullestis dictures et eaquid qui niati cores dolore et apicabo.</p>
     <p>Send your submissions to <a href="mailto:submit@ragezine.com">submit@ragezine.com</a></p>
   </div>
 </section>
@@ -193,12 +191,8 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
       <h2>PAST</h2>
       <p><strong>RAGE Workshop</strong><br>
         2024, Kulturnatten, Union, Copenhagen</p>
-      <p><strong>RAGE Workshop</strong><br>
-        2024, Feminist RAGE Room, Fabrik, NYC</p>
-      <p><strong>RAGE Workshop</strong><br>
-        2024, Debut Fest, HUSET, Copenhagen</p>
       <p><strong>RAGE Zine Vol. 1 Launch Party</strong><br>
-        2024, Råhuset, Meatpacking District, Copenhagen</p>
+        2024, Råhuset, Copenhagen</p>
     </div>
   </div>
 </section>
@@ -216,13 +210,10 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
   </div>
 </section>
 
-
+  <!-- JavaScript Code -->
   <script>
-  // Scroll-based active section highlighting with debounce
-  let lastKnownScrollPosition = 0;
-  let ticking = false;
-
-  function handleScroll(scrollPos) {
+  // Scroll-based active section highlighting
+  window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
     let currentSection = '';
@@ -231,7 +222,7 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
 
-      if (scrollPos >= sectionTop - sectionHeight / 3) {
+      if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
         currentSection = section.getAttribute('id');
       }
     });
@@ -242,59 +233,36 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
         link.classList.add('active');
       }
     });
-  }
+  });
 
-  window.addEventListener('scroll', function() {
-    lastKnownScrollPosition = window.scrollY;
+  // Collective member pop-up logic
+  document.querySelectorAll('.member').forEach(member => {
+    member.addEventListener('click', () => {
+      member.classList.toggle('active');
+    });
 
-    if (!ticking) {
-      window.requestAnimationFrame(function() {
-        handleScroll(lastKnownScrollPosition);
-        ticking = false;
+    if (window.innerWidth > 768) {
+      member.addEventListener('mouseenter', () => {
+        member.classList.add('hovering');
       });
-
-      ticking = true;
+      member.addEventListener('mouseleave', () => {
+        if (!member.classList.contains('active')) {
+          member.classList.remove('hovering');
+        }
+      });
     }
   });
 
   // Close bio on clicking the close button
   document.querySelectorAll('.close-bio').forEach(button => {
     button.addEventListener('click', (e) => {
-      e.stopPropagation(); // Prevent click event on the member from firing
+      e.stopPropagation();
       const bio = button.closest('.bio');
       bio.parentElement.classList.remove('active');
     });
   });
 
-  // Hover behavior for collective members on desktop, click to stay open
-  function setHoverAndClickBehavior() {
-    const isDesktop = window.innerWidth > 768; // Desktop condition
-
-    document.querySelectorAll('.member').forEach(member => {
-      if (isDesktop) {
-        member.addEventListener('mouseenter', () => {
-          member.classList.add('hovering'); // Show bio on hover
-        });
-
-        member.addEventListener('mouseleave', () => {
-          if (!member.classList.contains('active')) {
-            member.classList.remove('hovering'); // Hide bio when mouse leaves
-          }
-        });
-      }
-
-      // Toggle on click (works on mobile + desktop)
-      member.addEventListener('click', () => {
-        if (member.classList.contains('active')) {
-          member.classList.remove('active');
-        } else {
-          member.classList.add('active');
-        }
-      });
-    });
-  }
-
-  // Ensure bio remains centered on the screen when open
+  // Center bio popup
   function centerBio() {
     const bios = document.querySelectorAll('.bio');
     bios.forEach(bio => {
@@ -302,25 +270,18 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
       const windowHeight = window.innerHeight;
 
       if (bioHeight > windowHeight) {
-        bio.style.top = '10px'; // Align near top if bio is taller than window
+        bio.style.top = '10px';
       } else {
         const topPosition = (windowHeight - bioHeight) / 2;
-        bio.style.top = `${topPosition}px`; // Center bio vertically
+        bio.style.top = `${topPosition}px`;
       }
     });
   }
 
-  // Initialize hover/click behavior and bio centering
-  window.addEventListener('resize', () => {
-    setHoverAndClickBehavior(); // Recheck hover or click behaviors on resize
-    centerBio(); // Recenter bio on resize
-  });
-
-  // Initial load
-  setHoverAndClickBehavior();
+  // Call to center bio when window resizes
+  window.addEventListener('resize', centerBio);
   centerBio();
 </script>
-
 
 </body>
 </html>

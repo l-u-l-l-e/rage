@@ -52,8 +52,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background-color: rgba(206, 189, 239, 0.8);
-  backdrop-filter: blur(10px);
+  background-color: transparent;
+  backdrop-filter: none;
   transition: background-color 0.3s ease;
 }
 
@@ -238,23 +238,27 @@ nav ul li a:hover {
 }
 
 .rolling-text {
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
+  width: 100vw;
   padding: 40px 0;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .rolling-text span {
+  font-size: clamp(32px, 8vw, 64px);
+  text-transform: uppercase;
+  white-space: nowrap;
   display: inline-block;
-  font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
-  font-size: clamp(24px, 6vw, 48px);
-  color: #FF00C3;
-  animation: roll-text 40s linear infinite;
+  padding-left: 100%;
+  animation: roll-text 20s linear infinite;
 }
 
 @keyframes roll-text {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
 }
 
 .submission-content {
@@ -276,33 +280,34 @@ nav ul li a:hover {
 }
 
 .submission-content a {
-  display: block;
+  display: inline-block;
+  transition: color 0.3s ease;
   margin-top: 10px;
   font-family: 'NewEdge666Slanted', sans-serif;
   font-size: clamp(16px, 1.7vw, 24px);
   color: #1D30D7;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .submission-content a:hover {
-  color: #FF00C3;
+  color: #FFE4FF;
 }
 
 /* Events Section */
 .events {
   min-height: 100vh;
   padding: 50px;
-  background: linear-gradient(180deg, #FF00C3 0%, #FF003C 100%);
+   background: linear-gradient(180deg, #FF00C3 0%, #B80000 100%);
   color: black;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
 .future-events, .past-events {
-  flex: 1 1 300px;
+  flex: 1;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -333,12 +338,12 @@ nav ul li a:hover {
 
 /* Contact Section */
 .contact {
-  min-height: 100vh;
   padding: 50px;
-  background: linear-gradient(180deg, #B80000 0%, #F50000 50%, #FFE4FF 100%);
+  background: linear-gradient(180deg, #B80000 0%, #F50000 50%, #CEBDEF 100%);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+  min-height: 100vh;
   align-items: center;
 }
 
@@ -366,6 +371,7 @@ nav ul li a:hover {
   width: 100%;
   max-width: 800px;
   margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .contact-links a {
@@ -382,15 +388,16 @@ nav ul li a:hover {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
+ nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0;
   }
 
   .menu-button {

@@ -74,12 +74,6 @@ nav ul li a {
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Hover effect for menu */
-nav ul li a:hover,
-.menu-button:hover {
-  font-family: 'NewEdge666Slanted', sans-serif;
-}
-
 /* Active menu */
 nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
@@ -108,18 +102,16 @@ nav ul li a.active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: left;
-  overflow: hidden; /* Prevents content overflow */
+  overflow: hidden;
 }
 
-/* Fix for about section text (Single column on all screens) */
 .about p {
   max-width: 75vw;
   margin-bottom: 10px;
-  line-height: 1.4;
-  column-count: 1; /* Ensure it's only one column */
-  column-gap: 0; /* Remove any column gap */
+  line-height: 1.6;
+  font-size: 1.5vw;
 }
 
 /* Collective section */
@@ -128,7 +120,7 @@ nav ul li a.active {
   padding: 50px;
   background: linear-gradient(180deg, #FFE4FF 0%, #CEBDEF 50%, #1C30D6 100%);
   color: black;
-  overflow-x: hidden; /* Fix for overflowing on mobile */
+  overflow-x: hidden;
 }
 
 .collective-container {
@@ -136,7 +128,7 @@ nav ul li a.active {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
   justify-items: center;
-  width: 100%; /* Ensure it fits within the screen */
+  width: 100%;
 }
 
 /* Portrait styling */
@@ -170,25 +162,22 @@ nav ul li a.active {
   overflow: auto;
   opacity: 0;
   visibility: hidden;
-  z-index: 10000; /* Ensure it stays on top of other content */
+  z-index: 10000;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Show bio on hover */
 .member:hover .bio {
   display: block;
   opacity: 1;
   visibility: visible;
 }
 
-/* Active bio (click to open) */
 .member.active .bio {
   display: block;
   opacity: 1;
   visibility: visible;
 }
 
-/* Close button */
 .close-bio {
   position: absolute;
   top: 10px;
@@ -204,46 +193,10 @@ nav ul li a.active {
   color: #CEBDEF;
 }
 
-/* Additional styling for readability */
-.bio h3 {
-  margin-bottom: 10px;
-}
-
-.bio p {
-  margin-top: 15px;
-  line-height: 1.5;
-}
-
-/* Adjustments for mobile */
-@media (max-width: 768px) {
-  nav ul li a {
-    font-size: 4vw;
-  }
-
-  .menu-button {
-    font-size: 4vw; /* Fix for mobile buttons */
-  }
-
-  .about p {
-    font-size: 4.5vw;
-    line-height: 1.6;
-    column-count: 1; /* Ensure single column layout */
-  }
-
-  .collective-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .bio {
-    max-width: 90vw;
-    max-height: 70vh;
-  }
-}
-
-/* Submit Section */
+/* Submission Section */
 .submit {
   height: 100vh;
-  background: linear-gradient(180deg, #1C30D6 0%, #CEBDEF 50%, #FF009B 100%); /* Smooth gradient transition */
+  background: linear-gradient(180deg, #1C30D6 0%, #CEBDEF 50%, #FF009B 100%);
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -251,7 +204,6 @@ nav ul li a.active {
   color: black;
 }
 
-/* Rolling Text for Submissions Deadline */
 .rolling-text {
   width: 100%;
   overflow: hidden;
@@ -263,54 +215,43 @@ nav ul li a.active {
 .rolling-text span {
   display: inline-block;
   font-family: 'NewEdge666Slanted', sans-serif;
-  font-size: 6vw; /* Responsive size */
-  color: #FF009B; /* Pink color */
+  font-size: 6vw;
+  color: #FF009B;
   animation: roll-text 20s linear infinite;
 }
 
-/* Rolling text animation */
 @keyframes roll-text {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
 
-/* Submission Content */
-.submission-content {
-  margin-top: 20px;
-}
-
 .submission-content h2 {
   font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
-  font-size: 2.5vw; /* Responsive size */
-  color: black;
-  margin-bottom: 20px;
+  font-size: 2.5vw;
 }
 
 .submission-content p {
   font-family: 'NewEdge666Light', sans-serif;
   font-size: 1.5vw;
   line-height: 1.6;
-  margin-bottom: 20px;
-  color: black;
 }
 
-/* Email link styling */
 .submission-content a {
   font-family: 'NewEdge666Slanted', sans-serif;
   font-size: 1.7vw;
-  color: #1C30D6; /* Blue color for links */
+  color: #1C30D6;
   text-decoration: none;
 }
 
 .submission-content a:hover {
-  color: #CEBDEF; /* Lighter blue on hover */
+  color: #CEBDEF;
 }
 
 /* Events Section */
 .events {
   height: 100vh;
   padding: 50px;
-  background: linear-gradient(180deg, #9A34D7 0%, #FF009B 60%, #FF003C 100%); /* Adjusted gradient */
+  background: linear-gradient(180deg, #9A34D7 0%, #FF009B 60%, #FF003C 100%);
   color: black;
 }
 
@@ -325,7 +266,6 @@ nav ul li a.active {
   font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
   font-size: 3vw;
   margin-bottom: 20px;
-  color: black;
 }
 
 .future-events p, .past-events p {
@@ -337,31 +277,15 @@ nav ul li a.active {
   font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .future-events h2, .past-events h2 {
-    font-size: 5vw;
-  }
-
-  .future-events p, .past-events p {
-    font-size: 4vw;
-    line-height: 1.6;
-  }
-}
-
 /* Contact Section */
 .contact {
   height: 100vh;
   padding: 50px;
-  background: linear-gradient(180deg, #FF003C 0%, #FF6347 50%, #FFE4FF 100%); /* Smooth gradient from the events section */
+  background: linear-gradient(180deg, #B80000 0%, #F50000 50%, #FFE4FF 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.contact-container {
-  text-align: center;
 }
 
 .contact-container h1 {
@@ -393,8 +317,36 @@ nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
+  nav ul li a {
+    font-size: 4vw;
+  }
+
+  .menu-button {
+    font-size: 4vw;
+  }
+
+  .about p {
+    font-size: 4.5vw;
+  }
+
+  .collective-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bio {
+    max-width: 90vw;
+    max-height: 70vh;
+  }
+
+  .submission-content h2 {
+    font-size: 5vw;
+  }
+
+  .future-events h2, .past-events h2 {
+    font-size: 5vw;
+  }
+
   .contact-container h1 {
     font-size: 8vw;
   }

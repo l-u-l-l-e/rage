@@ -134,7 +134,7 @@ nav ul li a:hover {
   color: black;
   overflow-x: hidden;
   display: flex;
-  align-items: center; /* Vertically centered rows */
+  align-items: center;
 }
 
 .collective-container {
@@ -161,7 +161,7 @@ nav ul li a:hover {
 
 /* Bio pop-up */
 .bio {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -172,14 +172,14 @@ nav ul li a:hover {
   width: 80%;
   max-width: 500px;
   max-height: 80vh;
-  overflow: auto;
+  overflow-y: auto;
   opacity: 0;
   visibility: hidden;
   z-index: 10000;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.member:hover .bio {
+.member:hover .bio, .member.active .bio {
   opacity: 1;
   visibility: visible;
 }
@@ -266,9 +266,12 @@ nav ul li a:hover {
   font-family: 'NewEdge666Light', sans-serif;
   font-size: 1.8vw;
   line-height: 1.6;
+  margin-bottom: 30px;
 }
 
 .submission-content a {
+  display: block;
+  margin-top: 10px;
   font-family: 'NewEdge666Slanted', sans-serif;
   font-size: 1.7vw;
   color: #1D30D7;
@@ -283,7 +286,7 @@ nav ul li a:hover {
 .events {
   height: 100vh;
   padding: 50px;
-  background: linear-gradient(180deg, #9A34D7 0%, #FF00C3 60%, #FF003C 100%);
+  background: linear-gradient(180deg, #FF00C3 0%, #FF003C 100%);
   color: black;
   display: flex;
   justify-content: space-evenly;

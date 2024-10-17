@@ -26,6 +26,11 @@
   src: url('NewEdge666-SemiBoldRounded.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'NewEdge666UltraBoldSlanted';
+  src: url('NewEdge666-UltraBoldRoundedSlanted.otf') format('opentype');
+}
+
 /* General layout */
 html, body {
   height: 100%;
@@ -184,9 +189,7 @@ nav ul li a.active {
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.member:hover .bio,
 .member.active .bio {
-  display: block;
   opacity: 1;
   visibility: visible;
 }
@@ -230,10 +233,11 @@ nav ul li a.active {
 .submit {
   height: 100vh;
   background: linear-gradient(180deg, #1D30D7 0%, #CEBDEF 50%, #FF00C3 100%);
-  padding: 50px;
+  padding: 100px 50px; /* Ensures it's not too close to the menu */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center; /* Centered content */
+  align-items: center;
   color: black;
 }
 
@@ -242,7 +246,7 @@ nav ul li a.active {
   overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
-  padding: 20px 0; /* More padding for rolling text */
+  padding: 40px 0; /* More padding for rolling text */
 }
 
 .rolling-text span {
@@ -259,20 +263,20 @@ nav ul li a.active {
 }
 
 .submission-content {
-  margin-top: 50px; /* Added space between rolling text and submission guidelines */
+  margin-top: 60px; /* Added space between rolling text and submission guidelines */
 }
 
 .submission-content h2 {
-  font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
-  font-size: 2.5vw;
+  font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
+  font-size: 2.8vw;
   text-transform: uppercase;
+  margin-bottom: 30px;
 }
 
 .submission-content p {
   font-family: 'NewEdge666Light', sans-serif;
   font-size: 1.5vw;
   line-height: 1.6;
-  margin-bottom: 20px;
 }
 
 .submission-content a {
@@ -280,11 +284,10 @@ nav ul li a.active {
   font-size: 1.7vw;
   color: #1D30D7;
   text-decoration: none;
-  margin-bottom: 20px;
 }
 
 .submission-content a:hover {
-  color: #FF00C3; /* Strong pink color on hover */
+  color: #FF00C3;
 }
 
 /* Events Section */
@@ -305,7 +308,7 @@ nav ul li a.active {
 }
 
 .future-events h2, .past-events h2 {
-  font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
+  font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
   font-size: 3vw;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -342,7 +345,7 @@ nav ul li a.active {
 }
 
 .contact-container h1 {
-  font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
+  font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
   font-size: 5vw;
   margin-bottom: 50px;
   text-align: center;

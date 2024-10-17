@@ -70,14 +70,8 @@ nav ul li a {
   border: none;
 }
 
-/* Hover effect for menu */
 nav ul li a:hover,
 .menu-button:hover {
-  font-family: 'NewEdge666Slanted', sans-serif;
-}
-
-/* Active menu */
-nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
@@ -102,8 +96,9 @@ nav ul li a.active {
   color: black;
   font-family: 'NewEdge666Light', sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  text-align: left;
 }
 
 /* Paragraphs in about */
@@ -165,6 +160,16 @@ nav ul li a.active {
   display: block;
 }
 
+/* Spacing and line height */
+.bio h3 {
+  margin-bottom: 15px;
+}
+
+.bio p {
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
 /* Close button */
 .close-bio {
   position: absolute;
@@ -183,10 +188,6 @@ nav ul li a.active {
 
 /* Adjustments for mobile */
 @media (max-width: 768px) {
-  nav ul li a {
-    font-size: 4vw;
-  }
-
   .about p {
     font-size: 4.5vw;
     line-height: 1.6;

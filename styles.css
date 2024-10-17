@@ -239,3 +239,70 @@ nav ul li a.active {
     max-height: 70vh;
   }
 }
+
+/* Submit Section */
+.submit {
+  height: 100vh;
+  background: linear-gradient(180deg, #1C30D6 0%, #CEBDEF 50%, #FF009B 100%); /* Smooth gradient transition */
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: black;
+}
+
+/* Rolling Text for Submissions Deadline */
+.rolling-text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.rolling-text span {
+  display: inline-block;
+  font-family: 'NewEdge666Slanted', sans-serif;
+  font-size: 6vw; /* Responsive size */
+  color: #FF009B; /* Pink color */
+  animation: roll-text 20s linear infinite;
+}
+
+/* Rolling text animation */
+@keyframes roll-text {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Submission Content */
+.submission-content {
+  margin-top: 20px;
+}
+
+.submission-content h2 {
+  font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
+  font-size: 2.5vw; /* Responsive size */
+  color: black;
+  margin-bottom: 20px;
+}
+
+.submission-content p {
+  font-family: 'NewEdge666Light', sans-serif;
+  font-size: 1.5vw;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: black;
+}
+
+/* Email link styling */
+.submission-content a {
+  font-family: 'NewEdge666Slanted', sans-serif;
+  font-size: 1.7vw;
+  color: #1C30D6; /* Blue color for links */
+  text-decoration: none;
+}
+
+.submission-content a:hover {
+  color: #CEBDEF; /* Lighter blue on hover */
+}
+

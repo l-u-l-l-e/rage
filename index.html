@@ -161,10 +161,13 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
       
     </div>
   </section>
-<!-- JavaScript for collective members and hover effect -->
-<script>
-  // Scroll-based active section highlighting
-  window.addEventListener('scroll', () => {
+
+  <script>
+  // Scroll-based active section highlighting with debounce
+  let lastKnownScrollPosition = 0;
+  let ticking = false;
+
+  function handleScroll(scrollPos) {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
     let currentSection = '';
@@ -172,7 +175,8 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
-      if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
+
+      if (scrollPos >= sectionTop - sectionHeight / 3) {
         currentSection = section.getAttribute('id');
       }
     });
@@ -183,53 +187,67 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
         link.classList.add('active');
       }
     });
+  }
+
+  window.addEventListener('scroll', function() {
+    lastKnownScrollPosition = window.scrollY;
+
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        handleScroll(lastKnownScrollPosition);
+        ticking = false;
+      });
+
+      ticking = true;
+    }
   });
 
-  // Close bio when clicking on close button
+  // Close bio on clicking the close button
   document.querySelectorAll('.close-bio').forEach(button => {
     button.addEventListener('click', (e) => {
-      e.stopPropagation(); // Prevent triggering member click
+      e.stopPropagation(); // Prevent click event on the member from firing
       const bio = button.closest('.bio');
       bio.parentElement.classList.remove('active');
     });
   });
 
   // Hover behavior for collective members on desktop, click to stay open
-  const isDesktop = window.innerWidth > 768; // Define desktop width
-  document.querySelectorAll('.member').forEach(member => {
-    // Hover only on desktop
-    if (isDesktop) {
-      member.addEventListener('mouseenter', () => {
-        member.classList.add('hovering'); // Show bio on hover
-      });
+  function setHoverAndClickBehavior() {
+    const isDesktop = window.innerWidth > 768; // Desktop condition
 
-      member.addEventListener('mouseleave', () => {
-        if (!member.classList.contains('active')) {
-          member.classList.remove('hovering'); // Hide bio when mouse leaves if not clicked
+    document.querySelectorAll('.member').forEach(member => {
+      if (isDesktop) {
+        member.addEventListener('mouseenter', () => {
+          member.classList.add('hovering'); // Show bio on hover
+        });
+
+        member.addEventListener('mouseleave', () => {
+          if (!member.classList.contains('active')) {
+            member.classList.remove('hovering'); // Hide bio when mouse leaves
+          }
+        });
+      }
+
+      // Toggle on click (works on mobile + desktop)
+      member.addEventListener('click', () => {
+        if (member.classList.contains('active')) {
+          member.classList.remove('active');
+        } else {
+          member.classList.add('active');
         }
       });
-    }
-
-    // Click behavior for all devices (mobile + desktop)
-    member.addEventListener('click', () => {
-      if (member.classList.contains('active')) {
-        member.classList.remove('active'); // Close bio if already open
-      } else {
-        member.classList.add('active'); // Open bio on click
-      }
     });
-  });
+  }
 
   // Ensure bio remains centered on the screen when open
   function centerBio() {
     const bios = document.querySelectorAll('.bio');
     bios.forEach(bio => {
-      const parent = bio.parentElement;
       const bioHeight = bio.clientHeight;
       const windowHeight = window.innerHeight;
-      
+
       if (bioHeight > windowHeight) {
-        bio.style.top = '10px'; // Set position at top if bio is taller than window
+        bio.style.top = '10px'; // Align near top if bio is taller than window
       } else {
         const topPosition = (windowHeight - bioHeight) / 2;
         bio.style.top = `${topPosition}px`; // Center bio vertically
@@ -237,12 +255,17 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
     });
   }
 
-  // Adjust bio positions when window resizes
-  window.addEventListener('resize', centerBio);
+  // Initialize hover/click behavior and bio centering
+  window.addEventListener('resize', () => {
+    setHoverAndClickBehavior(); // Recheck hover or click behaviors on resize
+    centerBio(); // Recenter bio on resize
+  });
 
-  // Initial call to center bios on page load
+  // Initial load
+  setHoverAndClickBehavior();
   centerBio();
 </script>
+
 
 </body>
 </html>

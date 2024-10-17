@@ -62,12 +62,10 @@ nav ul li a {
   font-family: 'NewEdge666', sans-serif;
 }
 
-/* Hover effect for menu items */
 nav ul li a:hover {
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Fix for "Order" and "Read" buttons to look like menu items */
 .menu-button {
   font-size: 2vw;
   color: black;
@@ -138,6 +136,8 @@ nav ul li a.active {
   background: linear-gradient(180deg, #FFE4FF 0%, #CEBDEF 50%, #1D30D7 100%);
   color: black;
   overflow-x: hidden;
+  display: flex;
+  align-items: center; /* Vertically centered rows */
 }
 
 .collective-container {
@@ -242,7 +242,7 @@ nav ul li a.active {
   overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
-  padding: 10px 0;
+  padding: 20px 0; /* More padding for rolling text */
 }
 
 .rolling-text span {
@@ -272,6 +272,7 @@ nav ul li a.active {
   font-family: 'NewEdge666Light', sans-serif;
   font-size: 1.5vw;
   line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .submission-content a {
@@ -279,6 +280,7 @@ nav ul li a.active {
   font-size: 1.7vw;
   color: #1D30D7;
   text-decoration: none;
+  margin-bottom: 20px;
 }
 
 .submission-content a:hover {
@@ -289,8 +291,10 @@ nav ul li a.active {
 .events {
   height: 100vh;
   padding: 50px;
-  background: linear-gradient(180deg, #FF00C3 0%, #F50000 60%, #B80000 100%);
+  background: linear-gradient(180deg, #9A34D7 0%, #FF00C3 60%, #FF003C 100%);
   color: black;
+  display: flex;
+  align-items: center; /* Vertically centered */
 }
 
 .events-container {
@@ -303,13 +307,27 @@ nav ul li a.active {
 .future-events h2, .past-events h2 {
   font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
   font-size: 3vw;
-  margin-bottom: 50px; /* Added more space between Future and Past sections */
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .future-events p, .past-events p {
-  font-family: 'NewEdge666Light', sans-serif;
   font-size: 1.5vw;
   line-height: 1.6;
+}
+
+.future-events p strong, .past-events p strong {
+  font-family: 'NewEdge666';
+  font-weight: 600;
+  font-size: 1.8vw;
+}
+
+.future-events p {
+  margin-bottom: 20px;
+}
+
+.past-events {
+  margin-top: 50px; /* Added space between FUTURE and PAST */
 }
 
 /* Contact Section */
@@ -337,7 +355,6 @@ nav ul li a.active {
 
 .contact-container h1 a:hover {
   text-decoration: underline;
-  color: #FF00C3;
 }
 
 .contact-links {

@@ -161,19 +161,17 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
       
     </div>
   </section>
-<!-- JavaScript for active section highlighting and hover effect -->
- <script>
-    // Active section highlighting when scrolling
+<!-- JavaScript for collective members and hover effect -->
+  <script>
+    // Scroll-based active section highlighting
     window.addEventListener('scroll', () => {
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('nav ul li a');
-
       let currentSection = '';
 
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-
         if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
           currentSection = section.getAttribute('id');
         }
@@ -187,23 +185,33 @@ She is currently a Project Coordinator at UN Women, and an Advisor on Diversity,
       });
     });
 
-    // Toggle bio visibility on click
+    // Toggle bio on click for mobile
     document.querySelectorAll('.member').forEach(member => {
       member.addEventListener('click', () => {
         member.classList.toggle('active');
       });
     });
 
-    // Close bio window on click of close button
+    // Hover behavior for collective members on desktop
+    if (window.innerWidth > 768) {
+      document.querySelectorAll('.member').forEach(member => {
+        member.addEventListener('mouseenter', () => {
+          member.classList.add('active');
+        });
+        member.addEventListener('mouseleave', () => {
+          member.classList.remove('active');
+        });
+      });
+    }
+
+    // Close bio when clicking on close button
     document.querySelectorAll('.close-bio').forEach(button => {
       button.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent click event on the member from firing
+        e.stopPropagation(); // Prevent triggering member click
         const bio = button.closest('.bio');
         bio.parentElement.classList.remove('active');
       });
     });
   </script>
-</body>
-</html>
 </body>
 </html>

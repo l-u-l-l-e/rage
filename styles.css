@@ -10,22 +10,18 @@
   font-family: 'NewEdge666';
   src: url('NewEdge666-RegularRounded.otf') format('opentype');
 }
-
 @font-face {
   font-family: 'NewEdge666Slanted';
   src: url('NewEdge666-RegularRoundedSlanted.otf') format('opentype');
 }
-
 @font-face {
   font-family: 'NewEdge666Light';
   src: url('NewEdge666-LightRounded.otf') format('opentype');
 }
-
 @font-face {
   font-family: 'NewEdge666SemiBold';
   src: url('NewEdge666-SemiBoldRounded.otf') format('opentype');
 }
-
 @font-face {
   font-family: 'NewEdge666UltraBoldSlanted';
   src: url('NewEdge666-UltraBoldRoundedSlanted.otf') format('opentype');
@@ -242,11 +238,11 @@ nav ul li a.active {
 }
 
 .rolling-text {
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
-  padding: 40px 0; /* More padding for rolling text */
+  padding: 40px 0;
 }
 
 .rolling-text span {
@@ -255,6 +251,7 @@ nav ul li a.active {
   font-size: 6vw;
   color: #FF00C3;
   animation: roll-text 40s linear infinite;
+  text-transform: uppercase;
 }
 
 @keyframes roll-text {
@@ -263,7 +260,7 @@ nav ul li a.active {
 }
 
 .submission-content {
-  margin-top: 60px; /* Added space between rolling text and submission guidelines */
+  margin-top: 40px;
 }
 
 .submission-content h2 {
@@ -275,22 +272,19 @@ nav ul li a.active {
 
 .submission-content p {
   font-family: 'NewEdge666Light', sans-serif;
-  font-size: 1.5vw;
-  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .submission-content a {
   font-family: 'NewEdge666Slanted', sans-serif;
-  font-size: 1.7vw;
   color: #1D30D7;
-  text-decoration: none;
 }
 
 .submission-content a:hover {
   color: #FF00C3;
 }
 
-/* Events Section */
+/* Events section */
 .events {
   height: 100vh;
   padding: 50px;
@@ -301,22 +295,23 @@ nav ul li a.active {
 }
 
 .events-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
 }
 
 .future-events h2, .past-events h2 {
   font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
-  font-size: 3vw;
   text-transform: uppercase;
-  margin-bottom: 20px;
+}
+
+.future-events p span, .past-events p span {
+  font-family: 'NewEdge666Light';
+  line-height: 1.6;
 }
 
 .future-events p, .past-events p {
   font-size: 1.5vw;
-  line-height: 1.6;
 }
 
 .future-events p strong, .past-events p strong {
@@ -325,15 +320,11 @@ nav ul li a.active {
   font-size: 1.8vw;
 }
 
-.future-events p {
-  margin-bottom: 20px;
-}
-
 .past-events {
-  margin-top: 50px; /* Added space between FUTURE and PAST */
+  margin-top: 50px; /* Space between FUTURE and PAST */
 }
 
-/* Contact Section */
+/* Contact section */
 .contact {
   height: 100vh;
   padding: 50px;
@@ -347,7 +338,6 @@ nav ul li a.active {
 .contact-container h1 {
   font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
   font-size: 5vw;
-  margin-bottom: 50px;
   text-align: center;
 }
 
@@ -387,7 +377,7 @@ nav ul li a.active {
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* JS Script to show contact links when at the bottom */
+/* Scroll-based active section highlighting */
 document.addEventListener('scroll', function() {
   const contactLinks = document.querySelector('.contact-links');
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
@@ -426,6 +416,10 @@ document.addEventListener('scroll', function() {
 
   .future-events h2, .past-events h2 {
     font-size: 5vw;
+  }
+
+  .events-container {
+    grid-template-columns: 1fr;
   }
 
   .contact-container h1 {

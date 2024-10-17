@@ -9,22 +9,27 @@
 @font-face {
   font-family: 'NewEdge666';
   src: url('NewEdge666-RegularRounded.otf') format('opentype');
+  font-display: swap;
 }
 @font-face {
   font-family: 'NewEdge666Slanted';
   src: url('NewEdge666-RegularRoundedSlanted.otf') format('opentype');
+  font-display: swap;
 }
 @font-face {
   font-family: 'NewEdge666Light';
   src: url('NewEdge666-LightRounded.otf') format('opentype');
+  font-display: swap;
 }
 @font-face {
   font-family: 'NewEdge666SemiBold';
   src: url('NewEdge666-SemiBoldRounded.otf') format('opentype');
+  font-display: swap;
 }
 @font-face {
   font-family: 'NewEdge666UltraBoldSlanted';
   src: url('NewEdge666-UltraBoldRoundedSlanted.otf') format('opentype');
+  font-display: swap;
 }
 
 /* General layout */
@@ -47,6 +52,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+  background-color: rgba(206, 189, 239, 0.8);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease;
 }
 
 nav ul {
@@ -58,9 +66,10 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: black;
-  font-size: 2vw;
+  font-size: clamp(16px, 2vw, 24px);
   text-transform: lowercase;
   font-family: 'NewEdge666', sans-serif;
+  transition: font-family 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -69,7 +78,7 @@ nav ul li a:hover {
 
 /* Menu button */
 .menu-button {
-  font-size: 2vw;
+  font-size: clamp(16px, 2vw, 24px);
   color: black;
   text-decoration: none;
   background: none;
@@ -79,6 +88,7 @@ nav ul li a:hover {
   border: none;
   display: inline-block;
   margin-left: 30px;
+  transition: font-family 0.3s ease;
 }
 
 .menu-button:hover {
@@ -96,11 +106,12 @@ nav ul li a:hover {
 
 .hero .logo {
   max-width: 80vw;
+  height: auto;
 }
 
 /* About section */
 .about {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(180deg, #B80000 0%, #FF00C3 60%, #FFE4FF 100%);
   padding: 50px;
   color: black;
@@ -117,13 +128,7 @@ nav ul li a:hover {
   max-width: 75vw;
   margin-bottom: 10px;
   line-height: 1.6;
-  font-size: 1.8vw;
-}
-
-@media (max-width: 768px) {
-  .about p {
-    font-size: 4vw;
-  }
+  font-size: clamp(16px, 1.8vw, 24px);
 }
 
 /* Collective section */
@@ -138,16 +143,10 @@ nav ul li a:hover {
 
 .collective-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* Adjust space between collective members */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   width: 100%;
   justify-items: center;
-}
-
-@media (max-width: 768px) {
-  .collective-container {
-    grid-template-columns: 1fr; /* Stack members on mobile */
-  }
 }
 
 .portrait {
@@ -156,12 +155,13 @@ nav ul li a:hover {
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
 
 .member:hover .portrait {
   filter: grayscale(0%);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
 }
 
 /* Bio pop-up */
@@ -191,13 +191,13 @@ nav ul li a:hover {
 
 .bio h3 {
   font-family: 'NewEdge666SemiBold';
-  font-size: 1.8vw;
+  font-size: clamp(18px, 1.8vw, 24px);
   text-transform: uppercase;
 }
 
 .bio .pronouns {
   font-family: 'NewEdge666Slanted';
-  font-size: 1.2vw;
+  font-size: clamp(14px, 1.2vw, 18px);
   margin-bottom: 10px;
   text-transform: none;
 }
@@ -206,7 +206,7 @@ nav ul li a:hover {
   font-family: 'NewEdge666Light';
   margin-bottom: 10px;
   line-height: 1.8;
-  font-size: 1.2vw;
+  font-size: clamp(14px, 1.2vw, 18px);
 }
 
 .close-bio {
@@ -218,6 +218,7 @@ nav ul li a:hover {
   font-size: 2rem;
   color: #1D30D7;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .close-bio:hover {
@@ -226,7 +227,7 @@ nav ul li a:hover {
 
 /* Submission Section */
 .submit {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(180deg, #1D30D7 0%, #CEBDEF 50%, #FF00C3 100%);
   padding: 100px 50px;
   display: flex;
@@ -246,7 +247,7 @@ nav ul li a:hover {
 .rolling-text span {
   display: inline-block;
   font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
-  font-size: 6vw;
+  font-size: clamp(24px, 6vw, 48px);
   color: #FF00C3;
   animation: roll-text 40s linear infinite;
 }
@@ -262,14 +263,14 @@ nav ul li a:hover {
 
 .submission-content h2 {
   font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
-  font-size: 2.8vw;
+  font-size: clamp(24px, 2.8vw, 36px);
   text-transform: uppercase;
   margin-bottom: 30px;
 }
 
 .submission-content p {
   font-family: 'NewEdge666Light', sans-serif;
-  font-size: 1.8vw;
+  font-size: clamp(16px, 1.8vw, 24px);
   line-height: 1.6;
   margin-bottom: 30px;
 }
@@ -278,9 +279,10 @@ nav ul li a:hover {
   display: block;
   margin-top: 10px;
   font-family: 'NewEdge666Slanted', sans-serif;
-  font-size: 1.7vw;
+  font-size: clamp(16px, 1.7vw, 24px);
   color: #1D30D7;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .submission-content a:hover {
@@ -289,38 +291,40 @@ nav ul li a:hover {
 
 /* Events Section */
 .events {
-  height: 100vh;
+  min-height: 100vh;
   padding: 50px;
   background: linear-gradient(180deg, #FF00C3 0%, #FF003C 100%);
   color: black;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .future-events, .past-events {
-  flex: 1;
+  flex: 1 1 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px;
 }
 
 .future-events h2, .past-events h2 {
   font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
-  font-size: 3vw;
+  font-size: clamp(24px, 3vw, 36px);
   text-transform: uppercase;
   margin-bottom: 30px;
 }
 
 .future-events p, .past-events p {
-  font-size: 1.5vw;
+  font-size: clamp(14px, 1.5vw, 20px);
   line-height: 1.6;
 }
 
 .future-events p strong, .past-events p strong {
   font-family: 'NewEdge666';
   font-weight: 600;
-  font-size: 1.8vw;
+  font-size: clamp(16px, 1.8vw, 24px);
 }
 
 .future-events p {
@@ -329,7 +333,7 @@ nav ul li a:hover {
 
 /* Contact Section */
 .contact {
-  height: 100vh;
+  min-height: 100vh;
   padding: 50px;
   background: linear-gradient(180deg, #B80000 0%, #F50000 50%, #FFE4FF 100%);
   display: flex;
@@ -340,13 +344,14 @@ nav ul li a:hover {
 
 .contact-container h1 {
   font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
-  font-size: 5vw;
+  font-size: clamp(32px, 5vw, 64px);
   text-align: center;
 }
 
 .contact-container h1 a {
   color: black;
   text-decoration: none;
+  transition: text-decoration 0.3s ease;
 }
 
 .contact-container h1 a:hover {
@@ -355,16 +360,20 @@ nav ul li a:hover {
 
 .contact-links {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   width: 100%;
   max-width: 800px;
+  margin-top: 40px;
 }
 
 .contact-links a {
   font-family: 'NewEdge666', sans-serif;
-  font-size: 2vw;
+  font-size: clamp(18px, 2vw, 24px);
   color: black;
   text-decoration: none;
+  transition: font-family 0.3s ease;
 }
 
 .contact-links a:hover {
@@ -373,16 +382,24 @@ nav ul li a:hover {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  nav ul li a {
-    font-size: 4vw;
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
   }
 
   .menu-button {
-    font-size: 4vw;
+    margin-left: 0;
+    margin-top: 10px;
   }
 
   .about p {
-    font-size: 4vw;
+    max-width: 100%;
   }
 
   .collective-container {
@@ -394,25 +411,16 @@ nav ul li a:hover {
     max-height: 70vh;
   }
 
-  .submission-content h2 {
-    font-size: 5vw;
+  .events {
+    flex-direction: column;
   }
 
-  .future-events h2, .past-events h2 {
-    font-size: 5vw;
-  }
-
-  .contact-container h1 {
-    font-size: 8vw;
+  .future-events, .past-events {
+    width: 100%;
   }
 
   .contact-links {
     flex-direction: column;
     align-items: center;
-  }
-
-  .contact-links a {
-    margin: 10px 0;
-    font-size: 4vw;
   }
 }

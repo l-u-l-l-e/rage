@@ -128,21 +128,26 @@ nav ul li a:hover {
 
 /* Collective section */
 .collective {
-  height: 100vh;
   padding: 50px;
   background: linear-gradient(180deg, #FFE4FF 0%, #CEBDEF 50%, #1D30D7 100%);
   color: black;
   overflow-x: hidden;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .collective-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  justify-items: center;
+  gap: 20px; /* Adjust space between collective members */
   width: 100%;
+  justify-items: center;
+}
+
+@media (max-width: 768px) {
+  .collective-container {
+    grid-template-columns: 1fr; /* Stack members on mobile */
+  }
 }
 
 .portrait {
@@ -150,8 +155,8 @@ nav ul li a:hover {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  transition: all 0.3s ease;
-  filter: grayscale(100%);
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .member:hover .portrait {

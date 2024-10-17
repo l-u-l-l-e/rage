@@ -22,8 +22,8 @@
 }
 
 @font-face {
-  font-family: 'NewEdge666UltraBoldRoundedSlanted';
-  src: url('NewEdge666-UltraBoldRoundedSlanted.otf') format('opentype');
+  font-family: 'NewEdge666SemiBold';
+  src: url('NewEdge666-SemiBoldRounded.otf') format('opentype');
 }
 
 /* General layout */
@@ -122,7 +122,13 @@ nav ul li a.active {
   max-width: 75vw;
   margin-bottom: 10px;
   line-height: 1.6;
-  font-size: 2vw;
+  font-size: 1.8vw; /* Slightly smaller text */
+}
+
+@media (max-width: 768px) {
+  .about p {
+    font-size: 4vw; /* Bigger text for better legibility on mobile */
+  }
 }
 
 /* Collective section */
@@ -140,7 +146,7 @@ nav ul li a.active {
   gap: 40px;
   justify-items: center;
   width: 100%;
-  max-width: 6fr; /* Ensure maximum of 6 members per row */
+  max-width: 6fr; /* Max of 6 members per row */
 }
 
 /* Portrait styling */
@@ -186,16 +192,16 @@ nav ul li a.active {
 }
 
 .bio h3 {
-  font-family: 'NewEdge666UltraBoldRoundedSlanted';
+  font-family: 'NewEdge666SemiBold';
   font-size: 1.8vw;
   text-transform: uppercase;
-  font-family: 'NewEdge666UltraBoldRounded';
 }
 
 .bio .pronouns {
   font-family: 'NewEdge666Slanted';
   font-size: 1.2vw;
   margin-bottom: 10px;
+  text-transform: none; /* No caps for pronouns */
 }
 
 .bio p {
@@ -252,6 +258,10 @@ nav ul li a.active {
   100% { transform: translateX(-100%); }
 }
 
+.submission-content {
+  margin-top: 50px; /* Added space between rolling text and submission guidelines */
+}
+
 .submission-content h2 {
   font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
   font-size: 2.5vw;
@@ -272,7 +282,7 @@ nav ul li a.active {
 }
 
 .submission-content a:hover {
-  color: #CEBDEF;
+  color: #FF00C3; /* Strong pink color on hover */
 }
 
 /* Events Section */
@@ -293,16 +303,13 @@ nav ul li a.active {
 .future-events h2, .past-events h2 {
   font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
   font-size: 3vw;
-  margin-bottom: 20px;
+  margin-bottom: 50px; /* Added more space between Future and Past sections */
 }
 
 .future-events p, .past-events p {
+  font-family: 'NewEdge666Light', sans-serif;
   font-size: 1.5vw;
   line-height: 1.6;
-}
-
-.future-events p strong, .past-events p strong {
-  font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
 }
 
 /* Contact Section */
@@ -320,6 +327,7 @@ nav ul li a.active {
   font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
   font-size: 5vw;
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .contact-container h1 a {
@@ -327,7 +335,11 @@ nav ul li a.active {
   text-decoration: none;
 }
 
-/* Contact links now only visible at the bottom of the page */
+.contact-container h1 a:hover {
+  text-decoration: underline;
+  color: #FF00C3;
+}
+
 .contact-links {
   display: flex;
   justify-content: space-between;
@@ -376,7 +388,7 @@ document.addEventListener('scroll', function() {
   }
 
   .about p {
-    font-size: 4.5vw;
+    font-size: 4vw; /* Bigger text for mobile */
   }
 
   .collective-container {

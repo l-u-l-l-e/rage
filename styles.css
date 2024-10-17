@@ -21,13 +21,18 @@
   src: url('NewEdge666-LightRounded.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'NewEdge666UltraBoldRoundedSlanted';
+  src: url('NewEdge666-UltraBoldRoundedSlanted.otf') format('opentype');
+}
+
 /* General layout */
 html, body {
   height: 100%;
   font-family: 'NewEdge666', sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: #DAB2E0;
+  background-color: #CEBDEF; /* Background color to match the palette */
 }
 
 /* Navigation */
@@ -68,6 +73,7 @@ nav ul li a {
   font-family: 'NewEdge666', sans-serif;
   border: none;
   display: inline-block;
+  margin-left: 30px; /* Add space between Order and Read */
 }
 
 .menu-button:hover {
@@ -82,7 +88,7 @@ nav ul li a.active {
 /* Hero section */
 .hero {
   height: 100vh;
-  background: linear-gradient(180deg, #DAB2E0 0%, #B80000 95%);
+  background: linear-gradient(180deg, #CEBDEF 0%, #B80000 95%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,7 +101,7 @@ nav ul li a.active {
 /* About section */
 .about {
   height: 100vh;
-  background: linear-gradient(180deg, #B80000 0%, #FF009B 60%, #FFE4FF 100%);
+  background: linear-gradient(180deg, #B80000 0%, #FF00C3 60%, #FFE4FF 100%);
   padding: 50px;
   color: black;
   font-family: 'NewEdge666Light', sans-serif;
@@ -111,21 +117,21 @@ nav ul li a.active {
   max-width: 75vw;
   margin-bottom: 10px;
   line-height: 1.6;
-  font-size: 1.5vw;
+  font-size: 2vw;
 }
 
 /* Collective section */
 .collective {
   height: 100vh;
   padding: 50px;
-  background: linear-gradient(180deg, #FFE4FF 0%, #CEBDEF 50%, #1C30D6 100%);
+  background: linear-gradient(180deg, #FFE4FF 0%, #CEBDEF 50%, #1D30D7 100%);
   color: black;
   overflow-x: hidden;
 }
 
 .collective-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Made images smaller */
   gap: 40px;
   justify-items: center;
   width: 100%;
@@ -133,8 +139,8 @@ nav ul li a.active {
 
 /* Portrait styling */
 .portrait {
-  width: 200px;
-  height: 200px;
+  width: 150px;  /* Reduced size */
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   transition: all 0.3s ease;
@@ -178,6 +184,24 @@ nav ul li a.active {
   visibility: visible;
 }
 
+.bio h3 {
+  font-family: 'NewEdge666UltraBoldRoundedSlanted';
+  font-size: 1.8vw;
+  margin-bottom: 10px;
+}
+
+.bio .pronouns {
+  font-family: 'NewEdge666';
+  font-size: 1.2vw;
+  margin-bottom: 10px;
+}
+
+.bio p {
+  font-family: 'NewEdge666Light';
+  margin-bottom: 10px;
+  font-size: 1.2vw;
+}
+
 .close-bio {
   position: absolute;
   top: 10px;
@@ -185,7 +209,7 @@ nav ul li a.active {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #1C30D6;
+  color: #1D30D7;
   cursor: pointer;
 }
 
@@ -196,7 +220,7 @@ nav ul li a.active {
 /* Submission Section */
 .submit {
   height: 100vh;
-  background: linear-gradient(180deg, #1C30D6 0%, #CEBDEF 50%, #FF009B 100%);
+  background: linear-gradient(180deg, #1D30D7 0%, #CEBDEF 50%, #FF00C3 100%);
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -216,8 +240,8 @@ nav ul li a.active {
   display: inline-block;
   font-family: 'NewEdge666Slanted', sans-serif;
   font-size: 6vw;
-  color: #FF009B;
-  animation: roll-text 20s linear infinite;
+  color: #FF00C3;
+  animation: roll-text 40s linear infinite; /* Made text slower */
 }
 
 @keyframes roll-text {
@@ -228,6 +252,7 @@ nav ul li a.active {
 .submission-content h2 {
   font-family: 'NewEdge666UltraBoldRoundedSlanted', sans-serif;
   font-size: 2.5vw;
+  text-transform: uppercase;
 }
 
 .submission-content p {
@@ -239,7 +264,7 @@ nav ul li a.active {
 .submission-content a {
   font-family: 'NewEdge666Slanted', sans-serif;
   font-size: 1.7vw;
-  color: #1C30D6;
+  color: #1D30D7;
   text-decoration: none;
 }
 
@@ -251,7 +276,7 @@ nav ul li a.active {
 .events {
   height: 100vh;
   padding: 50px;
-  background: linear-gradient(180deg, #9A34D7 0%, #FF009B 60%, #FF003C 100%);
+  background: linear-gradient(180deg, #FF00C3 0%, #F50000 60%, #B80000 100%);
   color: black;
 }
 
@@ -304,6 +329,8 @@ nav ul li a.active {
   justify-content: space-between;
   width: 100%;
   max-width: 800px;
+  position: fixed;
+  bottom: 10px;
 }
 
 .contact-links a {

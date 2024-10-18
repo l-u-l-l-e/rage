@@ -235,13 +235,15 @@ nav ul li a:hover {
 }
 
 .rolling-text {
-  width: 100vw;
+  width: 100%;
   padding: 40px 0;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .rolling-text span {
@@ -256,8 +258,13 @@ nav ul li a:hover {
 }
 
 @keyframes roll-text {
-  0% { transform: translate(0, 0); }
+ 0% { transform: translate(0, 0); }
   100% { transform: translate(-100%, 0); }
+}
+
+.rolling-text span::after {
+  content: attr(data-text);
+  padding-left: 50px;
 }
 
 .submission-content {

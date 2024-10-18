@@ -245,52 +245,51 @@ Diat. Met qui beati as arciet volor rerum quia dis apit etur? Quis sae nobis sol
   });
 
   // Collective member pop-up logic
-  document.querySelectorAll('.member').forEach(member => {
-    member.addEventListener('click', () => {
-      member.classList.toggle('active');
-    });
+document.querySelectorAll('.member').forEach(member => {
+  const showBio = () => {
+    member.classList.add('active');
+    centerBio(member.querySelector('.bio'));
+  };
 
-    if (window.innerWidth > 768) {
-      member.addEventListener('mouseenter', () => {
-        member.classList.add('hovering');
-      });
-      member.addEventListener('mouseleave', () => {
-        if (!member.classList.contains('active')) {
-          member.classList.remove('hovering');
-        }
-      });
-    }
-  });
+  member.addEventListener('click', showBio);
 
-  // Close bio on clicking the close button
-  document.querySelectorAll('.close-bio').forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const bio = button.closest('.bio');
-      bio.parentElement.classList.remove('active');
-    });
-  });
-
-  // Center bio popup
-  function centerBio() {
-    const bios = document.querySelectorAll('.bio');
-    bios.forEach(bio => {
-      const bioHeight = bio.clientHeight;
-      const windowHeight = window.innerHeight;
-
-      if (bioHeight > windowHeight) {
-        bio.style.top = '10px';
-      } else {
-        const topPosition = (windowHeight - bioHeight) / 2;
-        bio.style.top = `${topPosition}px`;
-      }
+  if (window.innerWidth > 768) {
+    member.addEventListener('mouseenter', showBio);
+    member.addEventListener('mouseleave', () => {
+      member.classList.remove('active');
     });
   }
+});
 
-  // Call to center bio when window resizes
-  window.addEventListener('resize', centerBio);
-  centerBio();
-</script>
+// Close bio on clicking the close button
+document.querySelectorAll('.close-bio').forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const member = button.closest('.member');
+    member.classList.remove('active');
+  });
+});
+
+// Center bio popup
+function centerBio(bio) {
+  const viewportHeight = window.innerHeight;
+  const bioHeight = bio.offsetHeight;
+  
+  if (bioHeight > viewportHeight) {
+    bio.style.top = '10px';
+    bio.style.transform = 'translateX(-50%)';
+  } else {
+    bio.style.top = '50%';
+    bio.style.transform = 'translate(-50%, -50%)';
+  }
+}
+
+// Call to center bio when window resizes
+window.addEventListener('resize', () => {
+  const activeBio = document.querySelector('.member.active .bio');
+  if (activeBio) centerBio(activeBio);
+});
+  </script>
 
 </body>
 </html>

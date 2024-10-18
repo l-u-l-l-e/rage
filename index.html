@@ -244,20 +244,30 @@ Diat. Met qui beati as arciet volor rerum quia dis apit etur? Quis sae nobis sol
     });
   });
 
-  // Collective member pop-up logic
+// Collective member pop-up logic
 document.querySelectorAll('.member').forEach(member => {
+  const bio = member.querySelector('.bio');
+  
   const showBio = () => {
     member.classList.add('active');
-    centerBio(member.querySelector('.bio'));
+    centerBio(bio);
   };
 
-  member.addEventListener('click', showBio);
+  const hideBio = () => {
+    member.classList.remove('active');
+  };
+
+  member.addEventListener('click', (e) => {
+    if (e.target.closest('.close-bio')) return;
+    member.classList.toggle('active');
+    if (member.classList.contains('active')) {
+      centerBio(bio);
+    }
+  });
 
   if (window.innerWidth > 768) {
     member.addEventListener('mouseenter', showBio);
-    member.addEventListener('mouseleave', () => {
-      member.classList.remove('active');
-    });
+    member.addEventListener('mouseleave', hideBio);
   }
 });
 

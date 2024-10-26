@@ -289,6 +289,10 @@ section h2 {
   margin-bottom: 30px;
 }
 
+.submission-content .sub {
+  font-family: 'NewEdge666Slanted', sans-serif;
+}
+
 .submission-content a {
   display: inline-block;
   transition: color 0.3s ease;

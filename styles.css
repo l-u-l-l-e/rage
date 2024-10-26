@@ -41,7 +41,7 @@ html, body {
   background-color: #CEBDEF;
 }
 
-/* Navigation */
+/* Navigation - Updated */
 nav {
   position: fixed;
   top: 0;
@@ -52,9 +52,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background-color: rgba(206, 189, 239, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(206, 189, 239, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   transition: background-color 0.3s ease;
 }
 
@@ -140,14 +140,21 @@ section h2 {
   margin-bottom: 30px;
 }
 
-/* Collective section */
+/* Collective section - Updated */
 .collective {
   padding: 120px 50px 50px;
   background: linear-gradient(180deg, #FFE4FF 0%, #CEBDEF 50%, #1D30D7 100%);
   color: black;
   overflow-x: hidden;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collective h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .collective-container {
@@ -234,7 +241,7 @@ section h2 {
   color: #CEBDEF;
 }
 
-/* Submission Section */
+/* Submission Section - Updated rolling text */
 .submit {
   min-height: 100vh;
   background: linear-gradient(180deg, #1D30D7 0%, #CEBDEF 50%, #FF00C3 100%);
@@ -262,7 +269,7 @@ section h2 {
   text-transform: uppercase;
   display: inline-block;
   padding-left: 100%;
-  animation: roll-text 20s linear infinite;
+  animation: roll-text 40s linear infinite;
   white-space: nowrap;
 }
 
@@ -296,7 +303,7 @@ section h2 {
   color: #FFE4FF;
 }
 
-/* Events Section */
+/* Events Section - Updated headers */
 .events {
   min-height: 100vh;
   padding: 120px 50px 50px;
@@ -321,6 +328,13 @@ section h2 {
   align-items: flex-start;
 }
 
+.future-events h2, .past-events h2 {
+  font-family: 'NewEdge666', sans-serif;
+  font-size: clamp(20px, 2.4vw, 32px);
+  margin-bottom: 30px;
+  color: #1D30D7;
+}
+
 .future-events p, .past-events p {
   font-size: clamp(14px, 1.5vw, 20px);
   line-height: 1.6;
@@ -336,7 +350,7 @@ section h2 {
   margin-bottom: 20px;
 }
 
-/* Contact Section */
+/* Contact Section - Updated */
 .contact {
   padding: 120px 0 0;
   background: linear-gradient(180deg, #B80000 0%, #F50000 50%, #CEBDEF 100%);
@@ -349,13 +363,15 @@ section h2 {
 .contact-container {
   display: flex;
   flex-direction: column;
-  min-height: auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
 }
 
 .contact-container h1 {
-  font-size: clamp(32px, 5vw, 64px);
   text-align: center;
-  margin: auto;
+  margin: 0;
+  padding: 20px;
 }
 
 .contact-container h1 a {
@@ -372,12 +388,11 @@ section h2 {
 .contact-links {
   margin-top: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
   width: 100%;
   padding: 20px 50px;
-  background-color: rgba(206, 189, 239, 0.3);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background-color: transparent;
 }
 
 .contact-links a {
@@ -448,11 +463,8 @@ section h2 {
   }
 
   .contact-links {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 20px;
-    padding: 20px;
+    flex-wrap: wrap;
   }
 
   .contact-links a {
@@ -460,7 +472,6 @@ section h2 {
   }
 }
 
-/* Extra small screens */
 @media (max-width: 480px) {
   nav ul {
     gap: 0.5em;
@@ -472,5 +483,9 @@ section h2 {
 
   .buttons {
     gap: 0.5em;
+  }
+
+  .contact-links {
+    gap: 15px;
   }
 }

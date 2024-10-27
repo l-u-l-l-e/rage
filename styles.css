@@ -70,6 +70,19 @@ nav {
   transition: background-color 0.3s ease;
 }
 
+nav::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* Positioning it slightly outside the bottom edge */
+  left: 0;
+  width: 100%;
+  height: 30px; /* Height of the blurred area */
+  background: linear-gradient(to bottom, rgba(206, 189, 239, 0.1), rgba(206, 189, 239, 0));
+  filter: blur(8px); /* Adjust the blur strength */
+  pointer-events: none; /* Allows clicks to pass through */
+  z-index: -1;
+}
+
 nav ul {
   list-style: none;
   display: flex;

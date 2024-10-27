@@ -367,7 +367,7 @@ section h2 {
   font-family: 'NewEdge666', sans-serif;
   font-size: clamp(20px, 2.4vw, 32px);
   margin-bottom: 20px;
-  color: #1D30D7;
+  color: #000000;
 }
 
 .future-events p, .past-events p {

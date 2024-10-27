@@ -41,6 +41,18 @@ html, body {
   background-color: #CEBDEF;
 }
 
+/* Hide scrollbar but keep functionality */
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: none;
+}
+
 /* Navigation - Updated */
 nav {
   position: fixed;
@@ -52,9 +64,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background-color: rgba(206, 189, 239, 0.3);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  background-color: rgba(206, 189, 239, 0.1);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   transition: background-color 0.3s ease;
 }
 
@@ -153,7 +165,7 @@ section h2 {
 
 .collective h2 {
   width: 100%;
-  text-align: center;
+  text-align: left;
   margin-bottom: 50px;
 }
 
@@ -254,6 +266,7 @@ section h2 {
 }
 
 .rolling-text {
+  position: relative;
   width: 100vw;
   margin-left: -50px;
   margin-right: -50px;
@@ -269,13 +282,18 @@ section h2 {
   text-transform: uppercase;
   display: inline-block;
   padding-left: 100%;
-  animation: roll-text 40s linear infinite;
+  animation: roll-text 30s linear infinite;
   white-space: nowrap;
+}
+
+.rolling-text span::after {
+  content: attr(data-text);
+  margin-left: 50px;
 }
 
 @keyframes roll-text {
   0% { transform: translate(0, 0); }
-  100% { transform: translate(-200%, 0); }
+  100% { transform: translate(-100%, 0); }
 }
 
 .submission-content {
@@ -335,7 +353,7 @@ section h2 {
 .future-events h2, .past-events h2 {
   font-family: 'NewEdge666', sans-serif;
   font-size: clamp(20px, 2.4vw, 32px);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: #1D30D7;
 }
 
@@ -368,14 +386,17 @@ section h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 80vh;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 0 50px;
 }
 
 .contact-container h1 {
-  text-align: center;
-  margin: 0;
-  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(32px, 5vw, 64px);
 }
 
 .contact-container h1 a {
@@ -390,12 +411,11 @@ section h2 {
 }
 
 .contact-links {
-  margin-top: auto;
+   width: 100%;
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  width: 100%;
-  padding: 20px 50px;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin-bottom: 20px;
   background-color: transparent;
 }
 
@@ -412,6 +432,27 @@ section h2 {
 }
 
 /* Responsive adjustments */
+/* Mobile responsive updates */
+@media (max-width: 768px) {
+  .collective h2 {
+    text-align: center;
+  }
+  
+  .contact-links {
+    padding: 20px 0;
+  }
+  
+  .contact-links a {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  
+  .rolling-text {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
+
 @media (max-width: 768px) {
   nav {
     padding: 15px 20px;

@@ -279,7 +279,13 @@ document.querySelectorAll('.member').forEach(member => {
   const bio = member.querySelector('.bio');
   
   member.addEventListener('click', (e) => {
-    if (e.target.closest('.close-bio')) return;
+    if (e.target.closest('.close-bio')) {
+      e.preventDefault();
+      e.stopPropagation();
+      member.classList.remove('active');
+      return;
+    }
+    
     document.querySelectorAll('.member.active').forEach(activeMember => {
       if (activeMember !== member) activeMember.classList.remove('active');
     });
@@ -290,9 +296,10 @@ document.querySelectorAll('.member').forEach(member => {
   });
 });
 
-// Close bio on clicking the close button
+// Update close bio button logic
 document.querySelectorAll('.close-bio').forEach(button => {
   button.addEventListener('click', (e) => {
+    e.preventDefault();
     e.stopPropagation();
     const member = button.closest('.member');
     member.classList.remove('active');

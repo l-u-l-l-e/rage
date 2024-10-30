@@ -52,7 +52,7 @@ html, body {
 
 /* Navigation */
 nav {
-  position: fixed;
+position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -64,17 +64,20 @@ nav {
   background-color: rgba(206, 189, 239, 0.3); /* Reduced opacity */
   backdrop-filter: blur(8px); /* Softer blur */
   transition: background-color 0.3s ease;
+  border-bottom: 1px solid rgba(206, 189, 239, 0.3); /* Adding a soft border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 nav::after {
  content: '';
   position: absolute;
-  bottom: -20px;
+  bottom: -20px; /* Adjust as needed */
   left: 0;
   width: 100%;
   height: 20px;
-  background: linear-gradient(to bottom, rgba(206, 189, 239, 0.2), transparent); /* Reduced opacity */
+  background: linear-gradient(to bottom, rgba(206, 189, 239, 0.2), transparent);
   pointer-events: none;
+  backdrop-filter: blur(5px); /* Added blur for the bottom edge */
 }
 
 nav ul {
@@ -349,17 +352,18 @@ opacity: 1;
 
 /* Events Section */
 .events {
-  min-height: 100vh;
+min-height: 100vh;
   padding: 120px 50px 50px;
   background: linear-gradient(180deg, #FF00C3 0%, #B80000 100%);
   color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 40px; /* Increase vertical spacing */
 }
 
 .events-container {
-  display: flex;
+   display: flex;
   justify-content: space-between;
   width: 100%;
 }
@@ -381,7 +385,7 @@ opacity: 1;
 
 .future-events p, .past-events p {
   font-size: clamp(14px, 1.5vw, 20px);
-  line-height: 1.6;
+  line-height: 1.8; /* Adjusted line height */
 }
 
 .future-events p strong, .past-events p strong {

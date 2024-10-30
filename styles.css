@@ -478,14 +478,15 @@ section h2 {
   nav {
     padding: 15px;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     backdrop-filter: blur(15px);
     width: 100vw;
   }
 
   nav ul {
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 15px;
     margin-bottom: 10px;
     gap: 1em;
   }
@@ -493,92 +494,63 @@ section h2 {
   .buttons {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: 15px;
     gap: 1em;
     margin: 0;
   }
 
-  .menu-button {
-    margin-left: 0;
-    font-size: clamp(14px, 1.8vw, 20px);
-  }
-
-  /* About section adjustment */
-  .about {
-    padding: 100px 20px 50px;
-  }
-
-  .about p {
-    max-width: 100%;
-    padding-right: 20px;
-  }
-
-  /* Collective title centering */
-  .collective h2 {
+  /* Collective section adjustments */
+  .collective-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     width: 100%;
-    text-align: center;
+    padding: 0 20px;
   }
 
-  /* Events section stacking */
-  .events-container {
-    flex-direction: column;
-    gap: 40px;
+  /* Make all sections use full width like About section */
+  .collective, .submit, .events, .contact, .stockists {
+    padding: 120px 20px 50px;
   }
 
-  .future-events, .past-events {
-    width: 100%;
-    padding: 0;
-  }
-
-  /* Stockists section stacking */
-  .stockists-container {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .stockists-column {
-    width: 100%;
+  .events-container, .stockists-container {
     padding: 0;
   }
 
   /* Contact section adjustments */
+  .contact {
+    padding-bottom: 20px;
+  }
+
+  .contact-container {
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
   .contact-links {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    overflow-x: auto;
-    padding-bottom: 5px;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .contact-links a {
-    flex: 0 0 auto;
-    white-space: nowrap;
-    font-size: clamp(14px, 1.5vw, 18px);
-    padding: 0 5px;
-  }
-
-  /* Adjust rolling text for better mobile view */
-  .rolling-text span {
-    font-size: clamp(32px, 8vw, 48px);
-  }
-}
-
-/* Additional adjustments for very small screens */
-@media (max-width: 480px) {
-  nav ul li a {
-    font-size: 14px;
-  }
-
-  .menu-button {
-    font-size: 14px;
-  }
-
-  .contact-links {
+    gap: 15px;
     padding: 10px 0;
   }
 
-  .contact-links a {
-    font-size: 12px;
+  .contact-links {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-container h1 {
+    margin: 40px 0;
+  }
+
+  /* Fix portrait sizes in 2-column layout */
+  .portrait {
+    width: 120px;
+    height: 120px;
   }
 }

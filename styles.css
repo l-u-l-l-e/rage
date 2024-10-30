@@ -42,18 +42,15 @@ html, body {
 }
 
 /* Hide scrollbar but keep functionality */
-/* For Webkit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 0;
   background: transparent;
 }
-
-/* For Firefox */
 * {
   scrollbar-width: none;
 }
 
-/* Navigation - Updated */
+/* Navigation */
 nav {
   position: fixed;
   top: 0;
@@ -66,14 +63,11 @@ nav {
   z-index: 1000;
   background-color: rgba(206, 189, 239, 0.7);
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   transition: background-color 0.3s ease;
-  /* Remove the sharp bottom edge */
-  border-bottom: none;
 }
 
 nav::after {
- content: '';
+  content: '';
   position: absolute;
   bottom: -20px;
   left: 0;
@@ -112,7 +106,6 @@ nav ul li a:hover {
   text-transform: lowercase;
   font-family: 'NewEdge666', sans-serif;
   border: none;
-  display: inline-block;
   margin-left: 30px;
   transition: font-family 0.3s ease;
 }
@@ -165,7 +158,7 @@ section h2 {
   margin-bottom: 30px;
 }
 
-/* Collective section - Updated */
+/* Collective section */
 .collective {
   padding: 120px 50px 50px;
   background: linear-gradient(180deg, #FFE4FF 0%, #CEBDEF 50%, #1D30D7 100%);
@@ -273,7 +266,7 @@ section h2 {
   color: #CEBDEF;
 }
 
-/* Submission Section - Updated rolling text */
+/* Submission Section */
 .submit {
   min-height: 100vh;
   background: linear-gradient(180deg, #1D30D7 0%, #CEBDEF 50%, #FF00C3 100%);
@@ -286,7 +279,7 @@ section h2 {
 }
 
 .rolling-text {
-position: relative;
+  position: relative;
   width: 100vw;
   margin-left: -50px;
   margin-right: -50px;
@@ -298,17 +291,16 @@ position: relative;
 .rolling-text span {
   font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
   color: #FF00C3;
-  font-size: clamp(48px, 10vw, 84px); /* Increased font size */
+  font-size: clamp(48px, 10vw, 84px);
   text-transform: uppercase;
   display: inline-block;
   padding-left: 100%;
-  animation: roll-text 20s linear infinite; /* Reduced animation time */
-  white-space: nowrap;
+  animation: roll-text 20s linear infinite;
 }
 
 .rolling-text span::after {
   content: attr(data-text);
-  margin-left: 20px; /* Reduced gap */
+  margin-left: 20px;
 }
 
 @keyframes roll-text {
@@ -345,7 +337,7 @@ position: relative;
   color: #FFE4FF;
 }
 
-/* Events Section - Updated headers */
+/* Events Section */
 .events {
   min-height: 100vh;
   padding: 120px 50px 50px;
@@ -392,9 +384,9 @@ position: relative;
   margin-bottom: 20px;
 }
 
-/* Contact Section - Updated */
+/* Contact Section */
 .contact {
-padding: 120px 0 0;
+  padding: 120px 0 0;
   background: linear-gradient(180deg, #B80000 0%, #F50000 50%, #CEBDEF 100%);
   min-height: 100vh;
   display: flex;
@@ -410,7 +402,7 @@ padding: 120px 0 0;
 }
 
 .contact-container h1 {
-   flex: 1;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -452,7 +444,6 @@ padding: 120px 0 0;
 }
 
 /* Responsive adjustments */
-/* Mobile responsive updates */
 @media (max-width: 768px) {
   .collective h2 {
     text-align: center;
@@ -472,15 +463,15 @@ padding: 120px 0 0;
     margin-right: -20px;
   }
 
-    .rolling-text span {
+  .rolling-text span {
     font-size: clamp(36px, 8vw, 64px); /* Adjusted mobile font size */
   }
 
-    .contact-container {
+  .contact-container {
     padding: 0 20px;
   }
   
- .contact-links {
+  .contact-links {
     justify-content: center;
     gap: 20px;
   }
@@ -502,11 +493,6 @@ padding: 120px 0 0;
     font-size: 14px;
   }
 
-  .buttons {
-    display: flex;
-    gap: 1em;
-  }
-
   .about, .submit, .events, .collective {
     padding: 100px 20px 50px;
   }
@@ -524,11 +510,6 @@ padding: 120px 0 0;
     max-height: 70vh;
   }
 
-  .rolling-text {
-    margin-left: -20px;
-    margin-right: -20px;
-  }
-
   .events-container {
     flex-direction: column;
     gap: 40px;
@@ -538,7 +519,6 @@ padding: 120px 0 0;
     width: 100%;
     padding: 0;
   }
-
 }
 
 @media (max-width: 480px) {

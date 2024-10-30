@@ -61,16 +61,16 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background-color: rgba(206, 189, 239, 0.3); /* Reduced opacity */
+  background-color: rgba(206, 189, 239, 0.3);
   backdrop-filter: blur(10px);
   transition: background-color 0.3s ease;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav::after {
   content: '';
   position: absolute;
-  bottom: -20px; /* Adjust as needed */
+  bottom: -20px;
   left: 0;
   width: 100%;
   height: 20px;
@@ -156,7 +156,7 @@ section h2 {
   font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
   font-size: clamp(24px, 2.8vw, 36px);
   text-transform: uppercase;
-  margin-bottom: 30px;
+  margin-bottom: 50px; /* Increased space below section title */
 }
 
 /* Collective section */
@@ -271,6 +271,7 @@ section h2 {
   align-items: center;
   color: black;
 }
+
 .submission-content {
   margin-top: 60px;
 }
@@ -332,7 +333,10 @@ section h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+}
+
+.events h2 {
+  margin-bottom: 50px;
 }
 
 .events-container {
@@ -346,22 +350,21 @@ section h2 {
   padding: 0 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .future-events h3, .past-events h3 {
   font-family: 'NewEdge666', sans-serif;
-  font-size: clamp(24px, 2.4vw, 32px);
-  margin-bottom: 20px;
+  font-size: clamp(20px, 2.4vw, 32px);
+  margin-bottom: 10px;
+}
+
+.future-events p, .past-events p {
+  font-size: clamp(14px, 1.5vw, 20px);
+  font-family: 'NewEdge666Light', sans-serif;
 }
 
 .future-events p strong, .past-events p strong {
   font-size: clamp(18px, 1.8vw, 24px);
-}
-
-.future-events p span, .past-events p span {
-  font-size: clamp(14px, 1.5vw, 20px);
-  font-family: 'NewEdge666Light', sans-serif;
 }
 
 /* Contact Section */
@@ -425,11 +428,17 @@ section h2 {
 
 /* Stockists Section */
 .stockists {
+  min-height: 100vh;
   padding: 120px 50px 50px;
-  background-color: #CEBDEF; /* Light purple from contact gradient */
+  background-color: #CEBDEF;
   color: black;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.stockists h2 {
+  margin-bottom: 50px;
 }
 
 .stockists-container {

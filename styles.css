@@ -339,6 +339,12 @@ section h2 {
   margin-bottom: 50px;
 }
 
+.events h3 {
+  font-family: 'NewEdge666', sans-serif;
+  font-size: clamp(20px, 2.4vw, 32px);
+  margin-bottom: 40px;
+}
+
 .events-container {
   display: flex;
   justify-content: space-between;

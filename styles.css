@@ -473,55 +473,112 @@ section h2 {
   margin-bottom: 20px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
-  /* Reduced left and right padding for mobile */
-  section, .contact-container, .collective, .submit, .events, .stockists {
-    padding-left: 20px;
+  /* Navigation adjustments */
+  nav {
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    width: 100vw;
+  }
+
+  nav ul {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 1em;
+  }
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 0;
+  }
+
+  .menu-button {
+    margin-left: 0;
+    font-size: clamp(14px, 1.8vw, 20px);
+  }
+
+  /* About section adjustment */
+  .about {
+    padding: 100px 20px 50px;
+  }
+
+  .about p {
+    max-width: 100%;
     padding-right: 20px;
   }
 
-  /* Aligning "Stockists," "Order," and "Read" to the right on mobile */
-  .buttons {
-    margin-left: auto;
-    display: flex;
+  /* Collective title centering */
+  .collective h2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Events section stacking */
+  .events-container {
     flex-direction: column;
-    align-items: flex-end;
+    gap: 40px;
   }
 
-  /* Set collective members in two columns */
-  .collective-container {
-    grid-template-columns: repeat(2, 1fr);
+  .future-events, .past-events {
+    width: 100%;
+    padding: 0;
   }
 
-  /* Speed up rolling text animation on mobile */
-  .rolling-text span {
-    animation: roll-text 30s linear infinite;
+  /* Stockists section stacking */
+  .stockists-container {
+    flex-direction: column;
+    gap: 40px;
   }
 
-  /* Stack contact links into two lines */
+  .stockists-column {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Contact section adjustments */
   .contact-links {
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: nowrap;
     justify-content: center;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    -webkit-overflow-scrolling: touch;
   }
 
   .contact-links a {
-    flex-basis: 45%;
-    text-align: center;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: clamp(14px, 1.5vw, 18px);
+    padding: 0 5px;
+  }
+
+  /* Adjust rolling text for better mobile view */
+  .rolling-text span {
+    font-size: clamp(32px, 8vw, 48px);
   }
 }
 
+/* Additional adjustments for very small screens */
 @media (max-width: 480px) {
-  /* Further reduce left and right padding for smaller screens */
-  section, .contact-container, .collective, .submit, .events, .stockists {
-    padding-left: 15px;
-    padding-right: 15px;
+  nav ul li a {
+    font-size: 14px;
   }
 
-  /* Stack contact links completely on smaller screens */
+  .menu-button {
+    font-size: 14px;
+  }
+
+  .contact-links {
+    padding: 10px 0;
+  }
+
   .contact-links a {
-    flex-basis: 100%;
-    text-align: center;
+    font-size: 12px;
   }
 }

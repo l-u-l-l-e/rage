@@ -52,23 +52,24 @@ html, body {
 
 /* Navigation */
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  background-color: rgba(206, 189, 239, 0.3); /* Reduced opacity */
-  backdrop-filter: blur(10px); /* Softer blur */
-  transition: background-color 0.3s ease;
-  /* Removed visible edge */
+position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background-color: rgba(206, 189, 239, 0.3); /* Reduced opacity */
+    backdrop-filter: blur(10px); /* Softer blur */
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid rgba(206, 189, 239, 0.3); /* Adding a soft border */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 nav::after {
-  content: '';
+ content: '';
   position: absolute;
   bottom: -20px; /* Adjust as needed */
   left: 0;
@@ -221,13 +222,13 @@ section h2 {
 }
 
 .member.active .bio {
-  opacity: 1;
+ opacity: 1;
   visibility: visible;
 }
 
 /* Remove hover effect for bio display */
 .member:hover .bio {
-  opacity: 1;
+opacity: 1;
   visibility: visible;
 }
 
@@ -301,128 +302,300 @@ section h2 {
 .rolling-text span {
   font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
   color: #FF00C3;
-  font-size: clamp(48px, 10vw, 80px);
-  position: absolute;
-  animation: rolling 10s linear infinite;
-  /* Starting point of the animation */
-  left: 100%;
+  font-size: clamp(48px, 10vw, 84px);
+  text-transform: uppercase;
+  display: inline-block; /* Keep text inline */
+  padding-left: 100%; /* Start from outside the viewport */
+  animation: roll-text 60s linear infinite;
 }
 
-@keyframes rolling {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+.rolling-text span::after {
+  content: attr(data-text); /* Duplicate text for seamless effect */
+  margin-left: 60px; /* Space between the two texts */
+}
+
+@keyframes roll-text {
+  0% { transform: translateX(0); } /* Start position */
+  100% { transform: translateX(-100%); } /* Move left fully out of view */
+}
+
+.submission-content {
+  margin-top: 60px;
+}
+
+.submission-content p {
+  font-family: 'NewEdge666Light', sans-serif;
+  font-size: clamp(16px, 1.8vw, 24px);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.submission-content .sub {
+  font-family: 'NewEdge666Slanted', sans-serif;
+}
+
+.submission-content a {
+  display: inline-block;
+  transition: color 0.3s ease;
+  margin-top: 10px;
+  font-family: 'NewEdge666Slanted', sans-serif;
+  font-size: clamp(16px, 1.7vw, 24px);
+  color: #1D30D7;
+  text-decoration: none;
+}
+
+.submission-content a:hover {
+  color: #FFE4FF;
 }
 
 /* Events Section */
 .events {
   min-height: 100vh;
-  background: linear-gradient(180deg, #CEBDEF 0%, #B80000 50%, #FF00C3 100%);
-  padding: 120px 50px 50px;
-  color: black;
+    padding: 120px 50px 50px;
+    background: linear-gradient(180deg, #FF00C3 0%, #B80000 100%);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px; /* Increase separation between events */
 }
 
-.events h2 {
-  width: 100%;
-  text-align: left;
-  margin-bottom: 30px;
+.events-container {
+ display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.events .event {
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-  border-radius: 10px;
-  padding: 20px;
+.future-events, .past-events {
+  flex: 1;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.future-events h2, .past-events h2 {
+  font-family: 'NewEdge666', sans-serif;
+    font-size: clamp(20px, 2.4vw, 32px);
+    margin-bottom: 10px; /* Closer to description */
+    color: #000000;
+}
+
+.future-events p, .past-events p {
+font-size: clamp(14px, 1.5vw, 20px);
+    line-height: 1.8; /* Adjusted line height */
+}
+
+.future-events p strong, .past-events p strong {
+  font-family: 'NewEdge666', sans-serif;
+  font-weight: 600;
+  font-size: clamp(16px, 1.8vw, 24px);
+}
+
+.future-events p {
   margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.events .event:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.events .event h3 {
-  font-family: 'NewEdge666SemiBold', sans-serif;
-  font-size: clamp(18px, 1.8vw, 24px);
-  margin-bottom: 10px;
-}
-
-.events .event p {
-  font-family: 'NewEdge666Light';
-  line-height: 1.6;
-}
-
-/* Stockists Section */
-.stockists {
-  min-height: 100vh;
-  background: linear-gradient(180deg, #1D30D7 0%, #CEBDEF 50%, #FF00C3 100%);
-  padding: 120px 50px 50px;
-  color: black;
-}
-
-.stockists h2 {
-  width: 100%;
-  text-align: left;
-  margin-bottom: 30px;
-}
-
-.stockists .stockist {
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.stockists .stockist:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.stockists .stockist h3 {
-  font-family: 'NewEdge666SemiBold', sans-serif;
-  font-size: clamp(18px, 1.8vw, 24px);
-  margin-bottom: 10px;
-}
-
-.stockists .stockist p {
-  font-family: 'NewEdge666Light';
-  line-height: 1.6;
 }
 
 /* Contact Section */
 .contact {
+  padding: 120px 0 0;
+  background: linear-gradient(180deg, #B80000 0%, #F50000 50%, #CEBDEF 100%);
   min-height: 100vh;
-  background: linear-gradient(180deg, #FF00C3 0%, #1D30D7 50%, #CEBDEF 100%);
-  padding: 120px 50px 50px;
-  color: black;
+  display: flex;
+  flex-direction: column;
 }
 
-.contact h2 {
-  width: 100%;
-  text-align: left;
-  margin-bottom: 30px;
+.contact-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  margin-bottom: 50px; /* Added margin to ensure content stays in viewport */
 }
 
-.contact p {
-  margin-bottom: 10px;
-  font-size: clamp(16px, 1.8vw, 24px);
-}
-
-/* Footer */
-footer {
-  background-color: rgba(206, 189, 239, 0.8); /* Slightly transparent */
-  padding: 20px;
+.contact-container h1 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  font-size: clamp(24px, 5vw, 64px);
+  margin: 20px 0;
 }
 
-footer p {
-  margin: 0;
-  font-family: 'NewEdge666Light';
+.contact-container h1 a {
   color: black;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+  font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
+}
+
+.contact-container h1 a:hover {
+  text-decoration: underline;
+}
+
+.contact-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  gap: 15px;
+}
+
+.contact-links a {
+  font-family: 'NewEdge666', sans-serif;
+  font-size: clamp(18px, 2vw, 24px);
+  color: black;
+  text-decoration: none;
+  transition: font-family 0.3s ease;
+}
+
+.contact-links a:hover {
+  font-family: 'NewEdge666Slanted', sans-serif;
+}
+
+/* Stockists Section */
+.stockists {
+    padding: 120px 50px 50px;
+    background: linear-gradient(180deg, #FF00C3 100%, #B80000 0%); /* Gradient to a nice red */
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.stockists-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.stockists-column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+/* Column Titles */
+.stockists-column h2 {
+    font-family: 'NewEdge666', sans-serif;
+    font-size: clamp(20px, 2.4vw, 32px);
+    margin-bottom: 10px; /* Space below column title */
+}
+
+/* Stockist Store Title and Address Styling */
+.stockist-store-name {
+    font-family: 'NewEdge666', sans-serif;
+    font-size: clamp(18px, 2vw, 26px); /* Adjusted for store names */
+    margin-bottom: 5px; /* Adjusted spacing */
+}
+
+.stockist-address {
+    font-family: 'NewEdge666Light', sans-serif;
+    font-size: clamp(14px, 1.5vw, 20px);
+    margin-bottom: 20px; /* Space before the next store */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .collective h2 {
+    text-align: center;
+  }
+  
+  .contact-links {
+ justify-content: space-between;
+    flex-wrap: nowrap; /* Prevent wrapping on mobile */
+    gap: 10px;
+  }
+  
+  .contact-links a {
+  font-size: clamp(12px, 3vw, 16px); /* Smaller font size on mobile */
+    white-space: nowrap;
+    padding: 5px;
+  }
+  
+  .rolling-text {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .rolling-text span {
+    font-size: clamp(36px, 8vw, 64px); /* Adjusted mobile font size */
+  }
+
+  .contact-container {
+    padding: 0 20px;
+  }
+  
+  .contact-links {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .contact-links a {
+    font-size: clamp(16px, 4vw, 20px);
+    padding: 10px;
+  }
+
+  nav {
+    padding: 15px 20px;
+  }
+
+  nav ul {
+    gap: 1em;
+  }
+
+  nav ul li a, .menu-button {
+    font-size: 14px;
+  }
+
+  .about, .submit, .events, .collective {
+    padding: 100px 20px 50px;
+  }
+
+  .about p {
+    max-width: 100%;
+  }
+
+  .collective-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bio {
+    max-width: 90vw;
+    max-height: 70vh;
+  }
+
+  .events-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .future-events, .past-events {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    gap: 0.5em;
+  }
+
+  nav ul li a, .menu-button {
+    font-size: 12px;
+  }
+
+  .buttons {
+    gap: 0.5em;
+  }
+
+  .contact-links {
+    gap: 15px;
+  }
+
+    .contact-links a {
+    font-size: clamp(10px, 2.5vw, 14px); /* Even smaller font size for very small screens */
+    padding: 3px;
+  }
+  
 }

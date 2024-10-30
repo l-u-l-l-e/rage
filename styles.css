@@ -352,19 +352,16 @@ section h2 {
   flex-direction: column;
 }
 
-.future-events h3, .past-events h3 {
+.event-title {
   font-family: 'NewEdge666', sans-serif;
-  font-size: clamp(20px, 2.4vw, 32px);
-  margin-bottom: 10px;
+  font-size: clamp(18px, 2vw, 26px);
+  margin-bottom: 5px;
 }
 
-.future-events p, .past-events p {
-  font-size: clamp(14px, 1.5vw, 20px);
+.event-description {
   font-family: 'NewEdge666Light', sans-serif;
-}
-
-.future-events p strong, .past-events p strong {
-  font-size: clamp(18px, 1.8vw, 24px);
+  font-size: clamp(14px, 1.5vw, 20px);
+  margin-bottom: 20px;
 }
 
 /* Contact Section */

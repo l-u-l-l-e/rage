@@ -61,8 +61,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background-color: rgba(206, 189, 239, 0.4); /* Increased opacity for a denser background */
-  backdrop-filter: blur(15px); /* Increase blur strength */
+  background-color: rgba(206, 189, 239, 0.4);
+  backdrop-filter: blur(15px);
   transition: background-color 0.3s ease;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -70,11 +70,11 @@ nav {
 nav::after {
   content: '';
   position: absolute;
-  bottom: -30px; /* Extend gradient for a softer bottom edge */
+  bottom: -30px;
   left: 0;
   width: 100%;
-  height: 30px; /* Increase height of gradient */
-  background: linear-gradient(to bottom, rgba(206, 189, 239, 0.4), transparent); /* Slightly stronger color for gradient fade */
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(206, 189, 239, 0.4), transparent);
   pointer-events: none;
 }
 
@@ -172,7 +172,7 @@ section h2 {
 
 .collective h2 {
   width: 100%;
-  text-align: left;
+  text-align: center;
   margin-bottom: 50px;
 }
 
@@ -372,57 +372,41 @@ section h2 {
 
 /* Contact Section */
 .contact {
-  padding: 120px 0 0;
+  padding: 100px 20px 20px;
   background: linear-gradient(180deg, #B80000 0%, #F50000 50%, #CEBDEF 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .contact-container {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 50px;
-  margin-bottom: 50px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .contact-container h1 {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  margin-top: 40px;
   font-size: clamp(24px, 5vw, 64px);
-  margin: 20px 0;
-}
-
-.contact-container h1 a {
-  color: black;
-  text-decoration: none;
-  transition: text-decoration 0.3s ease;
-  font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
-}
-
-.contact-container h1 a:hover {
-  text-decoration: underline;
 }
 
 .contact-links {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
-  padding: 20px 0;
-  flex-wrap: nowrap;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 15px;
+  max-width: 100%;
 }
 
 .contact-links a {
   font-family: 'NewEdge666', sans-serif;
-  font-size: clamp(18px, 2vw, 24px);
+  font-size: clamp(16px, 1.8vw, 22px);
   color: black;
   text-decoration: none;
-  transition: font-family 0.3s ease;
 }
 
 .contact-links a:hover {
@@ -432,7 +416,7 @@ section h2 {
 /* Stockists Section */
 .stockists {
   min-height: 100vh;
-  padding: 120px 50px 50px;
+  padding: 120px 20px 50px;
   background-color: #CEBDEF;
   color: black;
   display: flex;
@@ -442,115 +426,12 @@ section h2 {
 
 .stockists h2 {
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .stockists-container {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.stockists-column {
-  flex: 1;
-  padding: 0 20px;
-}
-
-.stockists-column h3 {
-  font-family: 'NewEdge666', sans-serif;
-  font-size: clamp(20px, 2.4vw, 32px);
-  margin-bottom: 40px;
-}
-
-.stockist-store-name {
-  font-family: 'NewEdge666', sans-serif;
-  font-size: clamp(18px, 2vw, 26px);
-  margin-bottom: 5px;
-}
-
-.stockist-address {
-  font-family: 'NewEdge666Light', sans-serif;
-  font-size: clamp(14px, 1.5vw, 20px);
-  margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  /* Navigation adjustments */
-  nav {
-    padding: 15px;
-    flex-direction: column;
-    align-items: stretch;
-    backdrop-filter: blur(15px);
-    width: 100vw;
-  }
-
-  nav ul {
-    width: 100%;
-    justify-content: flex-start;
-    padding-left: 15px;
-    margin-bottom: 10px;
-    gap: 1em;
-  }
-
-  .buttons {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 15px;
-    gap: 1em;
-    margin: 0;
-  }
-
-  /* Collective section adjustments */
-  .collective-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    width: 100%;
-    padding: 0 20px;
-  }
-
-  /* Make all sections use full width like About section */
-  .collective, .submit, .events, .contact, .stockists {
-    padding: 120px 20px 50px;
-  }
-
-  .events-container, .stockists-container {
-    padding: 0;
-  }
-
-  /* Contact section adjustments */
-  .contact {
-    padding-bottom: 20px;
-  }
-
-  .contact-container {
-    padding: 0 20px;
-    margin-bottom: 20px;
-  }
-
-  .contact-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 10px 0;
-  }
-
-  .contact-links {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .contact-container h1 {
-    margin: 40px 0;
-  }
-
-  /* Fix portrait sizes in 2-column layout */
-  .portrait {
-    width: 120px;
-    height: 120px;
-  }
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
 }

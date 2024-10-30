@@ -271,6 +271,34 @@ section h2 {
   align-items: center;
   color: black;
 }
+.submission-content {
+  margin-top: 60px;
+}
+
+.submission-content p {
+  font-family: 'NewEdge666Light', sans-serif;
+  font-size: clamp(16px, 1.8vw, 24px);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.submission-content .sub {
+  font-family: 'NewEdge666Slanted', sans-serif;
+}
+
+.submission-content a {
+  display: inline-block;
+  transition: color 0.3s ease;
+  margin-top: 10px;
+  font-family: 'NewEdge666Slanted', sans-serif;
+  font-size: clamp(16px, 1.7vw, 24px);
+  color: #1D30D7;
+  text-decoration: none;
+}
+
+.submission-content a:hover {
+  color: #FFE4FF;
+}
 
 .rolling-text {
   position: relative;
@@ -303,6 +331,7 @@ section h2 {
   color: black;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -320,7 +349,7 @@ section h2 {
   align-items: flex-start;
 }
 
-.future-events h2, .past-events h2 {
+.future-events h3, .past-events h3 {
   font-family: 'NewEdge666', sans-serif;
   font-size: clamp(24px, 2.4vw, 32px);
   margin-bottom: 20px;
@@ -335,10 +364,69 @@ section h2 {
   font-family: 'NewEdge666Light', sans-serif;
 }
 
+/* Contact Section */
+.contact {
+  padding: 120px 0 0;
+  background: linear-gradient(180deg, #B80000 0%, #F50000 50%, #CEBDEF 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  margin-bottom: 50px;
+}
+
+.contact-container h1 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: clamp(24px, 5vw, 64px);
+  margin: 20px 0;
+}
+
+.contact-container h1 a {
+  color: black;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+  font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
+}
+
+.contact-container h1 a:hover {
+  text-decoration: underline;
+}
+
+.contact-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  flex-wrap: nowrap;
+  gap: 15px;
+}
+
+.contact-links a {
+  font-family: 'NewEdge666', sans-serif;
+  font-size: clamp(18px, 2vw, 24px);
+  color: black;
+  text-decoration: none;
+  transition: font-family 0.3s ease;
+}
+
+.contact-links a:hover {
+  font-family: 'NewEdge666Slanted', sans-serif;
+}
+
 /* Stockists Section */
 .stockists {
   padding: 120px 50px 50px;
-  background: linear-gradient(180deg, #FF00C3 100%, #B80000 0%);
+  background-color: #CEBDEF; /* Light purple from contact gradient */
   color: black;
   display: flex;
   flex-direction: column;
@@ -355,13 +443,12 @@ section h2 {
   padding: 0 20px;
 }
 
-.stockists h2, .stockists-column h2 {
-  font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
-  font-size: clamp(24px, 2.8vw, 36px);
-  margin-bottom: 20px;
+.stockists-column h3 {
+  font-family: 'NewEdge666', sans-serif;
+  font-size: clamp(20px, 2.4vw, 32px);
+  margin-bottom: 10px;
 }
 
-/* Stockist Store Title and Address Styling */
 .stockist-store-name {
   font-family: 'NewEdge666', sans-serif;
   font-size: clamp(18px, 2vw, 26px);
@@ -380,7 +467,22 @@ section h2 {
     text-align: center;
   }
 
-  .stockists-container, .events-container {
+  .contact-links {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .rolling-text {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .contact-container {
+    padding: 0 20px;
+  }
+
+  .events-container, .stockists-container {
     flex-direction: column;
     gap: 40px;
   }
@@ -388,5 +490,15 @@ section h2 {
   .future-events, .past-events, .stockists-column {
     width: 100%;
     padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    gap: 0.5em;
+  }
+
+  .contact-links {
+    gap: 15px;
   }
 }

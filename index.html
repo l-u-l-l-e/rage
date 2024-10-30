@@ -294,6 +294,11 @@ Artist-Name_Artwork-Title</p>
       });
     });
 
+    document.querySelector('.menu-button[href="#stockists"]').addEventListener('click', function (event) {
+  event.preventDefault();
+  document.getElementById('stockists').scrollIntoView({ behavior: 'smooth' });
+});
+
     // Member pop-up logic
     document.querySelectorAll('.member').forEach(member => {
       const portrait = member.querySelector('.portrait');

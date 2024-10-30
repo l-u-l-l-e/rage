@@ -293,12 +293,10 @@ opacity: 1;
 
 .rolling-text {
   position: relative;
-  width: 100vw;
-  margin-left: -50px;
-  margin-right: -50px;
+  width: 100vw; /* Make sure it spans the full width */
   overflow: hidden;
-  white-space: nowrap;
-  padding: 40px 0;
+  white-space: nowrap; /* Prevent text from wrapping */
+  padding: 40px 0; /* Space above and below the text */
 }
 
 .rolling-text span {
@@ -306,19 +304,19 @@ opacity: 1;
   color: #FF00C3;
   font-size: clamp(48px, 10vw, 84px);
   text-transform: uppercase;
-  display: inline-block;
-  padding-left: 100%;
+  display: inline-block; /* Keep text inline */
+  padding-left: 100%; /* Start from outside the viewport */
   animation: roll-text 40s linear infinite;
 }
 
 .rolling-text span::after {
-  content: attr(data-text);
-  margin-left: 40px;
+  content: attr(data-text); /* Duplicate text for seamless effect */
+  margin-left: 40px; /* Space between the two texts */
 }
 
 @keyframes roll-text {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-100%, 0); }
+  0% { transform: translateX(0); } /* Start position */
+  100% { transform: translateX(-100%); } /* Move left fully out of view */
 }
 
 .submission-content {

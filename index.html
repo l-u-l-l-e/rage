@@ -274,38 +274,41 @@ Visuals: TIFF & 300 dpi
     });
   });
 
-// Collective member pop-up logic
+// Updated collective member pop-up logic
 document.querySelectorAll('.member').forEach(member => {
-  const bio = member.querySelector('.bio');
+  const portrait = member.querySelector('.portrait');
   
-  member.addEventListener('click', (e) => {
-    if (e.target.closest('.close-bio')) {
-      e.preventDefault();
-      e.stopPropagation();
-      member.classList.remove('active');
-      return;
-    }
-    
-    document.querySelectorAll('.member.active').forEach(activeMember => {
-      if (activeMember !== member) activeMember.classList.remove('active');
+  portrait.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const allMembers = document.querySelectorAll('.member');
+    allMembers.forEach(m => {
+      if (m !== member) m.classList.remove('active');
     });
-    member.classList.toggle('active');
-    if (member.classList.contains('active')) {
-      centerBio(bio);
-    }
+    member.classList.add('active');
   });
 });
 
-// Update close bio button logic
+// Updated close bio button logic
 document.querySelectorAll('.close-bio').forEach(button => {
   button.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
     const member = button.closest('.member');
-    member.classList.remove('active');
+    if (member) {
+      member.classList.remove('active');
+    }
   });
 });
 
+// Close bio when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.bio') && !e.target.closest('.portrait')) {
+    document.querySelectorAll('.member.active').forEach(member => {
+      member.classList.remove('active');
+    });
+  }
+});
+    
 // Center bio popup
 function centerBio(bio) {
   const viewportHeight = window.innerHeight;

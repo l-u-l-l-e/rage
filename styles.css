@@ -306,12 +306,12 @@ opacity: 1;
   text-transform: uppercase;
   display: inline-block; /* Keep text inline */
   padding-left: 100%; /* Start from outside the viewport */
-  animation: roll-text 40s linear infinite;
+  animation: roll-text 60s linear infinite;
 }
 
 .rolling-text span::after {
   content: attr(data-text); /* Duplicate text for seamless effect */
-  margin-left: 40px; /* Space between the two texts */
+  margin-left: 60px; /* Space between the two texts */
 }
 
 @keyframes roll-text {

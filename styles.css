@@ -452,7 +452,7 @@ section h2 {
 .stockists-column h3 {
   font-family: 'NewEdge666', sans-serif;
   font-size: clamp(20px, 2.4vw, 32px);
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 
 .stockist-store-name {

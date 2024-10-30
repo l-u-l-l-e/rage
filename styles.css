@@ -156,7 +156,7 @@ section h2 {
   font-family: 'NewEdge666UltraBoldSlanted', sans-serif;
   font-size: clamp(24px, 2.8vw, 36px);
   text-transform: uppercase;
-  margin-bottom: 50px; /* Increased space below section title */
+  margin-bottom: 50px;
 }
 
 /* Collective section */

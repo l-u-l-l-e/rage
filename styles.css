@@ -457,6 +457,31 @@ min-height: 100vh;
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
+/* Stockists Section */
+.stockists {
+  padding: 120px 50px 50px;
+  background: linear-gradient(180deg, #B80000 0%, #F50000 50%, #CEBDEF 100%);
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.stockists h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.stockists-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.stockists div {
+  flex: 1;
+  padding: 0 20px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .collective h2 {

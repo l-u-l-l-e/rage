@@ -115,11 +115,9 @@ nav ul li a:hover {
   font-family: 'NewEdge666Slanted', sans-serif;
 }
 
-/* Buttons spacing (desktop) */
-@media (min-width: 769px) {
-  .buttons {
-    gap: 2em;
-  }
+.buttons {
+  display: flex;
+  gap: 3em; /* Larger gap on desktop */
 }
 
 /* Hero section */

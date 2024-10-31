@@ -486,7 +486,7 @@ section h2 {
   .buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 25px; /* Increased gap between Stockists, Order, and Read */
     margin-top: 10px;
   }
 

@@ -496,14 +496,16 @@ section h2 {
     gap: 15px;
     justify-content: center;
     margin-top: 10px;
+    text-align: center; /* Center the buttons row */
   }
 
-  /* About section - Max width adjustment */
+  /* About section - Adjustments for spacing and width */
   .about, .collective, .submit, .events, .contact, .stockists {
     padding: 80px 20px 20px;
     margin: 0 auto;
   }
 
+  /* Increased spacing between paragraphs */
   .about p,
   .submission-content p,
   .event-title, 
@@ -512,7 +514,8 @@ section h2 {
   .stockist-address {
     max-width: 90vw;
     text-align: left;
-    margin: 0 auto 10px;
+    margin: 0 auto 15px; /* Extra vertical space between paragraphs */
+    line-height: 1.6;
   }
 
   /* Center RAGE Collective Title */
@@ -538,7 +541,7 @@ section h2 {
     animation: roll-text 30s linear infinite;
   }
 
-  /* Events Section - Left Align Content */
+  /* Events Section - Left Align All Content */
   .events-container {
     flex-direction: column;
     gap: 30px;
@@ -554,6 +557,7 @@ section h2 {
 
   .event-title, .event-description {
     text-align: left;
+    margin-bottom: 10px;
   }
 
   /* Contact Links - Increase spacing between links */
@@ -596,5 +600,6 @@ section h2 {
     font-size: 1.5rem;
   }
 }
+
 
 

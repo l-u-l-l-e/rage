@@ -473,35 +473,35 @@ section h2 {
   margin-bottom: 20px;
 }
 
-/* Mobile-specific styles */
 @media (max-width: 768px) {
-  /* Navigation */
+  /* Navigation - Menu items in two centered rows */
   nav {
-    padding: 15px 20px; /* Adjusted padding for mobile */
+    padding: 15px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
   
   nav ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
-    align-items: center;
+    justify-content: center;
   }
   
   .buttons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
     margin-top: 10px;
   }
 
-  /* Content Sections - Reduce padding and margin */
+  /* About section - Max width adjustment */
   .about, .collective, .submit, .events, .contact, .stockists {
-    padding: 80px 20px 20px; /* Reduced padding */
-    margin: 0 auto; /* Center alignment for sections */
+    padding: 80px 20px 20px;
+    margin: 0 auto;
   }
 
   .about p,
@@ -510,14 +510,20 @@ section h2 {
   .event-description, 
   .stockist-store-name, 
   .stockist-address {
-    max-width: 90vw; /* Make text slightly wider on mobile */
+    max-width: 90vw;
     text-align: left;
     margin: 0 auto 10px;
   }
 
+  /* Center RAGE Collective Title */
+  .collective h2 {
+    text-align: center;
+    width: 100%;
+  }
+
   /* Collective Section - Adjust for grid display */
   .collective-container {
-    grid-template-columns: repeat(2, 1fr); /* 2-column grid for members */
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     width: 100%;
   }
@@ -529,10 +535,10 @@ section h2 {
 
   /* Submission rolling text */
   .rolling-text span {
-    animation: roll-text 30s linear infinite; /* Faster animation */
+    animation: roll-text 30s linear infinite;
   }
 
-  /* Events Section - Stack future and past events */
+  /* Events Section - Left Align Content */
   .events-container {
     flex-direction: column;
     gap: 30px;
@@ -542,25 +548,30 @@ section h2 {
   .past-events {
     width: 100%;
     padding: 0;
+    text-align: left;
     margin-bottom: 30px;
   }
 
-  /* Contact Links - Stack and move higher */
+  .event-title, .event-description {
+    text-align: left;
+  }
+
+  /* Contact Links - Increase spacing between links */
   .contact-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 20px; /* Increased gap between contact links */
     justify-content: center;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
   }
 
   .contact-container h1 {
-    font-size: clamp(18px, 5vw, 48px); /* Adjust heading font size */
+    font-size: clamp(18px, 5vw, 48px);
     margin: 30px 0;
   }
 
-  /* Stockists - Stack columns for better mobile layout */
+  /* Stockists - Stack columns */
   .stockists-container {
     flex-direction: column;
   }
@@ -585,4 +596,5 @@ section h2 {
     font-size: 1.5rem;
   }
 }
+
 

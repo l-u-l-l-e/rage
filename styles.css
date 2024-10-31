@@ -474,7 +474,7 @@ section h2 {
 }
 
 @media (max-width: 768px) {
-  /* Navigation - Menu items in two centered rows */
+  /* Navigation - Center the second row of menu items */
   nav {
     padding: 15px 20px;
     display: flex;
@@ -492,24 +492,24 @@ section h2 {
     margin-bottom: 10px;
   }
   
-  /* Second row of menu items */
+  /* Second row of menu items (Stockists, Order, Read) */
   .buttons {
     display: flex;
     flex-direction: row;
     gap: 15px;
     justify-content: center;
-    margin-top: 5px;
     width: 100%;
     text-align: center;
+    margin-top: 5px;
   }
 
-  /* About section - Adjustments for spacing and width */
+  /* Adjust spacing and width for all sections */
   .about, .collective, .submit, .events, .contact, .stockists {
     padding: 80px 20px 20px;
     margin: 0 auto;
   }
 
-  /* Increased spacing between paragraphs */
+  /* Increase paragraph spacing */
   .about p,
   .submission-content p,
   .event-title, 
@@ -528,7 +528,7 @@ section h2 {
     width: 100%;
   }
 
-  /* Collective Section - Adjust for grid display */
+  /* Adjust Collective section for grid display */
   .collective-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
@@ -540,22 +540,31 @@ section h2 {
     height: 120px;
   }
 
-  /* Submission rolling text */
+  /* Fix for rolling text to avoid cutting off */
+  .rolling-text {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 40px 0;
+  }
+
   .rolling-text span {
+    display: inline-block;
     animation: roll-text 30s linear infinite;
+    padding-left: 100%;
   }
 
   /* Events Section - Left Align All Content */
   .events-container {
     flex-direction: column;
     gap: 30px;
-    text-align: left; /* Left-align entire container */
+    text-align: left;
   }
 
   .future-events, 
   .past-events {
     width: 100%;
     padding: 0;
+    text-align: left;
     margin-bottom: 30px;
   }
 
@@ -564,7 +573,7 @@ section h2 {
     margin-bottom: 10px;
   }
 
-  /* Contact Links - Increase spacing between links */
+  /* Increase spacing between contact links */
   .contact-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -579,7 +588,7 @@ section h2 {
     margin: 30px 0;
   }
 
-  /* Stockists - Stack columns */
+  /* Stack columns for Stockists */
   .stockists-container {
     flex-direction: column;
   }
@@ -604,6 +613,17 @@ section h2 {
     font-size: 1.5rem;
   }
 }
+
+/* Rolling text animation */
+@keyframes roll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 
 
 

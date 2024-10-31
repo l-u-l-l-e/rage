@@ -110,6 +110,10 @@ nav ul li a:hover {
   transition: font-family 0.3s ease;
 }
 
+.buttons {
+  gap: 2em;
+}
+
 .menu-button:hover {
   font-family: 'NewEdge666Slanted', sans-serif;
 }
@@ -465,12 +469,6 @@ section h2 {
   font-family: 'NewEdge666Light', sans-serif;
   font-size: clamp(14px, 1.5vw, 20px);
   margin-bottom: 10px;
-}
-
-@media (min-width: 769px) {
-  .buttons {
-    gap: 40px; /* Larger gap on desktop for Stockists, Order, and Read */
-  }
 }
 
 @media (max-width: 768px) {

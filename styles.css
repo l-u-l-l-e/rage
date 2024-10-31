@@ -98,6 +98,7 @@ nav ul li a:hover {
 }
 
 /* Menu button */
+
 .menu-button {
   font-size: clamp(16px, 2vw, 24px);
   color: black;
@@ -110,12 +111,15 @@ nav ul li a:hover {
   transition: font-family 0.3s ease;
 }
 
-.buttons {
-  gap: 2em;
-}
-
 .menu-button:hover {
   font-family: 'NewEdge666Slanted', sans-serif;
+}
+
+/* Buttons spacing (desktop) */
+@media (min-width: 769px) {
+  .buttons {
+    gap: 2em;
+  }
 }
 
 /* Hero section */

@@ -483,20 +483,24 @@ section h2 {
     text-align: center;
   }
   
+  /* First row of menu items */
   nav ul {
     display: flex;
     flex-direction: row;
     gap: 15px;
     justify-content: center;
+    margin-bottom: 10px;
   }
   
+  /* Second row of menu items */
   .buttons {
     display: flex;
     flex-direction: row;
     gap: 15px;
     justify-content: center;
-    margin-top: 10px;
-    text-align: center; /* Center the buttons row */
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
   }
 
   /* About section - Adjustments for spacing and width */
@@ -514,7 +518,7 @@ section h2 {
   .stockist-address {
     max-width: 90vw;
     text-align: left;
-    margin: 0 auto 15px; /* Extra vertical space between paragraphs */
+    margin: 0 auto 20px; /* Extra vertical space between paragraphs */
     line-height: 1.6;
   }
 
@@ -545,13 +549,13 @@ section h2 {
   .events-container {
     flex-direction: column;
     gap: 30px;
+    text-align: left; /* Left-align entire container */
   }
 
   .future-events, 
   .past-events {
     width: 100%;
     padding: 0;
-    text-align: left;
     margin-bottom: 30px;
   }
 
@@ -564,7 +568,7 @@ section h2 {
   .contact-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px; /* Increased gap between contact links */
+    gap: 30px; /* Increased gap between contact links */
     justify-content: center;
     padding: 20px;
     text-align: center;

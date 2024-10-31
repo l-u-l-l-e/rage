@@ -478,29 +478,43 @@ section h2 {
   nav {
     padding: 15px;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center; /* Center align navigation items */
+    justify-content: center;
     backdrop-filter: blur(15px);
     width: 100vw;
+    text-align: center;
   }
 
   nav ul {
     width: 100%;
-    justify-content: flex-start;
-    padding-left: 15px;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
     gap: 1em;
   }
 
   .buttons {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
-    padding-right: 15px;
+    justify-content: center;
     gap: 1em;
     margin: 0;
   }
 
+  /* About section width adjustment */
+  .about p {
+    max-width: 90vw; /* Slightly wider than current mobile view */
+    margin: 0 auto 10px;
+    text-align: center;
+  }
+
   /* Collective section adjustments */
+  .collective h2 {
+    text-align: center;
+  }
+
   .collective-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -509,48 +523,65 @@ section h2 {
     padding: 0 20px;
   }
 
-  /* Make all sections use full width like About section */
-  .collective, .submit, .events, .contact, .stockists {
-    padding: 120px 20px 50px;
+  /* Rolling text adjustment */
+  .rolling-text span {
+    animation: roll-text 40s linear infinite; /* Faster animation */
   }
 
-  .events-container, .stockists-container {
+  /* Events section - stack past and future */
+  .events-container {
+    flex-direction: column;
+  }
+
+  .future-events, .past-events {
+    width: 100%;
     padding: 0;
+    margin-bottom: 40px;
   }
 
-  /* Contact section adjustments */
-  .contact {
-    padding-bottom: 20px;
+  /* Stockists section - stack columns */
+  .stockists-container {
+    flex-direction: column;
   }
 
-  .contact-container {
-    padding: 0 20px;
-    margin-bottom: 20px;
+  .stockists-column {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
   }
 
-  .contact-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 10px 0;
-  }
-
+  /* Contact links - ensure all are visible */
   .contact-links {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     justify-content: center;
-    align-items: center;
     text-align: center;
+    padding: 20px;
   }
 
   .contact-container h1 {
     margin: 40px 0;
+    font-size: clamp(18px, 5vw, 48px);
+  }
+
+  /* Ensure readable text sizes */
+  .event-title, .event-description, 
+  .stockist-store-name, .stockist-address {
+    text-align: center;
   }
 
   /* Fix portrait sizes in 2-column layout */
   .portrait {
     width: 120px;
     height: 120px;
+  }
+
+  /* Ensure bio pop-ups are fully responsive */
+  .bio {
+    width: 90%;
+    max-width: none;
+    max-height: 70vh;
+    padding: 15px;
   }
 }

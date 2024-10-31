@@ -61,8 +61,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background-color: rgba(206, 189, 239, 0.4); /* Increased opacity for a denser background */
-  backdrop-filter: blur(15px); /* Increase blur strength */
+  background-color: rgba(206, 189, 239, 0.4);
+  backdrop-filter: blur(15px);
   transition: background-color 0.3s ease;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -70,11 +70,11 @@ nav {
 nav::after {
   content: '';
   position: absolute;
-  bottom: -30px; /* Extend gradient for a softer bottom edge */
+  bottom: -30px;
   left: 0;
   width: 100%;
-  height: 30px; /* Increase height of gradient */
-  background: linear-gradient(to bottom, rgba(206, 189, 239, 0.4), transparent); /* Slightly stronger color for gradient fade */
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(206, 189, 239, 0.4), transparent);
   pointer-events: none;
 }
 
@@ -341,13 +341,14 @@ section h2 {
 .events h3 {
   font-family: 'NewEdge666', sans-serif;
   font-size: clamp(20px, 2.4vw, 32px);
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .events-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding-left: 20px; /* Align to left edge */
 }
 
 .future-events, .past-events {
@@ -366,7 +367,7 @@ section h2 {
 .event-description {
   font-family: 'NewEdge666Light', sans-serif;
   font-size: clamp(14px, 1.5vw, 20px);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 /* Contact Section */
@@ -410,9 +411,8 @@ section h2 {
 .contact-links {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px 0;
-  flex-wrap: nowrap;
   gap: 15px;
 }
 
@@ -445,19 +445,14 @@ section h2 {
 
 .stockists-container {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  flex-direction: column;
+  padding-left: 20px; /* Align to left edge */
+  gap: 20px;
 }
 
 .stockists-column {
   flex: 1;
-  padding: 0 20px;
-}
-
-.stockists-column h3 {
-  font-family: 'NewEdge666', sans-serif;
-  font-size: clamp(20px, 2.4vw, 32px);
-  margin-bottom: 40px;
+  padding: 0;
 }
 
 .stockist-store-name {
@@ -469,7 +464,7 @@ section h2 {
 .stockist-address {
   font-family: 'NewEdge666Light', sans-serif;
   font-size: clamp(14px, 1.5vw, 20px);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
@@ -480,7 +475,6 @@ section h2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: center;
   }
   
   nav ul {
@@ -488,22 +482,19 @@ section h2 {
     justify-content: center;
     gap: 15px;
   }
-  
-  /* Second row buttons (Stockists, Order, Read) */
+
   .buttons {
     display: flex;
     justify-content: center;
     gap: 15px;
-    width: 100%;
+    margin-top: 10px;
   }
 
-  /* Section and content adjustments */
   .about, .collective, .submit, .events, .contact, .stockists {
     padding: 80px 20px 20px;
     margin: 0 auto;
   }
 
-  /* Left align text on smaller screens */
   .about p,
   .submission-content p,
   .event-title, 
@@ -512,40 +503,34 @@ section h2 {
   .stockist-address {
     max-width: 90vw;
     text-align: left;
-    margin: 0 auto 20px;
-    line-height: 1.6;
+    margin: 0 auto 10px;
   }
 
-  /* Center RAGE Collective Title */
   .collective h2 {
     text-align: center;
     width: 100%;
   }
 
-  /* Grid for Collective members */
   .collective-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     width: 100%;
   }
 
-  /* Rolling text animation fix */
   .rolling-text span {
     animation: roll-text 30s linear infinite;
     padding-left: 100%;
   }
 
-  /* Event and Stockist containers stacked */
-  .events-container,
-  .stockists-container {
-    flex-direction: column;
-    gap: 20px;
+  .events-container, .stockists-container {
+    padding: 0;
   }
 
-  /* Contact links grid on mobile */
   .contact-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
   }
 }

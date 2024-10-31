@@ -107,7 +107,6 @@ nav ul li a:hover {
   text-transform: lowercase;
   font-family: 'NewEdge666', sans-serif;
   border: none;
-  margin-left: 30px;
   transition: font-family 0.3s ease;
 }
 
@@ -481,35 +480,30 @@ section h2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    justify-content: center;
   }
   
-  /* First row of menu items */
   nav ul {
     display: flex;
-    flex-direction: row;
-    gap: 15px;
     justify-content: center;
-    margin-bottom: 10px;
+    gap: 15px;
   }
   
-  /* Second row of menu items (Stockists, Order, Read) */
+  /* Second row buttons (Stockists, Order, Read) */
   .buttons {
     display: flex;
-    flex-direction: row;
-    gap: 15px;
     justify-content: center;
+    gap: 15px;
     width: 100%;
-    text-align: center;
-    margin-top: 5px;
   }
 
-  /* Adjust spacing and width for all sections */
+  /* Section and content adjustments */
   .about, .collective, .submit, .events, .contact, .stockists {
     padding: 80px 20px 20px;
     margin: 0 auto;
   }
 
-  /* Increase paragraph spacing */
+  /* Left align text on smaller screens */
   .about p,
   .submission-content p,
   .event-title, 
@@ -518,7 +512,7 @@ section h2 {
   .stockist-address {
     max-width: 90vw;
     text-align: left;
-    margin: 0 auto 20px; /* Extra vertical space between paragraphs */
+    margin: 0 auto 20px;
     line-height: 1.6;
   }
 
@@ -528,103 +522,30 @@ section h2 {
     width: 100%;
   }
 
-  /* Adjust Collective section for grid display */
+  /* Grid for Collective members */
   .collective-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     width: 100%;
   }
 
-  .portrait {
-    width: 120px;
-    height: 120px;
-  }
-
-  /* Fix for rolling text to avoid cutting off */
-  .rolling-text {
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 40px 0;
-  }
-
+  /* Rolling text animation fix */
   .rolling-text span {
-    display: inline-block;
     animation: roll-text 30s linear infinite;
     padding-left: 100%;
   }
 
-  /* Events Section - Left Align All Content */
-  .events-container {
+  /* Event and Stockist containers stacked */
+  .events-container,
+  .stockists-container {
     flex-direction: column;
-    gap: 30px;
-    text-align: left;
+    gap: 20px;
   }
 
-  .future-events, 
-  .past-events {
-    width: 100%;
-    padding: 0;
-    text-align: left;
-    margin-bottom: 30px;
-  }
-
-  .event-title, .event-description {
-    text-align: left;
-    margin-bottom: 10px;
-  }
-
-  /* Increase spacing between contact links */
+  /* Contact links grid on mobile */
   .contact-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px; /* Increased gap between contact links */
-    justify-content: center;
-    padding: 20px;
-    text-align: center;
-  }
-
-  .contact-container h1 {
-    font-size: clamp(18px, 5vw, 48px);
-    margin: 30px 0;
-  }
-
-  /* Stack columns for Stockists */
-  .stockists-container {
-    flex-direction: column;
-  }
-
-  .stockists-column {
-    width: 100%;
-    padding: 0;
-    margin-bottom: 20px;
-  }
-
-  /* Bio pop-up adjustments */
-  .bio {
-    width: 90%;
-    max-width: none;
-    max-height: 70vh;
-    padding: 15px;
-  }
-
-  .close-bio {
-    top: 5px;
-    right: 5px;
-    font-size: 1.5rem;
+    gap: 20px;
   }
 }
-
-/* Rolling text animation */
-@keyframes roll-text {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-
-
-
-

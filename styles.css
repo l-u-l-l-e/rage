@@ -183,15 +183,15 @@ section h2 {
 
 .collective-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);  /* changed from auto-fit */
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 20px;  /* less horizontal space, some vertical */
   width: 100%;
   justify-items: center;
 }
 
 .portrait {
-  width: 150px;
-  height: 150px;
+  width: 200px;   /* up from 150px */
+  height: 200px;  /* up from 150px */
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
@@ -522,6 +522,11 @@ section h2 {
     gap: 15px;
     width: 100%;
   }
+
+   .portrait {
+    width: 130px;
+    height: 130px;
+      }
 
   .rolling-text span {
     animation: roll-text 30s linear infinite;

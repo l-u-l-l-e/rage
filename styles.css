@@ -183,7 +183,7 @@ section h2 {
 
 .collective-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);  /* changed from auto-fit */
   gap: 20px;
   width: 100%;
   justify-items: center;
